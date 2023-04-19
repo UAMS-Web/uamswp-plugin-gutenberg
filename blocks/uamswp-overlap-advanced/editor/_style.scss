@@ -1,0 +1,15 @@
+
+
+.block-editor {
+
+    .wp-block[data-type="uamswp/overlap-advanced"] {
+
+        @include uams-gutenberg-block-outline();
+
+        &  .uams-overlap__container > .block-editor-inner-blocks > .block-editor-block-list__layout {
+            display: flex;
+        } 
+  
+    }
+
+}

@@ -19,7 +19,7 @@ const ImageSelectorControl = ( props ) => {
                 <BaseControl
                     help="Select where you would like the background to resize around."
                 >
-                    <BaseControl.VisualLabel className="wsu-settings__label">
+                    <BaseControl.VisualLabel className="uams-settings__label">
                         Focal Point Picker
                     </BaseControl.VisualLabel>
                     <FocalPointPicker

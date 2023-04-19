@@ -1,4 +1,4 @@
-<?php namespace WSUWP\Plugin\Gutenberg;
+<?php namespace UAMSWP\Plugin\Gutenberg;
 
 class Query_Posts {
 
@@ -352,7 +352,7 @@ class Query_Posts {
 			$api_taxonomies = array(
 				'categories'           => array(),
 				'post_tag'             => array(),
-				'wsuwp_university_org' => array(),
+				'uamswp_university_org' => array(),
 			);
 
 			foreach ( $this->taxonomy_query as $index => $taxonomy ) {
@@ -365,8 +365,8 @@ class Query_Posts {
 					case 'post_tag':
 						$api_taxonomies['tags'][] = $taxonomy['id'];
 						break;
-					case 'wsuwp_university_org':
-						$api_taxonomies['wsuwp_university_org'][] = $taxonomy['id'];
+					case 'uamswp_university_org':
+						$api_taxonomies['uamswp_university_org'][] = $taxonomy['id'];
 						break;
 				}
 
@@ -390,8 +390,8 @@ class Query_Posts {
 				case 'post_tag':
 					$query_args['tags'] = implode( ',', $this->terms );
 					break;
-				case 'wsuwp_university_org':
-					$query_args['wsuwp_university_org'] = implode( ',', $this->terms );
+				case 'uamswp_university_org':
+					$query_args['uamswp_university_org'] = implode( ',', $this->terms );
 					break;
 
 			}

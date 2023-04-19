@@ -22,8 +22,8 @@ const BreakPointWidthControl = ( props ) => {
     return (
         <SelectControl
             label={ 'Width at ' + label  }
-            value={ getBlockClassNameValue( attributes, 'wsu-break--' + value + '-' ) }
-            onChange={ ( size ) => setBlockClassName( attributes, setAttributes, 'wsu-break--' + value + '-'  , size ) }
+            value={ getBlockClassNameValue( attributes, 'uams-break--' + value + '-' ) }
+            onChange={ ( size ) => setBlockClassName( attributes, setAttributes, 'uams-break--' + value + '-'  , size ) }
             options= { [
                 {label:'N/A', value:''},
                 {label:'Auto', value:'auto'},

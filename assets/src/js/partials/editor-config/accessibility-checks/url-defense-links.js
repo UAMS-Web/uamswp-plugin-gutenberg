@@ -10,7 +10,7 @@ const urlDefenseLinksCheck = (report, doc) => {
 					in a browser. They still contain ITS's email security
 					measures.
 				</p>
-				<table className="wsu-gutenberg-accessibility-panel__details-table">
+				<table className="uams-gutenberg-accessibility-panel__details-table">
 					<thead>
 						<tr>
 							<th>Link Text</th>
@@ -54,7 +54,7 @@ const urlDefenseLinksCheck = (report, doc) => {
 };
 
 wp.hooks.addFilter(
-	"wsu.Accessibility",
-	"wsuwp/accessibility-checker",
+	"uams.Accessibility",
+	"uamswp/accessibility-checker",
 	urlDefenseLinksCheck
 );

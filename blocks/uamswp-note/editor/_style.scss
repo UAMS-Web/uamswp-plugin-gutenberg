@@ -1,0 +1,27 @@
+@import "../../../assets/src/scss/utilities/variables";
+@import "../../../assets/src/scss/utilities/mixins";
+@import '../../../node_modules/@wsuwebteam/wsu-web-design-system/_assets/scss/variables';
+
+.block-editor {
+  .wp-block[data-type="uamswp/note"] {
+
+    .block-editor-inner-blocks {
+
+      .block-editor-block-list__layout { 
+
+        > p,
+          ul,
+          ol {
+            font-size: $uams-font-size--small;
+            margin-bottom: $uams-spacing--sxxsmall; 
+          }
+      }
+    }
+
+    &.uams-note--size-small .block-editor-inner-blocks .block-editor-block-list__layout {
+      > p {
+        font-size: $uams-font-size--xsmall;
+      }
+    }
+  }
+}

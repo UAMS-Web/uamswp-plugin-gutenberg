@@ -12,7 +12,7 @@ const MaxWidthControl = ( props ) => {
     return (
         <SelectControl
             label="Max Width"
-            value={ getBlockClassNameValue( attributes, 'wsu-max-width--' ) }
+            value={ getBlockClassNameValue( attributes, 'uams-max-width--' ) }
             options={ [
                 { label: 'None', value: '' },
                 { label: 'Hero (1200px)', value: 'hero' },
@@ -27,7 +27,7 @@ const MaxWidthControl = ( props ) => {
                 { label: 'xxSmall (225px)', value: 'xxsmall' },
                 { label: 'sxxSmall (150px)', value: 'sxxsmall' },
             ] }
-            onChange={ ( width ) => setBlockClassName( attributes, setAttributes, 'wsu-max-width--', width )  }
+            onChange={ ( width ) => setBlockClassName( attributes, setAttributes, 'uams-max-width--', width )  }
         />
     )
     

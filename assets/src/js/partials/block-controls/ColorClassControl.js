@@ -22,7 +22,7 @@ const ColorClassControl = ( props ) => {
         setAttributes, 
         colors,
         label='Color',
-        prefix='wsu-color-background--',
+        prefix='uams-color-background--',
         value='#ffffff',
         onSetColor=false,
     } = props;

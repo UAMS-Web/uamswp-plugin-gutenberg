@@ -1,0 +1,24 @@
+@import '../../../assets/src/scss/utilities/variables';
+@import '../../../assets/src/scss/utilities/mixins';
+
+.uams-card--placeholder {
+
+    .uams-image-frame {
+
+        &::before {
+            background-color: $uams-color--gray-10;
+        } 
+
+    }
+
+    .uams-title {
+        color: transparent;
+        text-shadow: 0 0 3px rgba(0,0,0,0.5);
+        font-weight: 600;
+    }
+
+    .uams-caption {
+        color: transparent;
+        text-shadow: 0 0 3px rgba(0,0,0,0.5);
+    } 
+}  

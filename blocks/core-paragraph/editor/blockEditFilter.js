@@ -32,7 +32,7 @@ const coreParagraphControls = wp.compose.createHigherOrderComponent( (BlockEdit)
 
 		
 
-		let FontSizeValue = ( isSelected && (props.name == 'core/paragraph') ) ? getBlockClassNameValue( attributes, 'wsu-font-size--' ) : '';
+		let FontSizeValue = ( isSelected && (props.name == 'core/paragraph') ) ? getBlockClassNameValue( attributes, 'uams-font-size--' ) : '';
 
 		return (
 			<Fragment>
@@ -71,22 +71,22 @@ const coreParagraphControls = wp.compose.createHigherOrderComponent( (BlockEdit)
 										properties: [
 											{
 												label: 'Top',
-												prefix: 'wsu-spacing-before--',                                        
+												prefix: 'uams-spacing-before--',                                        
 												default: 'none',
 											},
 											{
 												label: 'Bottom',
-												prefix: 'wsu-spacing-after--',
+												prefix: 'uams-spacing-after--',
 												default: 'xmedium',                                        
 											},
 											{
 												label: 'Left',
-												prefix: 'wsu-spacing-margin-left--',									
+												prefix: 'uams-spacing-margin-left--',									
 												default: 'default',
 											},
 											{
 												label: 'Right',
-												prefix: 'wsu-spacing-margin-right--',									
+												prefix: 'uams-spacing-margin-right--',									
 												default: 'default',
 											}
 										]
@@ -96,22 +96,22 @@ const coreParagraphControls = wp.compose.createHigherOrderComponent( (BlockEdit)
 										properties: [
 											{
 												label: 'Top',
-												prefix: 'wsu-spacing-top--',
+												prefix: 'uams-spacing-top--',
 												default: 'default',
 											},
 											{
 												label: 'Bottom',
-												prefix: 'wsu-spacing-bottom--',
+												prefix: 'uams-spacing-bottom--',
 												default: 'default',									
 											},
 											{
 												label: 'Left',
-												prefix: 'wsu-spacing-padding-left--',									
+												prefix: 'uams-spacing-padding-left--',									
 												default: 'default',
 											},
 											{
 												label: 'Right',
-												prefix: 'wsu-spacing-padding-right--',									
+												prefix: 'uams-spacing-padding-right--',									
 												default: 'default',
 											}
 										]
@@ -130,6 +130,6 @@ const coreParagraphControls = wp.compose.createHigherOrderComponent( (BlockEdit)
 
 wp.hooks.addFilter(
 	'editor.BlockEdit',
-	'wsu/core-paragraph-controls',
+	'uams/core-paragraph-controls',
 	coreParagraphControls
 );

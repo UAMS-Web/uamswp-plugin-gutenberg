@@ -107,7 +107,7 @@ const TermSelectorControl = function (props) {
   }
 
   return (
-    <div className="wsu-gutenberg-term-selector">
+    <div className="uams-gutenberg-term-selector">
       {isLoading && <Spinner />}
 
       <ComboboxControl
@@ -121,25 +121,25 @@ const TermSelectorControl = function (props) {
       />
 
       {selectedTerms.length > 0 && (
-        <ul className="wsu-gutenberg-term-selector__selected_terms">
+        <ul className="uams-gutenberg-term-selector__selected_terms">
           {selectedTerms.map((term, index) => {
             return (
               <li
                 key={term.id}
-                className="wsu-gutenberg-term-selector__selected_term"
+                className="uams-gutenberg-term-selector__selected_term"
               >
                 <button
                   type="button"
-                  className="components-button wsu-gutenberg-term-selector__remove-btn has-text has-icon"
+                  className="components-button uams-gutenberg-term-selector__remove-btn has-text has-icon"
                   onClick={() => removeTerm(term)}
                 >
-                  <span className="wsu-gutenberg-term-selector__remove-btn-text">
+                  <span className="uams-gutenberg-term-selector__remove-btn-text">
                     {term.title}
-                    <span className="wsu-gutenberg-term-selector__remove-btn-taxonomy-text">
+                    <span className="uams-gutenberg-term-selector__remove-btn-taxonomy-text">
                       {term.type.replace("post_", "")}
                     </span>
                   </span>
-                  <span className="dashicon dashicons dashicons-no-alt wsu-gutenberg-term-selector__remove-btn-icon"></span>
+                  <span className="dashicon dashicons dashicons-no-alt uams-gutenberg-term-selector__remove-btn-icon"></span>
                 </button>
               </li>
             );

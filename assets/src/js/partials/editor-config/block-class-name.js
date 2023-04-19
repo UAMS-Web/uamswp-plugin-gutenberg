@@ -24,6 +24,6 @@ function injectBlockClassName( OriginalComponent ) {
 
 wp.hooks.addFilter(
     'editor.BlockEdit',
-    'wsuwp-plugin-gutenberg/inject-block-class-name',
+    'uamswp-plugin-gutenberg/inject-block-class-name',
     injectBlockClassName
 );

@@ -66,7 +66,7 @@ const coreParagraphControls = wp.compose.createHigherOrderComponent( (BlockEdit)
 							<PanelStyleOptions 
 							{...props} 
 							styles={imageStyles}
-							prefix="wsu-image--style-"  
+							prefix="uams-image--style-"  
 							></PanelStyleOptions>
 							<PanelAnimate { ...props } ></PanelAnimate>
 							<SpacingClassNameSelector
@@ -77,22 +77,22 @@ const coreParagraphControls = wp.compose.createHigherOrderComponent( (BlockEdit)
 										properties: [
 											{
 												label: 'Top',
-												prefix: 'wsu-spacing-before--',                                        
+												prefix: 'uams-spacing-before--',                                        
 												default: 'default',
 											},
 											{
 												label: 'Bottom',
-												prefix: 'wsu-spacing-after--',
+												prefix: 'uams-spacing-after--',
 												default: 'xmedium',                                        
 											},
 											{
 												label: 'Left',
-												prefix: 'wsu-spacing-margin-left--',									
+												prefix: 'uams-spacing-margin-left--',									
 												default: 'default',
 											},
 											{
 												label: 'Right',
-												prefix: 'wsu-spacing-margin-right--',									
+												prefix: 'uams-spacing-margin-right--',									
 												default: 'default',
 											}
 										]
@@ -111,6 +111,6 @@ const coreParagraphControls = wp.compose.createHigherOrderComponent( (BlockEdit)
 
 wp.hooks.addFilter(
 	'editor.BlockEdit',
-	'wsu/core-paragraph-controls',
+	'uams/core-paragraph-controls',
 	coreParagraphControls
 );

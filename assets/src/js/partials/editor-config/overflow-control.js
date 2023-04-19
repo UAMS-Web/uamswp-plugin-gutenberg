@@ -28,8 +28,8 @@ function overflowControl( OriginalComponent ) {
                     <InspectorAdvancedControls>
                         <ToggleControl
                             label="Overflow Hidden"
-                            checked={ hasBlockClassName( attributes, 'wsu-overflow--hidden') }
-                            onChange={ ( overflow ) => { setBlockClassNameBool( attributes, setAttributes, 'wsu-overflow--hidden', overflow ) } }
+                            checked={ hasBlockClassName( attributes, 'uams-overflow--hidden') }
+                            onChange={ ( overflow ) => { setBlockClassNameBool( attributes, setAttributes, 'uams-overflow--hidden', overflow ) } }
                             />
                     </InspectorAdvancedControls>
                 </>
@@ -44,6 +44,6 @@ function overflowControl( OriginalComponent ) {
 
 wp.hooks.addFilter(
     'editor.BlockEdit',
-    'wsuwp-plugin-gutenberg/overflow-control',
+    'uamswp-plugin-gutenberg/overflow-control',
     overflowControl
 );

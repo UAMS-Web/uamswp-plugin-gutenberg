@@ -60,6 +60,6 @@ const coreQuoteControls = wp.compose.createHigherOrderComponent( (BlockEdit) => 
 
 wp.hooks.addFilter(
 	'editor.BlockEdit',
-	'wsu/core-quote-controls',
+	'uams/core-quote-controls',
 	coreQuoteControls
 );

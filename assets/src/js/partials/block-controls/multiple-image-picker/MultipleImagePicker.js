@@ -65,7 +65,7 @@ const MultipleImagePicker = (props) => {
   }
 
   function getAnchorProp() {
-    return WSUWP_DATA.wpVersion.includes("6.1")
+    return UAMSWP_DATA.wpVersion.includes("6.1")
       ? { anchor: editingElement }
       : {
           getAnchorRect: () => editingElement?.getBoundingClientRect() || null,
@@ -74,7 +74,7 @@ const MultipleImagePicker = (props) => {
 
   return (
     <>
-      <BaseControl label={label} help={help} className="wsu-gutenberg-mip">
+      <BaseControl label={label} help={help} className="uams-gutenberg-mip">
         {editingImage && (
           <Popover
             headerTitle="Edit Focal Point"
@@ -84,7 +84,7 @@ const MultipleImagePicker = (props) => {
             onClose={closeEditPopover}
             {...getAnchorProp()}
           >
-            <div className="wsu-gutenberg-mip__focal-point-picker-container">
+            <div className="uams-gutenberg-mip__focal-point-picker-container">
               <FocalPointPicker
                 url={editingImage.url}
                 value={editingImage.focalPoint}
@@ -96,20 +96,20 @@ const MultipleImagePicker = (props) => {
           </Popover>
         )}
 
-        <div className="wsu-gutenberg-mip__images">
+        <div className="uams-gutenberg-mip__images">
           {value.map((item) => (
             <div
               key={item.id}
-              className="wsu-gutenberg-mip__thumbnail-container"
+              className="uams-gutenberg-mip__thumbnail-container"
             >
               <Button
-                className={`wsu-gutenberg-mip__select-button${
+                className={`uams-gutenberg-mip__select-button${
                   editingImage?.id === item.id ? " is-selected" : ""
                 }`}
                 onClick={(e) => openEditPopover(e, item)}
               >
                 <img
-                  className="wsu-gutenberg-mip__thumbnail"
+                  className="uams-gutenberg-mip__thumbnail"
                   src={item.thumbnail}
                 />
               </Button>
@@ -129,7 +129,7 @@ const MultipleImagePicker = (props) => {
                 <Button
                   isPrimary={true}
                   onClick={open}
-                  className="wsu-gutenberg-mip__open-button"
+                  className="uams-gutenberg-mip__open-button"
                 >
                   Select Images
                 </Button>

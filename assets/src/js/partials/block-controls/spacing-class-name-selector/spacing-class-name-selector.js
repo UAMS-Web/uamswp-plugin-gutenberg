@@ -14,13 +14,13 @@ import { Button, PanelBody, CustomSelectControl, Flex, FlexBlock } from '@wordpr
             properties: [
                 {
                     label: 'Top',
-                    prefix: 'wsu-spacing-before--',
+                    prefix: 'uams-spacing-before--',
                     ignoreOptions: ['none', 'xmedium', 'xxmedium'],									
                     default: 'small',
                 },
                 {
                     label: 'Bottom',
-                    prefix: 'wsu-spacing-after--',
+                    prefix: 'uams-spacing-after--',
                     default: 'none',
                 }
             ]
@@ -30,12 +30,12 @@ import { Button, PanelBody, CustomSelectControl, Flex, FlexBlock } from '@wordpr
             properties: [
                 {
                     label: 'Top',
-                    prefix: 'wsu-spacing-top--',
+                    prefix: 'uams-spacing-top--',
                     default: 'medium',
                 },
                 {
                     label: 'Bottom',
-                    prefix: 'wsu-spacing-bottom--',
+                    prefix: 'uams-spacing-bottom--',
                     default: 'large',
                 }
             ]
@@ -45,7 +45,7 @@ import { Button, PanelBody, CustomSelectControl, Flex, FlexBlock } from '@wordpr
 </SpacingClassNameSelector>
 */
 
-const CSSNAMESPACE = 'wsu-gutenberg-spacing';
+const CSSNAMESPACE = 'uams-gutenberg-spacing';
 const ALLOPTIONS = [
     { key: 'default', name: 'default' },    
     { key: 'none', name: 'none' },

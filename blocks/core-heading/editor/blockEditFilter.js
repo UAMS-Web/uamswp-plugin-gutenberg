@@ -65,7 +65,7 @@ const coreHeadingControls = wp.compose.createHigherOrderComponent( (BlockEdit) =
 							<PanelStyleOptions 
 								{...props} 
 								styles={headingStyles}
-								prefix="wsu-heading--style-" 
+								prefix="uams-heading--style-" 
 								>
 							</PanelStyleOptions>
 							<PanelAnimate { ...props } ></PanelAnimate>
@@ -85,23 +85,23 @@ const coreHeadingControls = wp.compose.createHigherOrderComponent( (BlockEdit) =
 									}
 									/>
 
-								{ ( 'marked' == getBlockClassNameValue( attributes, 'wsu-heading--style-' ) ) && <>
+								{ ( 'marked' == getBlockClassNameValue( attributes, 'uams-heading--style-' ) ) && <>
 								<ToggleControl
 									label="Mark Above Title"
-									checked={ hasBlockClassName( attributes, 'wsu-heading--mark-top') }
-									onChange={ ( above ) => { setBlockClassNameBool( attributes, setAttributes, 'wsu-heading--mark-top', above ) } }
+									checked={ hasBlockClassName( attributes, 'uams-heading--mark-top') }
+									onChange={ ( above ) => { setBlockClassNameBool( attributes, setAttributes, 'uams-heading--mark-top', above ) } }
 									/>
 								<ToggleControl
 									label="Mark centered"
-									checked={ hasBlockClassName( attributes, 'wsu-heading--mark-centered') }
-									onChange={ ( centered ) => { setBlockClassNameBool( attributes, setAttributes, 'wsu-heading--mark-centered', centered ) } }
+									checked={ hasBlockClassName( attributes, 'uams-heading--mark-centered') }
+									onChange={ ( centered ) => { setBlockClassNameBool( attributes, setAttributes, 'uams-heading--mark-centered', centered ) } }
 									/>
 								<ColorClassControl
 									{ ...props }
 									colors={markColors}
 									label='Mark Color'
 									value='#CA1237'
-									prefix='wsu-heading--mark-color-'
+									prefix='uams-heading--mark-color-'
 									/>
 								</>
 								
@@ -118,6 +118,6 @@ const coreHeadingControls = wp.compose.createHigherOrderComponent( (BlockEdit) =
 
 wp.hooks.addFilter(
 	'editor.BlockEdit',
-	'wsu/core-heading-controls',
+	'uams/core-heading-controls',
 	coreHeadingControls
 );

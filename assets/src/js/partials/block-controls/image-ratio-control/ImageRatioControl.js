@@ -62,7 +62,7 @@ const ImageRatioControl = (props) => {
 
     return (
         <BaseControl
-            className="wsu-gutenberg-svg-button-group-control"
+            className="uams-gutenberg-svg-button-group-control"
             id="svg-button-group-control"
             label={label}
             help=""

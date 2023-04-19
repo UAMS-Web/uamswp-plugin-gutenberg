@@ -15,6 +15,6 @@ function rearrangeBlockCategories(settings, name) {
   
 wp.hooks.addFilter(
     'blocks.registerBlockType', 
-    'wsuwp-plugin-gutenberg/block-categories',
+    'uamswp-plugin-gutenberg/block-categories',
     rearrangeBlockCategories
 );

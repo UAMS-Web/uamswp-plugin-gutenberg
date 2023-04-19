@@ -1,0 +1,17 @@
+@import '../../../assets/src/scss/utilities/variables';
+@import '../../../assets/src/scss/utilities/mixins';
+
+.block-editor {
+
+    .wp-block[data-type="uamswp/column"] {
+
+        @include uams-gutenberg-block-outline();
+
+        margin: 0 calc( #{$uams-gutenberg-spacing--block-inner} /2 ) 0;
+
+        padding-left: $uams-gutenberg-spacing--block-inner;
+        padding-right: $uams-gutenberg-spacing--block-inner; 
+
+    } 
+
+}

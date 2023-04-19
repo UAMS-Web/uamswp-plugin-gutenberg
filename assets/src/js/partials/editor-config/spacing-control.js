@@ -4,20 +4,20 @@ import { SpacingClassNameSelector } from "../block-controls/blockControls";
 function insertSpacingControl(OriginalComponent) {
   return function (props) {
     const unsupportedBlockTypes = [
-      "wsuwp/banner",
+      "uamswp/banner",
       "core/image",
-      "wsuwp/card",
-      "wsuwp/image",
-      "wsuwp/row",
-      "wsuwp/column",
+      "uamswp/card",
+      "uamswp/image",
+      "uamswp/row",
+      "uamswp/column",
       "core/button",
       "core/paragraph",
-      "wsuwp/section",
-      "wsuwp/card-group",
-      "wsuwp/callout",
-      "wsuwp/container",
-      "wsuwp/button",
-      "wsuwp/sticky-nav",
+      "uamswp/section",
+      "uamswp/card-group",
+      "uamswp/callout",
+      "uamswp/container",
+      "uamswp/button",
+      "uamswp/sticky-nav",
     ];
 
     if (!unsupportedBlockTypes.includes(props.name)) {
@@ -33,12 +33,12 @@ function insertSpacingControl(OriginalComponent) {
                   properties: [
                     {
                       label: "Top",
-                      prefix: "wsu-spacing-before--",
+                      prefix: "uams-spacing-before--",
                       default: "none",
                     },
                     {
                       label: "Bottom",
-                      prefix: "wsu-spacing-after--",
+                      prefix: "uams-spacing-after--",
                       default: "xmedium",
                     },
                   ],
@@ -58,6 +58,6 @@ function insertSpacingControl(OriginalComponent) {
 
 wp.hooks.addFilter(
   "editor.BlockEdit",
-  "wsuwp-plugin-gutenberg/insert-spacing-control",
+  "uamswp-plugin-gutenberg/insert-spacing-control",
   insertSpacingControl
 );

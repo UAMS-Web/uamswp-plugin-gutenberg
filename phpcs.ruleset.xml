@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
-<ruleset name="WSUWP Code">
+<ruleset name="UAMSWP Code">
 	<!-- see available rules at https://github.com/squizlabs/PHP_CodeSniffer/wiki/Customisable-Sniff-Properties -->
 
 	<!-- Check only PHP files -->
     <arg name="extensions" value="php"/>
 
-    <description>Sniffs for the coding standards of the WSUWP Content Visibility plugin</description>
+    <description>Sniffs for the coding standards of the UAMSWP Content Visibility plugin</description>
     <rule ref="WordPress"></rule>
     <rule ref="WordPress-Extra"></rule>
     <rule ref="WordPress-Core"></rule>

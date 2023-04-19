@@ -106,10 +106,10 @@ const FontIconPickerControl = (props) => {
   }
 
   return (
-    <div className="wsu-gutenberg-font-icon-picker">
-      <BaseControl className="wsu-settings__base-control" help={props.help}>
+    <div className="uams-gutenberg-font-icon-picker">
+      <BaseControl className="uams-settings__base-control" help={props.help}>
         {props.label && (
-          <BaseControl.VisualLabel className="wsu-settings__label">
+          <BaseControl.VisualLabel className="uams-settings__label">
             {props.label}
           </BaseControl.VisualLabel>
         )}
@@ -117,16 +117,16 @@ const FontIconPickerControl = (props) => {
         {props.value ? (
           <>
             <Button
-              className="wsu-gutenberg-font-icon-picker__selected-icon"
+              className="uams-gutenberg-font-icon-picker__selected-icon"
               onClick={toggleVisible}
             >
-              <i className={`wsu-icon wsu-i-${props.value}`}></i>
+              <i className={`uams-icon uams-i-${props.value}`}></i>
             </Button>
             <Button onClick={() => props.onChange("")}>Remove</Button>
           </>
         ) : (
           <Button
-            className="wsu-gutenberg-font-icon-picker__select-icon-button"
+            className="uams-gutenberg-font-icon-picker__select-icon-button"
             onClick={toggleVisible}
           >
             Select Icon
@@ -135,15 +135,15 @@ const FontIconPickerControl = (props) => {
 
         {isVisible && (
           <Popover>
-            <div className="wsu-gutenberg-font-icon-picker__icon-list">
+            <div className="uams-gutenberg-font-icon-picker__icon-list">
               {icons.map((i) => (
                 <button
                   key={i}
                   title={i}
-                  className="wsu-gutenberg-font-icon-picker__icon-button"
+                  className="uams-gutenberg-font-icon-picker__icon-button"
                   onClick={() => selectIcon(i)}
                 >
-                  <i className={`wsu-icon wsu-i-${i}`}></i>
+                  <i className={`uams-icon uams-i-${i}`}></i>
                 </button>
               ))}
             </div>

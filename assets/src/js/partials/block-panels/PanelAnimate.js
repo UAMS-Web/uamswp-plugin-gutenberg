@@ -38,27 +38,27 @@ const PanelAnimate = ( props ) => {
         setAttributes,
     } = props
 
-    let isAnimatable = hasBlockClassName( attributes, 'wsu-animate' );
+    let isAnimatable = hasBlockClassName( attributes, 'uams-animate' );
 
     return (
         <>
         { isAnimatable && <PanelBody title="Animate Options" initialOpen={isOpen} >
                 <SelectControl
                     label='Animation Type'
-                    value={ getBlockClassNameValue( attributes, 'wsu-animate--action-' ) }
+                    value={ getBlockClassNameValue( attributes, 'uams-animate--action-' ) }
                     options={ animateStyles }
-                    onChange={ ( animationStyle ) => setBlockClassName( attributes, setAttributes, 'wsu-animate--action-', animationStyle ) }
+                    onChange={ ( animationStyle ) => setBlockClassName( attributes, setAttributes, 'uams-animate--action-', animationStyle ) }
                     />
                 <SelectControl
                     label='Trigger Animation at:'
-                    value={ getBlockClassNameValue( attributes, 'wsu-animate--timing-' ) }
+                    value={ getBlockClassNameValue( attributes, 'uams-animate--timing-' ) }
                     options={ animateTiming }
-                    onChange={ ( animateAt ) => setBlockClassName( attributes, setAttributes, 'wsu-animate--timing-', animateAt ) }
+                    onChange={ ( animateAt ) => setBlockClassName( attributes, setAttributes, 'uams-animate--timing-', animateAt ) }
                     />
                 <RangeControl
                     label="Animation Delay"
-                    value={ parseInt( getBlockClassNameValue( attributes, 'wsu-animate--delay-', 0 ) ) }
-                    onChange={ ( delay ) => setBlockClassName( attributes, setAttributes, 'wsu-animate--delay-', delay ) }
+                    value={ parseInt( getBlockClassNameValue( attributes, 'uams-animate--delay-', 0 ) ) }
+                    onChange={ ( delay ) => setBlockClassName( attributes, setAttributes, 'uams-animate--delay-', delay ) }
                     help="Increments of 200ms"
                     min={0}
                     max={6}

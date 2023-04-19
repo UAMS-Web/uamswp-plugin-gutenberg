@@ -37,9 +37,9 @@ const AlignItemControl = ( props ) => {
     return (
         <SvgButtonGroupControl 
             {...props}
-            onClick={ ( value ) => { setBlockClassName( attributes, setAttributes, 'wsu-align-item--', value ) } }
+            onClick={ ( value ) => { setBlockClassName( attributes, setAttributes, 'uams-align-item--', value ) } }
             isActive={ ( value ) => { return false } }
-            currentValue={ getBlockClassNameValue( attributes, 'wsu-align-item--') }
+            currentValue={ getBlockClassNameValue( attributes, 'uams-align-item--') }
             label='Align Element'
             buttonOptions={ buttonOptions }
         />

@@ -20,7 +20,7 @@ const RelatedFeedControl = ( props ) => {
             { attributes.doRelated && <FeedTaxonomyControl
                 label="Taxonomy"
                 help="Select taxonomy to filter posts by"
-                host={attributes.host || window.wsu.ROOT_URL}
+                host={attributes.host || window.uams.ROOT_URL}
                 postType={attributes.postType}
                 value={attributes.taxonomy}
                 onChange={(taxonomy) => setAttributes({ taxonomy })}

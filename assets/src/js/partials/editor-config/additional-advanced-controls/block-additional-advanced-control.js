@@ -29,37 +29,37 @@ function additionalAdvancedControls( OriginalComponent ) {
         const unsupportedHide = [];
 
         const supportsAnimation = [
-            'wsuwp/card',
+            'uamswp/card',
             'core/image',
             'core/heading',
-            'wsuwp/banner', 
-            'wsuwp/button', 
-            'wsuwp/callout', 
-            'wsuwp/column', 
-            'wsuwp/container', 
-            'wsuwp/decorator', 
-            'wsuwp/row', 
-            'wsuwp/section',
+            'uamswp/banner', 
+            'uamswp/button', 
+            'uamswp/callout', 
+            'uamswp/column', 
+            'uamswp/container', 
+            'uamswp/decorator', 
+            'uamswp/row', 
+            'uamswp/section',
             'core/paragraph',
-            'wsuwp/stat',
+            'uamswp/stat',
         ];
 
 
         const supportsAnchor = [
-            'wsuwp/card',
-            'wsuwp/card-group',
-            'wsuwp/banner', 
-            'wsuwp/button', 
-            'wsuwp/callout', 
-            'wsuwp/column', 
-            'wsuwp/container', 
-            'wsuwp/row', 
-            'wsuwp/section',
-            'wsuwp/stat',
+            'uamswp/card',
+            'uamswp/card-group',
+            'uamswp/banner', 
+            'uamswp/button', 
+            'uamswp/callout', 
+            'uamswp/column', 
+            'uamswp/container', 
+            'uamswp/row', 
+            'uamswp/section',
+            'uamswp/stat',
         ];
 
         const excludeAdvanced = [
-            'wsuwp/card',
+            'uamswp/card',
         ]
 
         let {
@@ -73,18 +73,18 @@ function additionalAdvancedControls( OriginalComponent ) {
                 { ! excludeAdvanced.includes( props.name ) && <>
                 <InspectorAdvancedControls>
                     { supportsAnchor.includes( props.name ) && <AnchorControl  { ...props } ></AnchorControl> }
-                    <PanelBody title="Additional Advanced Settings" initialOpen={ false } className="wsu-block-control-additional-advanced">
+                    <PanelBody title="Additional Advanced Settings" initialOpen={ false } className="uams-block-control-additional-advanced">
                         { ! unsupportedPosition.includes( props.name ) && <ToggleControl
                             label="Position Element"
-                            checked={ hasBlockClassName( attributes, 'wsu-position--relative') }
-                            onChange={ ( position ) => { setBlockClassNameBool( attributes, setAttributes, 'wsu-position--relative', position ) } }
+                            checked={ hasBlockClassName( attributes, 'uams-position--relative') }
+                            onChange={ ( position ) => { setBlockClassNameBool( attributes, setAttributes, 'uams-position--relative', position ) } }
                             help='Sets element position to relative.'
                             />
                         }
                         { ! unsupportedZindex.includes( props.name ) && <RangeControl
                             label="Element z-index"
-                            value={ parseInt( getBlockClassNameValue( attributes, 'wsu-zindex--level-' ) ) }
-                            onChange={ ( zindex ) => setBlockClassName( attributes, setAttributes, 'wsu-zindex--level-', zindex ) }
+                            value={ parseInt( getBlockClassNameValue( attributes, 'uams-zindex--level-' ) ) }
+                            onChange={ ( zindex ) => setBlockClassName( attributes, setAttributes, 'uams-zindex--level-', zindex ) }
                             help="Position element must be on if the element isn't already positioned in CSS."
                             min={0}
                             max={7}
@@ -92,13 +92,13 @@ function additionalAdvancedControls( OriginalComponent ) {
                         }
                         { ! unsupportedOverflow.includes( props.name ) && <ToggleControl
                             label="Overflow Hidden"
-                            checked={ hasBlockClassName( attributes, 'wsu-overflow--hidden') }
-                            onChange={ ( overflow ) => { setBlockClassNameBool( attributes, setAttributes, 'wsu-overflow--hidden', overflow ) } }
+                            checked={ hasBlockClassName( attributes, 'uams-overflow--hidden') }
+                            onChange={ ( overflow ) => { setBlockClassNameBool( attributes, setAttributes, 'uams-overflow--hidden', overflow ) } }
                             />
                         }
                         { ! unsupportedOverflow.includes( props.name ) && <SelectControl
                             label='Hide at Breakpoint'
-                            value={ getBlockClassNameValue( attributes, 'wsu-hide--' ) }
+                            value={ getBlockClassNameValue( attributes, 'uams-hide--' ) }
                             options={ [
                                 { label:'none', value:''},
                                 { label:'xxultrawide', value:'xxultrawide'},
@@ -112,13 +112,13 @@ function additionalAdvancedControls( OriginalComponent ) {
                                 { label:'phone-small', value:'phone-small'},
                                 ]
                             }
-                            onChange={ ( animationStyle ) => setBlockClassName( attributes, setAttributes, 'wsu-hide--', animationStyle ) }
+                            onChange={ ( animationStyle ) => setBlockClassName( attributes, setAttributes, 'uams-hide--', animationStyle ) }
                             />
                         }
                         { supportsAnimation.includes( props.name ) && <ToggleControl
                             label="Animate"
-                            checked={ hasBlockClassName( attributes, 'wsu-animate') }
-                            onChange={ ( overflow ) => { setBlockClassNameBool( attributes, setAttributes, 'wsu-animate', overflow ) } }
+                            checked={ hasBlockClassName( attributes, 'uams-animate') }
+                            onChange={ ( overflow ) => { setBlockClassNameBool( attributes, setAttributes, 'uams-animate', overflow ) } }
                             />
                         }
                     </PanelBody>
@@ -132,6 +132,6 @@ function additionalAdvancedControls( OriginalComponent ) {
 
 wp.hooks.addFilter(
     'editor.BlockEdit',
-    'wsuwp-plugin-gutenberg/additional-advanced-controls',
+    'uamswp-plugin-gutenberg/additional-advanced-controls',
     additionalAdvancedControls
 );

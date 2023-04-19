@@ -1,0 +1,66 @@
+@import '../../../assets/src/scss/utilities/variables';
+@import '../../../assets/src/scss/utilities/mixins';
+
+.block-editor {
+
+    .wp-block[data-type="uamswp/overlap-spotlight"] {
+
+        @include uams-gutenberg-block-outline();
+
+        margin: 0 calc( #{$uams-gutenberg-spacing--block-inner} /2 ) 0;
+
+        padding-left: $uams-gutenberg-spacing--block-inner;
+        padding-right: $uams-gutenberg-spacing--block-inner;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+
+        .uams-overlap-spotlight__caption {
+            background-color: #fff;
+            padding: 1.5rem;
+        }
+
+        .uams-overlap--surface-column {
+            z-index: 1 !important;
+        }
+
+        &.uams-overlap-spotlight--style-left-top,
+        &.uams-overlap-spotlight--style-left-middle,
+        &.uams-overlap-spotlight--style-left-bottom {
+
+            .uams-overlap__container{
+                flex-direction: row-reverse;
+            }
+
+        }
+
+        .uams-overlap__container {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+
+        &.uams-overlap-spotlight--style-left-middle,
+        &.uams-overlap-spotlight--style-right-middle {
+
+            .uams-overlap__column-inner {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+        }
+
+        &.uams-overlap-spotlight--style-left-bottom,
+        &.uams-overlap-spotlight--style-right-bottom {
+
+            .uams-overlap__column-inner {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+            }
+
+        }
+
+    }
+
+}

@@ -3,7 +3,7 @@ import { getBlockClassNameOption, setBlockClassName, getBlockClassNameValue } fr
 import { ResetControl } from './blockControls';
 
 
-const wsuFontSizes = [
+const uamsFontSizes = [
     { label: 'Not Set', value: '' },
     { label: 'xxSmall', value: 'xxsmall' },
     { label: 'xSmall', value: 'xsmall' },
@@ -23,10 +23,10 @@ const FontSizeControl = ( props ) => {
     let { 
         attributes, 
         setAttributes, 
-        sizes = wsuFontSizes, 
+        sizes = uamsFontSizes, 
         elementClass ='className',
         label = 'Font Size',
-        prefix = 'wsu-font-size--',
+        prefix = 'uams-font-size--',
     } = props;
 
     // console.log(attributes);

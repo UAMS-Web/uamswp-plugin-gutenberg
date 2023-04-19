@@ -59,7 +59,7 @@ const PanelStyleOptions= ( props ) => {
 
     return (
             <PanelBody title="Style Options" initialOpen={isOpen} >
-                <BaseControl id="wsu-block-style" className="wsu-block-style">
+                <BaseControl id="uams-block-style" className="uams-block-style">
                     <ButtonGroup>
                         { styles.map( ( styleObj ) => styleItem( styleObj ) ) }
                     </ButtonGroup>

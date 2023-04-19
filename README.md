@@ -1,1 +1,1 @@
-# wsuwp-plugin-gutenberg
+# uamswp-plugin-gutenberg

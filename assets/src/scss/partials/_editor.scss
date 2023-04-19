@@ -16,30 +16,30 @@
   margin-right: 0;
 }
 
-.wsu-row--single .wsu-column {
+.uams-row--single .uams-column {
   flex-grow: 1;
 }
 
-.wsu-settings__base-control {
+.uams-settings__base-control {
   width: 100%;
 }
 
-.wsu-settings__label {
+.uams-settings__label {
   display: block !important;
   margin-bottom: 1em !important;
 }
 
-.wsu-settings__properties {
+.uams-settings__properties {
 }
 
 /*=============================================
 =            Input w/ Icon Control            =
 =============================================*/
-.wsu-gutenberg-input-with-icon {
+.uams-gutenberg-input-with-icon {
   position: relative;
 }
 
-.wsu-gutenberg-input-with-icon__icon {
+.uams-gutenberg-input-with-icon__icon {
   position: absolute;
   right: 0px;
   top: 1px;

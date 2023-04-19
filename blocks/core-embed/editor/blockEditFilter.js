@@ -34,7 +34,7 @@ const coreEmbedControls = wp.compose.createHigherOrderComponent( (BlockEdit) => 
 
 		
 
-		let FontSizeValue = ( isSelected && (props.name == 'core/embed') ) ? getBlockClassNameValue( attributes, 'wsu-font-size--' ) : '';
+		let FontSizeValue = ( isSelected && (props.name == 'core/embed') ) ? getBlockClassNameValue( attributes, 'uams-font-size--' ) : '';
 
 		return (
 			<Fragment>
@@ -45,8 +45,8 @@ const coreEmbedControls = wp.compose.createHigherOrderComponent( (BlockEdit) => 
 							<PanelDisplayOptions initialOpen={true} >
 								<ToggleControl
 									label="Full Width Video"
-									checked={ hasBlockClassName( attributes, 'wsu-video--width-full' ) }
-									onChange= { ( isFullWidth ) => setBlockClassNameBool( attributes, setAttributes, 'wsu-video--width-full', isFullWidth ) }
+									checked={ hasBlockClassName( attributes, 'uams-video--width-full' ) }
+									onChange= { ( isFullWidth ) => setBlockClassNameBool( attributes, setAttributes, 'uams-video--width-full', isFullWidth ) }
 									help="Set video to 100% width of parent."
 								/>
 								<AlignItemControl {...props} />
@@ -63,6 +63,6 @@ const coreEmbedControls = wp.compose.createHigherOrderComponent( (BlockEdit) => 
 
 wp.hooks.addFilter(
 	'editor.BlockEdit',
-	'wsu/core-embed-controls',
+	'uams/core-embed-controls',
 	coreEmbedControls
 );

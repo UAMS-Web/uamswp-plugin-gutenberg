@@ -4,7 +4,7 @@ if ( ! isset( $card ) ) {
 	$card = array();
 }
 
-WSUWP\Plugin\Gutenberg\Blocks::parse_block_template_args(
+UAMSWP\Plugin\Gutenberg\Blocks::parse_block_template_args(
 	$card,
 	array(
 		'imageSrc'         => '',
@@ -24,7 +24,7 @@ if ( ! isset( $card_attrs ) ) {
 	$card_attrs = array();
 }
 
-WSUWP\Plugin\Gutenberg\Blocks::parse_block_template_args(
+UAMSWP\Plugin\Gutenberg\Blocks::parse_block_template_args(
 	$card_attrs,
 	array(
 		'className'   => '',
@@ -41,7 +41,7 @@ WSUWP\Plugin\Gutenberg\Blocks::parse_block_template_args(
 ?>
 <article class="<?php echo esc_attr( $card_attrs['className'] ); ?>">
 	<?php if ( ! empty( $card['imageSrc'] ) && ! empty( $card_attrs['showImage'] ) ) : ?>
-	<div class="wsu-image-frame <?php if ( ! empty( $card_attrs['imageRatio'] ) && 'auto' !== $card_attrs['imageRatio'] ) : ?>wsu-image--ratio-<?php echo esc_attr( $card_attrs['imageRatio'] ); ?><?php endif; ?>">
+	<div class="uams-image-frame <?php if ( ! empty( $card_attrs['imageRatio'] ) && 'auto' !== $card_attrs['imageRatio'] ) : ?>uams-image--ratio-<?php echo esc_attr( $card_attrs['imageRatio'] ); ?><?php endif; ?>">
 		<?php if ( ! empty( $card['link'] ) ) : ?><a href="<?php echo esc_url( $card['link'] ); ?>" tabindex="-1" aria-hidden="true"><?php endif; ?>
 			<img src="<?php echo esc_attr( $card['imageSrc'] ); ?>"
 				srcset="<?php echo esc_attr( $card['imageSrcSet'] ); ?>"
@@ -52,24 +52,24 @@ WSUWP\Plugin\Gutenberg\Blocks::parse_block_template_args(
 		<?php if ( ! empty( $card['link'] ) ) : ?></a><?php endif; ?>
 	</div>
 	<?php endif; ?>
-	<div class="wsu-card__content">
+	<div class="uams-card__content">
 		<?php if ( ! empty( $card['title'] ) && ! empty( $card_attrs['showHeading'] ) ) : ?>
-		<<?php echo esc_attr( $card_attrs['headingTag'] ); ?> class="wsu-title <?php if ( ! empty( $card_attrs['headingClass'] ) ) : ?><?php echo esc_attr( $card_attrs['headingClass'] ); ?><?php endif; ?>">
+		<<?php echo esc_attr( $card_attrs['headingTag'] ); ?> class="uams-title <?php if ( ! empty( $card_attrs['headingClass'] ) ) : ?><?php echo esc_attr( $card_attrs['headingClass'] ); ?><?php endif; ?>">
 			<?php if ( ! empty( $card['link'] ) ) : ?><a href="<?php echo esc_url( $card['link'] ); ?>"><?php endif; ?>
 				<?php echo wp_kses_post( $card['title'] ); ?>
 			<?php if ( ! empty( $card['link'] ) ) : ?></a><?php endif; ?>
 		</<?php echo esc_attr( $card_attrs['headingTag'] ); ?>>
 		<?php endif; ?>
 		<?php if ( ! empty( $card['caption'] ) && ! empty( $card_attrs['showCaption'] )  ) : ?>
-		<div class="wsu-caption">
+		<div class="uams-caption">
 			<?php echo wp_kses_post( $card['caption'] ); ?>
 		</div>
 		<?php endif; ?>
 		<?php if ( ! empty( $card['content'] ) && ! empty( $card_attrs['showContent'] )  ) : ?>
-		<span class="wsu-card__content-custom">
+		<span class="uams-card__content-custom">
 			<?php echo wp_kses_post( $card['content'] ); ?>
 		</span>
 		<?php endif; ?>
 	</div>
-	<?php if ( ! empty( $card['link'] ) && ! empty( $card_attrs['linkCard'] ) ) : ?><a class='wsu-card__link' href="<?php echo esc_url( $card['link'] ); ?>" aria-hidden="true" tabindex="0" ></a><?php endif; ?>
+	<?php if ( ! empty( $card['link'] ) && ! empty( $card_attrs['linkCard'] ) ) : ?><a class='uams-card__link' href="<?php echo esc_url( $card['link'] ); ?>" aria-hidden="true" tabindex="0" ></a><?php endif; ?>
 </article>

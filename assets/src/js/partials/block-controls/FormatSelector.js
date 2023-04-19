@@ -4,11 +4,11 @@ const OptionItem = ( option, onSelect ) => {
 
     return (
 		<li 
-			className="wsu-gutenberg-format-selector__option"
+			className="uams-gutenberg-format-selector__option"
 			onClick={ ( event ) => { onSelect( option.slug ) } }
 			>
 			{option.icon}
-			<span className="wsu-gutenberg-format-selector__option__label">{option.label}</span>
+			<span className="uams-gutenberg-format-selector__option__label">{option.label}</span>
 		</li>
 	);
 
@@ -22,9 +22,9 @@ const FormatSelector = ( { options, onSelect, title } ) => {
         console.log( options ); 
 
 		return (
-			<div className="wsu-gutenberg-format-selector">
-				<div className="wsu-gutenberg-format-selector__title">{title}</div>
-				<ul className="wsu-gutenberg-format-selector__options">
+			<div className="uams-gutenberg-format-selector">
+				<div className="uams-gutenberg-format-selector__title">{title}</div>
+				<ul className="uams-gutenberg-format-selector__options">
 				{ options.map( ( option ) => OptionItem( option, onSelect ) ) }
 				</ul>
 			</div>

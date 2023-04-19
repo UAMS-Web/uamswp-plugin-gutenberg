@@ -75,15 +75,15 @@ const FeedHostControl = ({ attributes, setAttributes }) => {
       <BaseControl
         label="Host (optional)"
         id={id}
-        help="URL for the site to get results from (i.e. https://news.wsu.edu)."
+        help="URL for the site to get results from (i.e. https://news.uams.edu)."
       >
-        <div className="wsu-gutenberg-input-with-icon">
+        <div className="uams-gutenberg-input-with-icon">
           {value && (
             <span
-              className={`dashicon wsu-gutenberg-input-with-icon__icon ${
+              className={`dashicon uams-gutenberg-input-with-icon__icon ${
                 isValid
-                  ? "dashicons dashicons-yes wsu-gutenberg-input-with-icon__icon--success"
-                  : "dashicons dashicons-no-alt wsu-gutenberg-input-with-icon__icon--error"
+                  ? "dashicons dashicons-yes uams-gutenberg-input-with-icon__icon--success"
+                  : "dashicons dashicons-no-alt uams-gutenberg-input-with-icon__icon--error"
               }`}
             ></span>
           )}

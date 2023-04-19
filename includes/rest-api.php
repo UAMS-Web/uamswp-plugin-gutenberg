@@ -1,4 +1,4 @@
-<?php namespace WSUWP\Plugin\Gutenberg;
+<?php namespace UAMSWP\Plugin\Gutenberg;
 
 class Rest_API {
 
@@ -6,8 +6,8 @@ class Rest_API {
 	public static function setup_classes() {
 
 		Plugin::load_class( 'block' );
-		Plugin::load_class( 'wsu-query' );
-		Plugin::load_class( 'wsu-image' );
+		Plugin::load_class( 'uams-query' );
+		Plugin::load_class( 'uams-image' );
 
 	}
 

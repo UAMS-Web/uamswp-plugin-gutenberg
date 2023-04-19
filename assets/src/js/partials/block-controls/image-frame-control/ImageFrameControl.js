@@ -34,9 +34,9 @@ const ImageFrameControl = ( props ) => {
 
     }
 
-    let blockClasses = 'wsu-image-frame wsu-image-frame-control';
+    let blockClasses = 'uams-image-frame uams-image-frame-control';
 
-    blockClasses += ( attributes.hasOwnProperty( imageRatioKey ) && attributes[ imageRatioKey ] ) ? ' wsu-image--ratio-' + attributes[ imageRatioKey ] : ''; 
+    blockClasses += ( attributes.hasOwnProperty( imageRatioKey ) && attributes[ imageRatioKey ] ) ? ' uams-image--ratio-' + attributes[ imageRatioKey ] : ''; 
 
     if ( attributes.imageSrc ) {
 
@@ -45,7 +45,7 @@ const ImageFrameControl = ( props ) => {
             <div className={ blockClasses } >
                 <img src={attributes.imageSrc} ></img>
                 <button 
-                    className="wsu-image-frame-control__button"
+                    className="uams-image-frame-control__button"
                     onClick= { () => setAttributes(
                         {
                             [ imageSrcKey ] : '',
@@ -64,7 +64,7 @@ const ImageFrameControl = ( props ) => {
 
         return (
         
-            <div className="wsu-image-frame wsu-image-frame-control">
+            <div className="uams-image-frame uams-image-frame-control">
                 
                 <MediaPlaceholder
                     icon="format-image"

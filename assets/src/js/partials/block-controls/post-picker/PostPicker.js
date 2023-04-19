@@ -8,7 +8,7 @@ import { decodeEntities } from '@wordpress/html-entities';
 
 import TextControl from './text-control';
 
-const CSSNAMESPACE = 'wsu-gutenberg-post-picker';
+const CSSNAMESPACE = 'uams-gutenberg-post-picker';
 
 const PostPicker = ( props ) => {
     const { 

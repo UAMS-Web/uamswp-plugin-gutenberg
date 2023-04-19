@@ -1,7 +1,7 @@
 @import "../../../../../../node_modules/@wsuwebteam/wsu-web-design-system/_assets/scss/variables";
 
-.wsu-block-style {
-  padding-top: $wsu-spacing--xxsmall;
+.uams-block-style {
+  padding-top: $uams-spacing--xxsmall;
 
   label {
     display: block;
@@ -22,7 +22,7 @@
       align-items: normal;
       height: auto;
       box-shadow: none;
-      border: 1px solid $wsu-color--gray-20;
+      border: 1px solid $uams-color--gray-20;
 
       &.is-pressed {
         background-color: transparent;
@@ -40,9 +40,9 @@
 
       span {
         display: block;
-        background-color: $wsu-color--gray-5;
-        color: $wsu-color--gray-75;
-        font-size: $wsu-font-size--xxsmall;
+        background-color: $uams-color--gray-5;
+        color: $uams-color--gray-75;
+        font-size: $uams-font-size--xxsmall;
         font-weight: 500;
         padding: 0.3rem;
       }

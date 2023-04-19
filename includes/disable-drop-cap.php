@@ -1,4 +1,4 @@
-<?php namespace WSUWP\Plugin\Gutenberg;
+<?php namespace UAMSWP\Plugin\Gutenberg;
 
 class Disable_Drop_cap {
 

@@ -28,8 +28,8 @@ function insertSpacingControl( OriginalComponent ) {
                     <InspectorAdvancedControls>
                         <ToggleControl
                             label="Position Element"
-                            checked={ hasBlockClassName( attributes, 'wsu-position--relative') }
-                            onChange={ ( position ) => { setBlockClassNameBool( attributes, setAttributes, 'wsu-position--relative', position ) } }
+                            checked={ hasBlockClassName( attributes, 'uams-position--relative') }
+                            onChange={ ( position ) => { setBlockClassNameBool( attributes, setAttributes, 'uams-position--relative', position ) } }
                             help='Sets element position to relative.'
                             />
                     </InspectorAdvancedControls>
@@ -45,6 +45,6 @@ function insertSpacingControl( OriginalComponent ) {
 
 wp.hooks.addFilter(
     'editor.BlockEdit',
-    'wsuwp-plugin-gutenberg/insert-spacing-control',
+    'uamswp-plugin-gutenberg/insert-spacing-control',
     insertSpacingControl
 );

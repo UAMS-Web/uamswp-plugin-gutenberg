@@ -6,7 +6,7 @@ const NestedAdvancedPanel = (props) => {
 
     return (
 
-        <PanelBody title="Additional Advanced Settings" initialOpen={ false } className="wsu-gutenberg-panel-nested-advanced">
+        <PanelBody title="Additional Advanced Settings" initialOpen={ false } className="uams-gutenberg-panel-nested-advanced">
             {props.children}
         </PanelBody>
     );

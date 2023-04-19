@@ -13,12 +13,12 @@ const blockFlexLayoutControl = wp.compose.createHigherOrderComponent((BlockEdit)
 		return (
 			<Fragment>
 				<BlockEdit {...props} />
-				{isSelected && ( props.name == 'wsuwp/column' || props.name == 'wsuwp/callout' ) && 
+				{isSelected && ( props.name == 'uamswp/column' || props.name == 'uamswp/callout' ) && 
 					<InspectorAdvancedControls>
 						<ToggleControl
 							label={'Enable Align Bottom'}
-							checked={ hasBlockClassName( attributes, 'wsu-item-layout--flex-column' )}
-							onChange={( value ) => setBlockClassNameBool( attributes, setAttributes, 'wsu-item-layout--flex-column', value ) }
+							checked={ hasBlockClassName( attributes, 'uams-item-layout--flex-column' )}
+							onChange={( value ) => setBlockClassNameBool( attributes, setAttributes, 'uams-item-layout--flex-column', value ) }
                             help='Individual child items must have "Align Bottom" activated (Advanced/Align Bottom)'
 						/>
 					</InspectorAdvancedControls>
@@ -30,6 +30,6 @@ const blockFlexLayoutControl = wp.compose.createHigherOrderComponent((BlockEdit)
  
 wp.hooks.addFilter(
 	'editor.BlockEdit',
-	'wsuwp/block-flex-layout-control',
+	'uamswp/block-flex-layout-control',
 	blockFlexLayoutControl
 );

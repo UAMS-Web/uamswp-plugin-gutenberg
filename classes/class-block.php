@@ -1,10 +1,10 @@
-<?php namespace WSUWP\Plugin\Gutenberg;
+<?php namespace UAMSWP\Plugin\Gutenberg;
 
 class Block {
 
 	protected static $block_name        = false;
 	protected static $default_attrs     = array();
-	protected static $customizer_prefix = 'wsuwp_wds_component_';
+	protected static $customizer_prefix = 'uamswp_wds_component_';
 	protected static $register_block    = true;
 
 

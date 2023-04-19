@@ -1,0 +1,31 @@
+
+@import '../../../node_modules/@wsuwebteam/wsu-web-design-system/_assets/scss/variables';
+
+.block-editor {
+    .uams-card-wrapper {
+
+        &.wp-block {
+            display: block !important;
+        }
+
+    }
+
+    .uams-card-news__placeholder {
+
+        &-message {
+            display: block;
+            text-transform: uppercase;
+            font-weight: 800;
+            font-size: $uams-font-size--xlarge;
+            color: $uams-color--gray-50;
+        }
+
+        &-text {
+            display: block;
+            font-weight: 600;
+            color: $uams-color--gray-50;  
+        }
+
+    }
+
+}

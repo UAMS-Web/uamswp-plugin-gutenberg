@@ -34,16 +34,16 @@ const PanelDeveloperTools = ( props ) => {
                 { maxWidth && <MaxWidthControl {...props} /> }
                 { positionElement && <ToggleControl
                     label="Position Element"
-                    checked={ hasBlockClassName( attributes, 'wsu-position--relative') }
-                    onChange={ ( position ) => { setBlockClassNameBool( attributes, setAttributes, 'wsu-position--relative', position ) } }
+                    checked={ hasBlockClassName( attributes, 'uams-position--relative') }
+                    onChange={ ( position ) => { setBlockClassNameBool( attributes, setAttributes, 'uams-position--relative', position ) } }
                     help='Sets element position to relative.'
                     />
                 }
                 { alignItem && <AlignItemControl {...props} /> }
                 { zindex && <RangeControl
                     label="Element z-index"
-                    value={ parseInt( getBlockClassNameValue( attributes, 'wsu-zindex--level-' ) ) }
-                    onChange={ ( zindex ) => setBlockClassName( attributes, setAttributes, 'wsu-zindex--level-', zindex ) }
+                    value={ parseInt( getBlockClassNameValue( attributes, 'uams-zindex--level-' ) ) }
+                    onChange={ ( zindex ) => setBlockClassName( attributes, setAttributes, 'uams-zindex--level-', zindex ) }
                     help="Position element must be on if the element isn't already positioned in CSS."
                     min={0}
                     max={7}
@@ -51,13 +51,13 @@ const PanelDeveloperTools = ( props ) => {
                 }
                 { overflow && <ToggleControl
                     label="Overflow Hidden"
-                    checked={ hasBlockClassName( attributes, 'wsu-overflow--hidden') }
-                    onChange={ ( overflow ) => { setBlockClassNameBool( attributes, setAttributes, 'wsu-overflow--hidden', overflow ) } }
+                    checked={ hasBlockClassName( attributes, 'uams-overflow--hidden') }
+                    onChange={ ( overflow ) => { setBlockClassNameBool( attributes, setAttributes, 'uams-overflow--hidden', overflow ) } }
                     />
                 }
                 { hide && <SelectControl
                     label='Hide at Breakpoint'
-                    value={ getBlockClassNameValue( attributes, 'wsu-hide--' ) }
+                    value={ getBlockClassNameValue( attributes, 'uams-hide--' ) }
                     options={ [
                         { label:'none', value:''},
                         { label:'xxultrawide', value:'xxultrawide'},
@@ -71,13 +71,13 @@ const PanelDeveloperTools = ( props ) => {
                         { label:'phone-small', value:'phone-small'},
                         ]
                     }
-                    onChange={ ( animationStyle ) => setBlockClassName( attributes, setAttributes, 'wsu-hide--', animationStyle ) }
+                    onChange={ ( animationStyle ) => setBlockClassName( attributes, setAttributes, 'uams-hide--', animationStyle ) }
                     />
                 }
                 { animate && <ToggleControl
                     label="Animate"
-                    checked={ hasBlockClassName( attributes, 'wsu-animate') }
-                    onChange={ ( overflow ) => { setBlockClassNameBool( attributes, setAttributes, 'wsu-animate', overflow ) } }
+                    checked={ hasBlockClassName( attributes, 'uams-animate') }
+                    onChange={ ( overflow ) => { setBlockClassNameBool( attributes, setAttributes, 'uams-animate', overflow ) } }
                     />
                 }
                 {props.children}

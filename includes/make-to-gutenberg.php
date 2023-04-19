@@ -1,4 +1,4 @@
-<?php namespace WSUWP\Plugin\Gutenberg;
+<?php namespace UAMSWP\Plugin\Gutenberg;
 
 class Make_To_Gutenberg {
 
@@ -6,35 +6,35 @@ class Make_To_Gutenberg {
 		'banner'            => array(
 			'method' => 'append_markup_for_banner',
 		),
-		'wsuwpheader'       => array(
+		'uamswpheader'       => array(
 			'method' => 'append_markup_for_header',
 		),
-		'wsuwpsingle'       => array(
+		'uamswpsingle'       => array(
 			'method'          => 'append_markup_for_row',
 			'numberOfColumns' => 1,
 			'layout'          => 'single',
 		),
-		'wsuwphalves'       => array(
+		'uamswphalves'       => array(
 			'method'          => 'append_markup_for_row',
 			'numberOfColumns' => 2,
 			'layout'          => 'halves',
 		),
-		'wsuwpthirds'       => array(
+		'uamswpthirds'       => array(
 			'method'          => 'append_markup_for_row',
 			'numberOfColumns' => 3,
 			'layout'          => 'thirds',
 		),
-		'wsuwpquarters'     => array(
+		'uamswpquarters'     => array(
 			'method'          => 'append_markup_for_row',
 			'numberOfColumns' => 4,
 			'layout'          => 'quarters',
 		),
-		'wsuwpsidebarright' => array(
+		'uamswpsidebarright' => array(
 			'method'          => 'append_markup_for_row',
 			'numberOfColumns' => 2,
 			'layout'          => 'sidebar-right',
 		),
-		'wsuwpsidebarleft'  => array(
+		'uamswpsidebarleft'  => array(
 			'method'          => 'append_markup_for_row',
 			'numberOfColumns' => 2,
 			'layout'          => 'sidebar-left',
@@ -47,25 +47,25 @@ class Make_To_Gutenberg {
 	);
 
 	public static $color_class_map = array(
-		'gray-back'          => 'wsu-color-background--gray-55',
-		'gray-er-back'       => 'wsu-color-background--gray-0',
-		'er-back'            => 'wsu-color-background--gray-0',
-		'white-back'         => 'wsu-color-background--gray-0',
-		'gray-light-back'    => 'wsu-color-background--gray-40',
-		'light-back'         => 'wsu-color-background--gray-40',
-		'gray-lighter-back'  => 'wsu-color-background--gray-25',
-		'lighter-bac'        => 'wsu-color-background--gray-25',
-		'gray-lightly-back'  => 'wsu-color-background--gray-15',
-		'lightly-bac'        => 'wsu-color-background--gray-15',
-		'gray-lightest-back' => 'wsu-color-background--gray-5',
-		'lightest-back'      => 'wsu-color-background--gray-5',
-		'gray-dark-back'     => 'wsu-color-background--gray-75',
-		'dark-back'          => 'wsu-color-background--gray-75',
-		'gray-darker-back'   => 'wsu-color-background--gray-80',
-		'darker-bac'         => 'wsu-color-background--gray-80',
-		'gray-darkest-back'  => 'wsu-color-background--gray-95',
-		'darkest-back'       => 'wsu-color-background--gray-95',
-		'black-bac'          => 'wsu-color-background--gray-95',
+		'gray-back'          => 'uams-color-background--gray-55',
+		'gray-er-back'       => 'uams-color-background--gray-0',
+		'er-back'            => 'uams-color-background--gray-0',
+		'white-back'         => 'uams-color-background--gray-0',
+		'gray-light-back'    => 'uams-color-background--gray-40',
+		'light-back'         => 'uams-color-background--gray-40',
+		'gray-lighter-back'  => 'uams-color-background--gray-25',
+		'lighter-bac'        => 'uams-color-background--gray-25',
+		'gray-lightly-back'  => 'uams-color-background--gray-15',
+		'lightly-bac'        => 'uams-color-background--gray-15',
+		'gray-lightest-back' => 'uams-color-background--gray-5',
+		'lightest-back'      => 'uams-color-background--gray-5',
+		'gray-dark-back'     => 'uams-color-background--gray-75',
+		'dark-back'          => 'uams-color-background--gray-75',
+		'gray-darker-back'   => 'uams-color-background--gray-80',
+		'darker-bac'         => 'uams-color-background--gray-80',
+		'gray-darkest-back'  => 'uams-color-background--gray-95',
+		'darkest-back'       => 'uams-color-background--gray-95',
+		'black-bac'          => 'uams-color-background--gray-95',
 	);
 
 
@@ -139,7 +139,7 @@ class Make_To_Gutenberg {
 			$slide_id     = $meta_data[ "{$meta_prefix}banner-slide-order:$i" ][0];
 			$slide_prefix = "{$meta_prefix}banner-slides:{$slide_id}:";
 
-			$content .= '<!-- wp:wsuwp/hero {';
+			$content .= '<!-- wp:uamswp/hero {';
 			$content .= '"title":"' . $meta_data[ "{$slide_prefix}slide-title" ][0] . '",';
 			$content .= '"caption":"' . $meta_data[ "{$slide_prefix}content" ][0] . '",';
 			$content .= '"imageId":' . $meta_data[ "{$slide_prefix}image-id" ][0] . ',';
@@ -157,7 +157,7 @@ class Make_To_Gutenberg {
 
 		$title = $meta_data[ "{$meta_prefix}title" ][0];
 
-		$content .= '<!-- wp:wsuwp/pagetitle ';
+		$content .= '<!-- wp:uamswp/pagetitle ';
 		if ( ! empty( $title ) ) {
 			$content .= '{"title":"' . $title . '"} ';
 		}
@@ -180,14 +180,14 @@ class Make_To_Gutenberg {
 			$content .= '<!-- /wp:heading -->';
 		}
 
-		$content .= '<!-- wp:wsuwp/row {"layout":"' . $config['layout'] . '","className":"' . $section_classes . '"} -->';
+		$content .= '<!-- wp:uamswp/row {"layout":"' . $config['layout'] . '","className":"' . $section_classes . '"} -->';
 
 		for ( $i = 1; $i <= $config['numberOfColumns']; $i++ ) {
 			$column_title   = $meta_data[ "{$meta_prefix}columns:{$i}:title" ][0];
 			$column_classes = self::map_color_classes( $meta_data[ "{$meta_prefix}columns:{$i}:column-classes" ][0] );
 			$column_content = $meta_data[ "{$meta_prefix}columns:{$i}:content" ][0];
 
-			$content .= '<!-- wp:wsuwp/column {"className":"' . $column_classes . '"} -->';
+			$content .= '<!-- wp:uamswp/column {"className":"' . $column_classes . '"} -->';
 
 			if ( ! empty( $column_title ) ) {
 				$level    = $meta_data[ "{$meta_prefix}columns:{$i}:header-level" ][0];
@@ -200,10 +200,10 @@ class Make_To_Gutenberg {
 			$content .= $column_content;
 			$content .= '<!-- /wp:freeform -->';
 
-			$content .= '<!-- /wp:wsuwp/column -->';
+			$content .= '<!-- /wp:uamswp/column -->';
 		}
 
-		$content .= '<!-- /wp:wsuwp/row -->';
+		$content .= '<!-- /wp:uamswp/row -->';
 
 		return $content;
 

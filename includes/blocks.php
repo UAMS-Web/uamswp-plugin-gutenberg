@@ -1,68 +1,68 @@
-<?php namespace WSUWP\Plugin\Gutenberg;
+<?php namespace UAMSWP\Plugin\Gutenberg;
 
 class Blocks {
 
 
 	protected static $register_blocks = array(
-		'wsuwp/news-list'   => 'Block_WSUWP_News_List',
-		'wsuwp/row'         => 'Block_WSUWP_Row',
-		'wsuwp/column'      => 'Block_WSUWP_Column',
-		'wsuwp/banner'      => 'Block_WSUWP_Banner',
-		'wsuwp/decorator'   => 'Block_WSUWP_Decorator',
-		'wsuwp/news'        => 'Block_WSUWP_News',
-		'wsuwp/callout'     => 'Block_WSUWP_Callout',
-		'wsuwp/note'        => 'Block_WSUWP_Note',
-		'wsuwp/hero'        => 'Block_WSUWP_Hero',
-		'wsuwp/hero-slider' => 'Block_WSUWP_Hero_Slider',
-		'wsuwp/image'       => 'Block_WSUWP_Image',
-		'wsuwp/pagetitle'   => 'Block_WSUWP_Page_Title',
-		'wsuwp/news-cards'  => 'Block_WSUWP_News_Cards',
-		'wsuwp/accordion'   => 'Block_WSUWP_Accordion',
-		'wsuwp/section'     => 'Block_WSUWP_Section',
-		'wsuwp/people-list'         => 'Block_WSUWP_People_List',
-		'wsuwp/button'              => 'Block_WSUWP_Button',
-		'wsuwp/card'                => 'Block_WSUWP_Card',
-		'wsuwp/card-group'          => 'Block_WSUWP_Card_Group',
-		'wsuwp/carousel'          => 'Block_WSUWP_Carousel',
-		'wsuwp/container'           => 'Block_WSUWP_Container',
-		'wsuwp/menu'                => 'Block_WSUWP_Menu',
-		'wsuwp/stat'                => 'Block_WSUWP_Stat',
-		'wsuwp/sticky-nav'          => 'Block_WSUWP_Sticky_Nav',
-		'wsuwp/outline-header'      => 'Block_WSUWP_Outline_Header',
-		'wsuwp/overlap-advanced'    => 'Block_WSUWP_Overlap_Advanced',
-		'wsuwp/overlap-column'      => 'Block_WSUWP_Overlap_Column',
-		'wsuwp/overlap-spotlight'   => 'Block_WSUWP_Overlap_Spotlight',
+		'uamswp/news-list'   => 'Block_UAMSWP_News_List',
+		'uamswp/row'         => 'Block_UAMSWP_Row',
+		'uamswp/column'      => 'Block_UAMSWP_Column',
+		'uamswp/banner'      => 'Block_UAMSWP_Banner',
+		'uamswp/decorator'   => 'Block_UAMSWP_Decorator',
+		'uamswp/news'        => 'Block_UAMSWP_News',
+		'uamswp/callout'     => 'Block_UAMSWP_Callout',
+		'uamswp/note'        => 'Block_UAMSWP_Note',
+		'uamswp/hero'        => 'Block_UAMSWP_Hero',
+		'uamswp/hero-slider' => 'Block_UAMSWP_Hero_Slider',
+		'uamswp/image'       => 'Block_UAMSWP_Image',
+		'uamswp/pagetitle'   => 'Block_UAMSWP_Page_Title',
+		'uamswp/news-cards'  => 'Block_UAMSWP_News_Cards',
+		'uamswp/accordion'   => 'Block_UAMSWP_Accordion',
+		'uamswp/section'     => 'Block_UAMSWP_Section',
+		'uamswp/people-list'         => 'Block_UAMSWP_People_List',
+		'uamswp/button'              => 'Block_UAMSWP_Button',
+		'uamswp/card'                => 'Block_UAMSWP_Card',
+		'uamswp/card-group'          => 'Block_UAMSWP_Card_Group',
+		'uamswp/carousel'          	 => 'Block_UAMSWP_Carousel',
+		'uamswp/container'           => 'Block_UAMSWP_Container',
+		'uamswp/menu'                => 'Block_UAMSWP_Menu',
+		'uamswp/stat'                => 'Block_UAMSWP_Stat',
+		'uamswp/sticky-nav'          => 'Block_UAMSWP_Sticky_Nav',
+		'uamswp/outline-header'      => 'Block_UAMSWP_Outline_Header',
+		'uamswp/overlap-advanced'    => 'Block_UAMSWP_Overlap_Advanced',
+		'uamswp/overlap-column'      => 'Block_UAMSWP_Overlap_Column',
+		'uamswp/overlap-spotlight'   => 'Block_UAMSWP_Overlap_Spotlight',
 	);
 
 	protected static $allowed_blocks = array(
-		'wsuwp/row',
-		'wsuwp/news',
-		'wsuwp/callout',
-		'wsuwp/banner',
-		'wsuwp/decorator',
-		'wsuwp/note',
-		'wsuwp/hero',
-		'wsuwp/hero-slider',
-		'wsuwp/image',
-		'wsuwp/pagetitle',
-		'wsuwp/news-cards',
-		'wsuwp/news-list',
-		'wsuwp/accordion',
-		'wsuwp/section',
-		'wsuwp/sticky-nav',
-		'wsuwp/people-list',
-		'wsuwp/button',
-		'wsuwp/card',
-		'wsuwp/container',
-		'wsuwp/card-group',
-		'wsuwp/carousel',
-		'wsuwp/az-index',
-		'wsuwp/programs-list',
-		'wsuwp/outline-header',
-		'wsuwp/overlap-advanced',
-		'wsuwp/overlap-spotlight',
-		'wsuwp/stat',
-		'wsuwp/menu',
+		'uamswp/row',
+		'uamswp/news',
+		'uamswp/callout',
+		'uamswp/banner',
+		'uamswp/decorator',
+		'uamswp/note',
+		'uamswp/hero',
+		'uamswp/hero-slider',
+		'uamswp/image',
+		'uamswp/pagetitle',
+		'uamswp/news-cards',
+		'uamswp/news-list',
+		'uamswp/accordion',
+		'uamswp/section',
+		'uamswp/sticky-nav',
+		'uamswp/people-list',
+		'uamswp/button',
+		'uamswp/card',
+		'uamswp/container',
+		'uamswp/card-group',
+		'uamswp/carousel',
+		'uamswp/az-index',
+		'uamswp/programs-list',
+		'uamswp/outline-header',
+		'uamswp/overlap-advanced',
+		'uamswp/overlap-spotlight',
+		'uamswp/stat',
+		'uamswp/menu',
 		'bcn/breadcrumb-trail',
 		'core/code',
 		'core/embed',
@@ -102,8 +102,8 @@ class Blocks {
 	public static function setup_classes() {
 
 		Plugin::load_class( 'block' );
-		Plugin::load_class( 'wsu-query' );
-		Plugin::load_class( 'wsu-image' );
+		Plugin::load_class( 'uams-query' );
+		Plugin::load_class( 'uams-image' );
 
 	}
 
@@ -129,7 +129,7 @@ class Blocks {
 
 		foreach ( $blocks as $block => $class ) {
 
-			// folder name should be the block name with the / replaced with - (i.e. wsuwp/name -> wsupw-name)
+			// folder name should be the block name with the / replaced with - (i.e. uamswp/name -> uamspw-name)
 			$block_folder = str_replace( '/', '-', $block );
 
 			$block_class = __NAMESPACE__ . '\\' . $class;
@@ -144,7 +144,7 @@ class Blocks {
 					array(
 						'api_version'     => 2,
 						'render_callback' => array( $block_class, 'render_block' ),
-						'editor_script'   => 'wsuwp-theme-wds-2-blocks',
+						'editor_script'   => 'uamswp-theme-wds-2-blocks',
 					)
 				);
 			}

@@ -28,8 +28,8 @@ function insertSpacingControl( OriginalComponent ) {
                     <InspectorAdvancedControls>
                         <RangeControl
                             label="Element z-index"
-                            value={ parseInt( getBlockClassNameValue( attributes, 'wsu-zindex--level-' ) ) }
-                            onChange={ ( zindex ) => setBlockClassName( attributes, setAttributes, 'wsu-zindex--level-', zindex ) }
+                            value={ parseInt( getBlockClassNameValue( attributes, 'uams-zindex--level-' ) ) }
+                            onChange={ ( zindex ) => setBlockClassName( attributes, setAttributes, 'uams-zindex--level-', zindex ) }
                             help="Position element must be on if the element isn't already positioned in CSS."
                             min={0}
                             max={7}
@@ -47,6 +47,6 @@ function insertSpacingControl( OriginalComponent ) {
 
 wp.hooks.addFilter(
     'editor.BlockEdit',
-    'wsuwp-plugin-gutenberg/insert-spacing-control',
+    'uamswp-plugin-gutenberg/insert-spacing-control',
     insertSpacingControl
 );

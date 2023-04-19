@@ -36,8 +36,8 @@ const coreParagraphControls = wp.compose.createHigherOrderComponent( (BlockEdit)
 							<RangeControl
 								label="Number of Columns"
 								help="Number of columns to display."
-								value={ parseInt( getBlockClassNameValue( attributes,'wsu-list--columns-', 1, ) )  }
-								onChange={ ( columns ) => setBlockClassName( attributes, setAttributes, 'wsu-list--columns-', columns ) }
+								value={ parseInt( getBlockClassNameValue( attributes,'uams-list--columns-', 1, ) )  }
+								onChange={ ( columns ) => setBlockClassName( attributes, setAttributes, 'uams-list--columns-', columns ) }
 								min={1}
 								max={4}
 								/>
@@ -53,6 +53,6 @@ const coreParagraphControls = wp.compose.createHigherOrderComponent( (BlockEdit)
 
 wp.hooks.addFilter(
 	'editor.BlockEdit',
-	'wsu/core-paragraph-controls',
+	'uams/core-paragraph-controls',
 	coreParagraphControls
 );

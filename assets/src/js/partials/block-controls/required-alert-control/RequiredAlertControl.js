@@ -5,7 +5,7 @@ const RequiredAlertControl = ( props ) => {
     let { attributes, onChange } = props
 
     return (
-        <div className="wsu-gutenberg-alert-control">
+        <div className="uams-gutenberg-alert-control">
             {props.children}
         </div>
     )

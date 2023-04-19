@@ -2664,7 +2664,7 @@ const MultipleImagePicker = props => {
     setEditingImage(null);
   }
   function getAnchorProp() {
-    return WSUWP_DATA.wpVersion.includes("6.1") ? {
+    return UAMSWP_DATA.wpVersion.includes("6.1") ? {
       anchor: editingElement
     } : {
       getAnchorRect: () => editingElement?.getBoundingClientRect() || null
@@ -14268,7 +14268,7 @@ function Edit(props) {
   function getapiBaseUrl() {
     const sources = {
       global: window.location.hostname.includes(".local") ? "https://peopleapi.local" : "https://people.wsu.edu",
-      local: WSUWP_DATA.siteUrl,
+      local: UAMSWP_DATA.siteUrl,
       custom: attributes.custom_data_source
     };
     return sources[attributes.data_source];

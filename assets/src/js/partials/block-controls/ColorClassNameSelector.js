@@ -7,7 +7,7 @@ import { PanelColorSettings, getColorObjectByColorValue } from '@wordpress/block
     colorSettings={[
         {
             label: 'Background Color',
-            prefix: 'wsu-color-background--',
+            prefix: 'uams-color-background--',
             colors: [
                 { name: 'Gray 85', color: '#262626', className: 'gray-85' },
                 { name: 'Gray 95', color: '#080808', className: 'gray-95' },
@@ -15,7 +15,7 @@ import { PanelColorSettings, getColorObjectByColorValue } from '@wordpress/block
         },
         {
             label: 'Text Color',
-            prefix: 'wsu-color-text--',
+            prefix: 'uams-color-text--',
             colors: [			
                 { name: 'Gray 0', color: '#f7f7f7', className: 'gray-0' },
                 { name: 'Gray 5', color: '#f2f2f2', className: 'gray-5' },
@@ -29,9 +29,9 @@ import { PanelColorSettings, getColorObjectByColorValue } from '@wordpress/block
 /**
  * Functions just like the Wordpress color picker (PanelColorSettings), but instead of 
  * saving a color code it adds a class to the component className field.
- * Each color setting requires a prefix e.g. wsu-color-text--
+ * Each color setting requires a prefix e.g. uams-color-text--
  * Each color requires a className e.g. gray-10
- * The result will be a class of 'wsu-color-text--gray-10' added to the component className
+ * The result will be a class of 'uams-color-text--gray-10' added to the component className
  */
 const ColorClassNameSelector = (props) => {
 	const {

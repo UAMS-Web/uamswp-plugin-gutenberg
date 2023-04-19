@@ -46,9 +46,9 @@ const BorderControl = ( props ) => {
     return (
         <SvgButtonGroupControl 
             {...props}
-            onClick={ ( value ) => { setBlockClassName( attributes, setAttributes, 'wsu-border--add-', value, classKey ) } }
+            onClick={ ( value ) => { setBlockClassName( attributes, setAttributes, 'uams-border--add-', value, classKey ) } }
             isActive={ ( value ) => { return false } }
-            currentValue={ getBlockClassNameValue( attributes, 'wsu-border--add-', '', classKey) }
+            currentValue={ getBlockClassNameValue( attributes, 'uams-border--add-', '', classKey) }
             label='Add Border'
             buttonOptions={ buttonOptions }
         />

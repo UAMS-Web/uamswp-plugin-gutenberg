@@ -1,4 +1,4 @@
-window.wsu = {
+window.uams = {
   ROOT_URL: (function () {
     const href = window.location.href;
     const index = href.indexOf("/wp-admin");

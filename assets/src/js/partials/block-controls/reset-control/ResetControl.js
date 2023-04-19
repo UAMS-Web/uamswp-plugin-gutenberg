@@ -12,7 +12,7 @@ const ResetControl = ( props ) => {
 
     return (
         <Button
-            className="wsu-block-control-reset"
+            className="uams-block-control-reset"
             onClick={ () => setBlockClassName( attributes, setAttributes, prefix, '' ) }
         >{ label }</Button>
     )

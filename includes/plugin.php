@@ -1,4 +1,4 @@
-<?php namespace WSUWP\Plugin\Gutenberg;
+<?php namespace UAMSWP\Plugin\Gutenberg;
 
 class Plugin {
 
@@ -8,7 +8,7 @@ class Plugin {
 		switch ( $property ) {
 
 			case 'version':
-				return WSUWPPLUGINGUTENBERGVERSION;
+				return UAMSWPPLUGINGUTENBERGVERSION;
 
 			case 'dir':
 				return plugin_dir_path( dirname( __FILE__ ) );

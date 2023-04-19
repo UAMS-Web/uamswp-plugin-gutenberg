@@ -8,6 +8,6 @@ function removeBlockPanels(settings, name) {
 
 wp.hooks.addFilter(
   "blocks.registerBlockType",
-  "wsuwp-plugin-gutenberg/remove-block-panels",
+  "uamswp-plugin-gutenberg/remove-block-panels",
   removeBlockPanels
 );

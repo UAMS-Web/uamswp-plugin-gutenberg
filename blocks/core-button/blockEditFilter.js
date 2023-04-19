@@ -92,19 +92,19 @@ const coreButtonControls = wp.compose.createHigherOrderComponent( (BlockEdit) =>
 							<PanelStyleOptions 
 							{...props} 
 							styles={buttonStyles}
-							prefix="wsu-button--style-" 
+							prefix="uams-button--style-" 
 							></PanelStyleOptions>
 							<PanelDisplayOptions {...props} >
 								<SelectControl
 									label="Button Size"
-									value={ getBlockClassName( blockClassNames, 'wsu-button--size-' ) }
+									value={ getBlockClassName( blockClassNames, 'uams-button--size-' ) }
 									options={ [
 										{ label: 'Large', value: 'large' },
 										{ label: 'Medium', value: '' },
 										{ label: 'Small', value: 'small' },
 									] }
 									onChange={ ( buttonSize ) => { 
-										setAttributes( { className: addBlockClassName( blockClassNames, 'wsu-button--size-', buttonSize  ) } ) 
+										setAttributes( { className: addBlockClassName( blockClassNames, 'uams-button--size-', buttonSize  ) } ) 
 									} }
 								/>
 							</PanelDisplayOptions>
@@ -116,12 +116,12 @@ const coreButtonControls = wp.compose.createHigherOrderComponent( (BlockEdit) =>
 										properties: [
 											{
 												label: 'Top',
-												prefix: 'wsu-spacing-before--',									
+												prefix: 'uams-spacing-before--',									
 												default: 'none',
 											},
 											{
 												label: 'Bottom',
-												prefix: 'wsu-spacing-after--',									
+												prefix: 'uams-spacing-after--',									
 												default: 'xmedium',
 											}
 										]
@@ -140,6 +140,6 @@ const coreButtonControls = wp.compose.createHigherOrderComponent( (BlockEdit) =>
 
 wp.hooks.addFilter(
 	'editor.BlockEdit',
-	'wsu/core-button-controls',
+	'uams/core-button-controls',
 	coreButtonControls
 );
