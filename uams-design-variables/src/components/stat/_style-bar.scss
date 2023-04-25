@@ -1,0 +1,44 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-stat--style-bar {
+
+    font-size: $uams-font-size--sxxlarge;
+    border-left: 8px solid $uams-color--gray-30;
+    padding-left: $uams-spacing--xmedium;
+    padding-top: $uams-spacing--xsmall;
+    padding-bottom: $uams-spacing--xsmall;
+
+    .uams-stat {
+
+        &__value-wrapper {
+            display: block;
+            line-height: 1;
+            margin-bottom: 0.1em;
+        }
+
+        &__value {
+            @extend %uams-stat--crimson;
+        }
+
+        &__unit {
+            @extend %uams-stat--crimson;
+        }
+
+        &__caption {
+            font-size: $uams-font-size--xmedium;
+            font-weight: 700;
+            display: block;
+        }
+
+        &__caption {
+            font-size: $uams-font-size--xmedium;
+            font-weight: 700;
+            display: block;
+        }
+
+        &__citation {
+            @extend %uams-stat--citation;
+        }
+    }
+}

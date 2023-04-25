@@ -1,0 +1,252 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+$uams-slide-in-panel--speed: 200ms;
+
+
+$uams-slide-in-panel--width-default: 400px;
+$uams-slide-in-panel--width-vertical-nav: $uams-width--navigation-veritcal;
+$uams-slide-in-panel--width-xsmall: 150px;
+$uams-slide-in-panel--width-small: 250px;
+$uams-slide-in-panel--width-medium: 350px;
+$uams-slide-in-panel--width-large: 500px;
+$uams-slide-in-panel--width-xlarge: 650px;
+$uams-slide-in-panel--width-xxlarge: 800px;
+$uams-slide-in-panel--width-hero: 1200px;
+$uams-slide-in-panel--width-full: 95vw;
+$uams-slide-in-panel--width-cover: 100vw;
+
+$uams-slide-in-panel--width-map: (
+    'vertical-nav': $uams-slide-in-panel--width-vertical-nav,
+    'small': $uams-slide-in-panel--width-small,
+    'medium': $uams-slide-in-panel--width-medium,
+    'large': $uams-slide-in-panel--width-large,
+    'xlarge': $uams-slide-in-panel--width-xlarge,
+    'xxlarge': $uams-slide-in-panel--width-xxlarge,
+    'hero': $uams-slide-in-panel--width-hero,
+    'cover': $uams-slide-in-panel--width-cover,
+    'full': $uams-slide-in-panel--width-full,
+);
+
+
+%uams-slide-in-panel {
+    visibility: hidden;
+    transition: visibility 0s $uams-easing 300ms;
+    /*width: 0;
+    overflow: hidden;
+    
+    position: fixed;
+    top:0;
+    height: 100vh;
+    left: 0;*/
+}
+
+%uams-slide-in-panel--expanded {
+    visibility: visible;
+    width: 100vw;
+    transition: width 0s $uams-easing 300ms;
+} 
+
+%uams-slide-in-panel__crimson-triangle {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $uams-color--crimson-light;
+    width: 80px;
+    height: 80px;
+    display: block;
+    clip-path: polygon(100% 0,100% calc(100% - 100px),calc(100% - 100px) 100%,0 100%,0 0)
+}
+
+%uams-slide-in-panel-shadow {
+    
+    &::after {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        content: '';
+        height: auto;
+        display: block;
+        width: 6px;
+        opacity: 0.5;
+    }
+}
+
+%uams-slide-in-panel-shadow--left {
+    
+    &::after {
+        left: -6px;
+        background: -moz-linear-gradient(left,  rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.5) 100%);
+        background: -webkit-linear-gradient(left,  rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.5) 100%);
+        background: linear-gradient(to right,  rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.5) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d000000', endColorstr='#80000000',GradientType=1 );
+    }
+}
+
+
+%uams-slide-in-panel-overlay-fade-in {
+     opacity: 0.7;
+}
+
+
+%uams-slide-in-panel__overlay {
+    position: fixed;
+    top:0;
+    left: 0;
+    height: 100vh;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-radius: 0;
+    font-size: 0;
+    background-color: #000;
+    cursor: pointer;
+    width: 0;
+    opacity: 0;
+    transition: opacity 150ms $uams-easing, width 0s $uams-easing $uams-slide-in-panel--speed;
+    overflow: hidden;
+}
+
+
+%uams-slide-in-panel__panel {
+    display: block;
+    max-width: 100%;
+    position: fixed;
+    top:0;
+    height: 100vh;
+    right: 0;
+}
+
+%uams-slide-in-panel__panel--right {
+    right: 0;
+}
+
+%uams-slide-in-panel__panel--left {
+    left: 0;
+}
+
+%uams-slide-in-panel__panel-inner {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 0;
+    width: auto;
+    height: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    right: 0;
+}
+
+%uams-slide-in-panel__header {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+%uams-slide-in-panel__content {
+    flex-grow: 1;
+}
+
+
+
+.uams-slide-in-panel {
+    @extend %uams-slide-in-panel;
+
+    &__overlay {
+        @extend %uams-slide-in-panel__overlay;
+    }
+
+    &__panel {
+        @extend %uams-slide-in-panel__panel;
+        background-color: #fff;
+        transition: transform $uams-slide-in-panel--speed $uams-easing;
+        width: $uams-slide-in-panel--width-default;
+        transform: translateX(calc( #{ $uams-slide-in-panel--width-default } + 6px ) );
+        @extend %uams-slide-in-panel-shadow;
+        @extend %uams-slide-in-panel-shadow--left;
+    }
+
+    &__panel-inner {
+        @extend %uams-slide-in-panel__panel-inner;
+    }
+
+    &[aria-expanded="true"] {
+        visibility: visible;
+        width: 100vw;
+        transition: visibility 0s $uams-easing 0s;
+        
+        .uams-slide-in-panel {
+
+            &__panel {
+                transform: translateX(0) !important;
+            }
+
+            &__overlay {
+                width: 100vw;
+                @extend %uams-slide-in-panel-overlay-fade-in;
+                transition: opacity 150ms $uams-easing, width 0s $uams-easing 0s;
+            }
+        }
+        
+    }
+}
+
+@each $width-name, $width-value in $uams-slide-in-panel--width-map {
+
+    .uams-slide-in-panel--width-#{$width-name} .uams-slide-in-panel__panel {
+        width: $width-value;
+        transform: translateX(calc( #{ $width-value } + 6px ) );
+    }
+
+    .uams-slide-in-panel--width-#{$width-name}.uams-slide-in-panel--position-left  .uams-slide-in-panel__panel {
+        transform: translateX(calc( ( #{ $width-value } + 6px ) * -1 ) );
+    }
+    
+}
+
+.uams-slide-in-panel--position-left  .uams-slide-in-panel__panel {
+    left: 0;
+    right: auto;
+    transform: translateX(calc( ( #{ $uams-slide-in-panel--width-default } + 6px ) * -1 ) );
+}
+
+.uams-slide-in-panel--overlay-none {
+    .uams-slide-in-panel__panel::after,
+    .uams-slide-in-panel__overlay {
+        display: none !important;
+    }
+
+} 
+
+
+@import './style-crimson-mark';
+
+
+
+
+
+/*.uams-slide-in-panel {
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.uams-slide-in-panel--background-gray {
+
+    .uams-slide-in-panel__panel {
+        background-color: #333 !important;
+        background: rgb(68,68,68);
+        background: -moz-linear-gradient(-45deg,  rgba(68,68,68,1) 0%, rgba(17,17,17,1) 100%);
+        background: -webkit-linear-gradient(-45deg,  rgba(68,68,68,1) 0%,rgba(17,17,17,1) 100%);
+        background: linear-gradient(135deg,  rgba(68,68,68,1) 0%,rgba(17,17,17,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#444444', endColorstr='#111111',GradientType=1 );
+    }
+}*/
+
+
+//@import './style-vertical';

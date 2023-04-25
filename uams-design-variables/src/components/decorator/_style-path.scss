@@ -1,0 +1,15 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-decorator--style-path {
+
+    &-crimson-left {
+        border-left: 1px solid $uams-color--crimson-light;
+        border-bottom: 1px solid $uams-color--crimson-light;
+    }
+
+    &-crimson-right {
+        border-right: 1px solid $uams-color--crimson-light;
+        border-bottom: 1px solid $uams-color--crimson-light;
+    }
+}

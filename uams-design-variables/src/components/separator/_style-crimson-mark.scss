@@ -1,0 +1,16 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-separator--style-crimson-mark {
+    width: 95px;
+    border-color: transparent;
+    border-top: 8px solid $uams-color--crimson-light;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: solid;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    margin-top: $uams-spacing--large;
+    margin-bottom: $uams-spacing--large;
+}

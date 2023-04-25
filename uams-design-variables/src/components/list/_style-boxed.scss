@@ -1,0 +1,39 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-list--style-boxed {
+    @extend %uams-list--clean;
+
+    li {
+        margin: 0 0 0.75em 0;
+        padding: 0 0 0 1.25em;
+        line-height: 1.4;
+        position: relative;
+
+        &::before {
+            content: '';
+            height: 6px;
+            width: 10px;
+            background-color: $uams-color--crimson-light;
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0.6em;
+            transform: translateY(-3px);
+        }
+    }
+
+}
+
+.uams-has-background--dark .uams-list--style-boxed,
+.uams-has-background--dark.uams-list--style-boxed {
+
+    li {
+        color: #fff;
+    }
+
+    a {
+        color: #fff;
+    }
+    
+}

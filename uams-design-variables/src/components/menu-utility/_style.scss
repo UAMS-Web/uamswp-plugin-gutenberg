@@ -1,0 +1,98 @@
+.uams-menu-utility {
+    font-family: $uams-font-family;
+    list-style-type: none;
+    margin: 0 0 $uams-spacing--component 0;
+    padding: 0;
+    font-size: $uams-font-size--small;
+
+    a {
+        outline: none;
+        text-decoration: none;
+        color: inherit;
+        font-size: inherit;
+        @include uams-menu-item--crimson-bar( -4px );
+    }
+
+    button:not([class*="uams-button-"]) {
+        background-color: transparent;
+        color: inherit;
+        font-size: inherit;
+        margin: 0;
+        padding: 0;
+        outline: 0;
+        box-shadow: none;
+        font-weight: inherit;
+        @include uams-menu-item--crimson-bar( -4px );
+        text-transform: inherit;
+        text-align: left;
+    }
+
+    li {
+        list-style-type: none;
+        margin: 0 0 $uams-spacing--xxsmall 0;
+        padding: 0.3em 0;
+        display: block;
+        font-weight: 600;
+        font-size: $uams-font-size--medium;
+        
+        li {
+            font-size: $uams-font-size--small;
+            font-weight: 400;
+            margin: 0;
+        }
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: block;
+        margin-left: $uams-spacing--xsmall;
+    }
+
+}
+
+
+/* ==============================================
+= Horizontal Modifier = 
+================================================*/
+
+.uams-menu-utility--horizontal .uams-menu-utility,
+.uams-menu-utility.uams-menu-utility--horizontal {
+   
+    display: flex;
+    flex-wrap: wrap;
+
+    & > li {
+        margin-right: $uams-spacing--xxmedium;
+        margin-bottom: $uams-spacing--small;
+    }
+
+}
+
+
+/* ==============================================
+= Spaced Modifier = 
+================================================*/
+
+.uams-menu-utility--spaced .uams-menu-utility,
+.uams-menu-utility.uams-menu-utility--spaced {
+
+    & > li {
+        margin-bottom: $uams-spacing--small;
+    }
+
+}
+
+.uams-menu-utility--flat .uams-menu-utility,
+.uams-menu-utility.uams-menu-utility--flat {
+
+    ul {
+        margin-left: 0 !important;
+    }
+
+    li {
+        padding: .5em 0;
+    }
+
+}

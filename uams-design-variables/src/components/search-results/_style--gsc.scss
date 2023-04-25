@@ -1,0 +1,80 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+a.gs-title {
+    font-size: $uams-font-size--xmedium !important;
+    font-weight: 500 !important;
+    text-decoration: underline !important;
+
+    &:hover,
+    &:focus {
+        text-decoration: none !important;
+    }
+}
+
+.gsc-url-top {
+    margin-bottom: 0.2rem !important;
+}
+
+.gs-image-box {
+    padding-right: 0.75rem !important;
+}
+
+.gsc-results {
+    padding: $uams-spacing--medium 0 $uams-spacing--xxmedium !important;
+}
+
+.gsc-result {
+    margin-bottom: $uams-spacing--xxmedium 0 !important;
+}
+
+.gs-snippet {
+    font-size: $uams-font-size--small !important;
+}
+
+.gsc-above-wrapper-area-container {
+    margin-bottom: $uams-spacing--xmedium !important;
+
+    td {
+        border: none !important;
+    }
+}
+
+.gsc-cursor-box {
+    margin-top: $uams-spacing--xmedium !important;
+}
+
+.gsc-cursor .gsc-cursor-page {
+    color: $uams-color--crimson !important;
+    border: 1px solid $uams-color--gray-10;
+    border-radius: 3px;
+    padding: $uams-spacing--sxxsmall $uams-spacing--small;
+    display: inline-block !important;
+    margin-bottom: $uams-spacing--sxxsmall !important;
+    box-sizing: border-box;
+
+    &.gsc-cursor-current-page {
+        border-color: $uams-color--crimson  !important;
+        border: 2px solid $uams-color--crimson  !important;
+        background-color: $uams-color--crimson  !important;
+        color: #fff !important;
+    }
+
+    &:hover,
+    &:focus {
+        outline: 2px solid $uams-color--gray-65; 
+    }
+}
+
+.gcsc-find-more-on-google {
+    color: $uams-color--crimson !important;
+    @include uams-font--xsmall();
+}
+
+.gcsc-find-more-on-google svg {
+    display: none;
+}
+
+.gsc-result .gs-title {
+    overflow: visible !important;
+}

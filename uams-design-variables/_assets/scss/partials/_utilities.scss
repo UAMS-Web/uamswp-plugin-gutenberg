@@ -1,0 +1,102 @@
+@import '../variables';
+
+
+
+@media screen and (min-width: $uams-breakpoint--ultrawide) {
+
+    .uams-breakpoint-hide-above--desktop {
+        display: none !important;
+    }
+
+}
+
+@media screen and (min-width: $uams-breakpoint--desktop) {
+
+    .uams-breakpoint-hide-above--desktop {
+        display: none !important;
+    }
+
+}
+
+@media screen and (min-width: $uams-breakpoint--tablet-large) {
+
+    .uams-breakpoint-hide-above--tablet-large {
+        display: none !important;
+    }
+
+}
+
+@media screen and (min-width: $uams-breakpoint--tablet) {
+
+    .uams-breakpoint-hide-above--tablet{
+        display: none !important;
+    }
+
+}
+
+@media screen and (min-width: $uams-breakpoint--phone) {
+
+    .uams-breakpoint-hide-above--phone {
+        display: none !important;
+    }
+
+}
+
+@media screen and (min-width: $uams-breakpoint--phone-small) {
+
+    .uams-breakpoint-hide-above--phone-small {
+        display: none !important;
+    }
+
+}
+
+/* Hide Below */
+
+
+@media screen and (max-width: $uams-breakpoint--ultrawide) {
+
+    .uams-breakpoint-hide-below--desktop {
+        display: none !important;
+    }
+
+}
+
+@media screen and (max-width: $uams-breakpoint--desktop) {
+
+    .uams-breakpoint-hide-below--desktop {
+        display: none !important;
+    }
+
+}
+
+@media screen and (max-width: $uams-breakpoint--tablet-large) {
+
+    .uams-breakpoint-hide-below--tablet-large {
+        display: none !important;
+    }
+
+}
+
+@media screen and (max-width: $uams-breakpoint--tablet) {
+
+    .uams-breakpoint-hide-below--tablet{
+        display: none !important;
+    }
+
+}
+
+@media screen and (max-width: $uams-breakpoint--phone) {
+
+    .uams-breakpoint-hide-below--phone {
+        display: none !important;
+    }
+
+}
+
+@media screen and (max-width: $uams-breakpoint--phone-small) {
+
+    .uams-breakpoint-hide-below--phone-small {
+        display: none !important;
+    }
+
+}

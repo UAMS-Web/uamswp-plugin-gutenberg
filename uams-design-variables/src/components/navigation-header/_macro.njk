@@ -1,0 +1,7 @@
+{% macro navigationHeader( classes='' ) %}
+{% from "menu-collapse/_macro.njk" import menuCollapse %}
+
+<nav class="wsu-navigation-header {{ classes }}">
+    {{ menuCollapse( classes=' wsu-menu-collapse--style-horizontal' ) }}
+</nav>
+{% endmacro %}

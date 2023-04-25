@@ -1,0 +1,92 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-heading--style-marked {
+    
+    &::before,
+    &::after {
+        width: 50px;
+        height: 6px;
+        display: block;
+        background-color: $uams-color--crimson-light;
+        content: '';
+    }
+
+    &::after {
+        margin-top: 0.75rem;
+        margin-bottom: 0.75rem;
+    }
+
+    &::before {
+        margin-bottom: 0.75rem;
+        margin-bottom: 0.75rem;
+        display: none;
+    }
+}
+
+.uams-heading--mark-centered {
+    text-align: center;
+    &::before,
+    &::after {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.uams-heading--mark-top {
+    &::after {
+        display: none;
+    }
+
+    &::before {
+        display: block;
+    }
+}
+
+.uams-heading--mark-color {
+
+    &-crimson {
+        &::before,
+        &::after {
+            background-color: $uams-color--crimson;
+        }
+    }
+
+    &-gray {
+        &::before,
+        &::after {
+            background-color: $uams-color--gray-30;
+        }
+    }
+
+    &-autumn {
+        &::before,
+        &::after {
+            background-color: $uams-color--accent-autumn;
+        }
+    }
+    &-goldfinch {
+        &::before,
+        &::after {
+            background-color: $uams-color--accent-goldfinch;
+        }
+    }
+    &-vineyard {
+        &::before,
+        &::after {
+            background-color: $uams-color--accent-vineyard;
+        }
+    }
+    &-pacificsky {
+        &::before,
+        &::after {
+            background-color: $uams-color--accent-pacificsky;
+        }
+    }
+    &-midnight {
+        &::before,
+        &::after {
+            background-color: $uams-color--accent-midnight;
+        }
+    }
+}

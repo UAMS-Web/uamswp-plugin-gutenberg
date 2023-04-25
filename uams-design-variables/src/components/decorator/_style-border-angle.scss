@@ -1,0 +1,28 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-decorator--style-border-angle-left,
+.uams-decorator--style-border-angle-right {
+    height: 200%;
+    width: 100%;
+    content: '';
+	display: block;
+	position: absolute;
+    background-color: #fff;
+}
+
+.uams-decorator--style-border-angle {
+
+    &-right {
+        border-left: 1px solid $uams-color--crimson-light;
+        transform: rotate(45deg);
+        transform-origin: top left;
+    }
+
+    &-left {
+        border-right: 1px solid $uams-color--crimson-light;
+        transform: rotate(-45deg);
+        transform-origin: top right;
+    }
+}
+   

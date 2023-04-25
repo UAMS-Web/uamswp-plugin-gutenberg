@@ -149,9 +149,9 @@ class Block_UAMSWP_News extends Block {
 
 		$attrs = array_merge( $attrs, $overrides );
 
-		$fields = WSU_Query::get_fields( $attrs, array( 'title', 'image', 'caption', 'date', 'link' ) );
+		$fields = UAMS_Query::get_fields( $attrs, array( 'title', 'image', 'caption', 'date', 'link' ) );
 
-		$cards = WSU_Query::get_posts_attrs( $attrs, $fields );
+		$cards = UAMS_Query::get_posts_attrs( $attrs, $fields );
 
 		return $cards;
 

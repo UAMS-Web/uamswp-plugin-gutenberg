@@ -1,0 +1,67 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-pagination {
+    border-top: 1px solid $uams-color--gray-15;
+    margin-top: $uams-spacing--large;
+    padding-top: $uams-spacing--xmedium;
+    display: flex;
+
+    &__menu {
+        list-style-type: none;
+        display: flex;
+        margin: 0 1rem;
+        padding: 0;
+
+        li {
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        a {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 0.5rem;
+            font-size: $uams-font-size--small;
+            font-weight: 500;
+    
+            &[aria-current="true"] {
+                font-weight: 600;
+                color: $uams-color--gray-85;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .uams-button {
+        font-size: $uams-font-size--small;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .uams-button + .uams-button {
+        margin-left: $uams-spacing--small;
+    }
+
+    &__previous::before,
+    &__next::after {
+        font-family: 'uams-icons';
+        font-size: $uams-font-size--small;
+        display: inline-block;
+        vertical-align: middle;
+        font-size: $uams-font-size--xsmall;
+    }
+
+    &__previous::before {
+        content: '\F105';
+        margin-right: 0.5rem;
+    }
+
+    &__next::after {
+        content: '\F107';
+        margin-left: 0.5rem;
+    }
+}

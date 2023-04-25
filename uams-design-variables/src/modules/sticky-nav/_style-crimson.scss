@@ -1,0 +1,170 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-sticky-nav--style-crimson {
+
+    .uams-sticky-box__content {
+        padding: 0;
+        background-color: #fff;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        margin-bottom: $uams-spacing--large;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            height: 20px;
+            width: 200vw;
+            left: -100vw;
+            display: block;
+            background: -moz-linear-gradient(top,  rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
+            background: -webkit-linear-gradient(top,  rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 100%);
+            background: linear-gradient(to bottom,  rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a000000', endColorstr='#00000000',GradientType=0 );
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', endColorstr='#00000000',GradientType=0 );
+
+        }
+    }
+
+    .uams-anchor-menu {
+        flex-grow: 1;
+        position: relative;
+        background-color: #fff;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+    
+        li {
+            margin: 0;
+            padding: 0;
+            position: relative;
+            
+            a {
+                font-weight: 600;
+                color: $uams-color--crimson;
+                text-decoration: none;
+                @include uams-font--medium();
+                padding: $uams-spacing--small $uams-spacing--xmedium;
+                position: relative;
+                display: block;
+    
+                &::after,
+                &::before {
+                    content: '';
+                    background-color: $uams-color--gray-15;
+                    position: absolute;
+                    bottom: $uams-font-size--medium;
+                    top: $uams-font-size--medium;
+                    width: 2px;
+                    height: auto;
+                    transition: height $uams-easing 150ms;
+                }
+    
+                &::after {
+                    display: none;
+                    right: -1px;
+                }
+    
+                &::before {
+                    display: block;
+                    left: -1px;
+                }
+            }
+    
+            &:last-child a::after {
+                display: block;
+            }
+    
+            &::after {
+                content: '';
+                background-color: $uams-color--crimson-light;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                width: auto;
+                height: 0;
+                transition: height $uams-easing 150ms;
+            }
+            
+            &:hover,
+            &:focus,
+            &.uams-active {
+    
+                &::after {
+                    height: 6px;
+                }
+    
+            }
+        }
+
+        li:first-child a::before {
+            display: none;
+        }
+        
+    }
+
+    .uams-sticky-nav__top-btn {
+        text-transform: uppercase;
+        @include uams-font--xxsmall();
+        text-decoration: none;
+        font-weight: 500;
+        display: none;
+        text-align: center;
+        flex-direction: column;
+        color: #fff;
+        background-color: $uams-color--crimson;
+        padding: 0 $uams-spacing--xsmall;
+        justify-content: center;
+        position: relative;
+
+        &::before {
+            content: "\F10A";
+            display: block;
+            font-family: 'uams-icons';
+            font-size: $uams-font-size--medium;
+        }
+    }
+
+    .uams-sticky-box--stuck {
+
+        .uams-sticky-box__content {
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                height: 100%;
+                width: 200vw;
+                display: block;
+                background-color: $uams-color--crimson;
+            }
+    
+            &::before {
+                left: -100vw;
+            }
+
+        }
+
+        .uams-sticky-nav__top-btn {
+            display: flex;
+        }
+
+        .uams-menu--style-inline-split li {
+            &:last-child a::after {
+                /*display: none; */
+            }
+    
+            &:first-child a::before {
+                display: none;
+            }
+        }
+
+    }
+        
+}

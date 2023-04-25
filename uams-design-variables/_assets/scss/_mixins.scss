@@ -1,0 +1,611 @@
+@import './variables';
+
+
+/* =====================
+
+- Fonts
+- Modals
+- Menu Items
+- Transitions
+- Buttons
+- Forms
+
+===================== */
+
+@mixin uams-position-absolute-fill() {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%; 
+}
+
+@mixin uams-bleed--full( $className ) {
+
+    .uams-wrapper-site #{$className} {
+
+        margin-left: calc( (100vw - 100% ) / -2 );
+        margin-right: calc( (100vw - 100% ) / -2 );
+    
+    }
+
+    @media screen and (min-width: $uams-breakpoint--desktop ) {
+
+        .uams-navigation-site-vertical ~ .uams-wrapper-site #{$className} {
+            margin-left: calc( ( (100vw - 100% ) - #{$uams-width--navigation-open} ) / -2 );
+            margin-right: calc( ( (100vw - 100% ) - #{$uams-width--navigation-open} ) / -2 );
+        }
+    
+        .uams-navigation-site-vertical--is-closed .uams-navigation-site-vertical ~ .uams-wrapper-site #{$className} {
+            margin-left: calc( ( (100vw - 100% ) - #{$uams-width--navigation-closed} ) / -2 );
+            margin-right: calc( ( (100vw - 100% ) - #{$uams-width--navigation-closed} ) / -2 );
+        }
+            
+    }
+    
+    @media screen and (min-width: $uams-breakpoint--tablet ) and (max-width: $uams-breakpoint--desktop ) {
+    
+        .uams-navigation-site-vertical ~ .uams-wrapper-site #{$className} {
+            margin-left: calc( ( (100vw - 100% ) - #{$uams-width--navigation-closed} ) / -2 );
+            margin-right: calc( ( (100vw - 100% ) - #{$uams-width--navigation-closed} ) / -2 );
+        }
+           
+    }
+    
+    @media screen and (min-width: $uams-breakpoint--tablet ) and (max-width: $uams-breakpoint--desktop ) {
+    
+        .uams-navigation-site-vertical ~ .uams-wrapper-site #{$className} {
+            margin-left: calc( ( (100vw - 100% ) - #{$uams-width--navigation-closed} ) / -2 );
+            margin-right: calc( ( (100vw - 100% ) - #{$uams-width--navigation-closed} ) / -2 );
+        }
+           
+    }
+
+}
+
+@mixin uams-focus--link {
+    outline: 2px solid #ca1237;
+    //outline-offset: 2px;
+    //box-shadow: 0px 0px 0px 3px #ca1237;
+    border-radius: 3px; 
+} 
+
+
+@mixin uams-hover--border-bottom {
+
+    &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        height: 0;
+        background-color: transparent;
+        position: absolute;
+        transition: height $uams-transition-speed--fast $uams-easing;
+    }
+
+    &:hover,
+    &:focus {
+        &::after {
+            height: 5px;
+            background-color: $uams-color--crimson-light;
+        }
+    }
+
+}
+
+
+/* ========================================================
+== Fonts ==
+==========================================================*/
+@mixin uams-font--hero {
+    font-size: $uams-font-size--hero;
+    line-height: 1.15;
+}
+
+@mixin uams-font--sxxlarge {
+    font-size: $uams-font-size--sxxlarge;
+    line-height: 1.2;
+}
+
+@mixin uams-font--xxlarge {
+    font-size: $uams-font-size--xxlarge;
+    line-height: 1.2;
+}
+
+@mixin uams-font--xlarge {
+    font-size: $uams-font-size--xlarge;
+    line-height: 1.2;
+}
+
+@mixin uams-font--large {
+    font-size: $uams-font-size--large;
+    line-height: 1.3;
+}
+
+@mixin uams-font--xxmedium {
+    font-size: $uams-font-size--xxmedium;
+    line-height: 1.4;
+}
+
+@mixin uams-font--xmedium {
+    font-size: $uams-font-size--xmedium;
+    line-height: 1.4;
+}
+
+@mixin uams-font--medium {
+    font-size: $uams-font-size--medium;
+    line-height: 1.5;
+}
+
+@mixin uams-font--small {
+    font-size: $uams-font-size--small;
+    line-height: 1.5;
+}
+
+@mixin uams-font--xsmall {
+    font-size: $uams-font-size--xsmall;
+    line-height: 1.5;
+}
+
+@mixin uams-font--xxsmall {
+    font-size: $uams-font-size--xxsmall;
+    line-height: 1.5;
+}
+
+@mixin uams-link--secondary {
+    color: $uams-color--gray-75;
+    text-decoration: underline;
+    text-decoration-color: $uams-color--gray-40;
+}
+
+@mixin uams-navigation-menu {
+
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    li {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+
+    button:not([class*='uams-button']):first-child,
+    a {
+        text-decoration: none;
+        color: inherit;
+        background-color: transparent;
+        border-left: 5px solid transparent;
+        border-right: none;
+        border-bottom: none;
+        border-top: none;
+        outline: none;
+        box-shadow: none;
+        font-weight: inherit;
+        margin: 0;
+        padding: 0.7rem calc( #{$uams-spacing--medium } - 5px );
+        flex-grow: 1;
+        border-radius: 0;
+        display: block;
+        box-sizing: border-box;
+        text-align: left;
+        font-size: $uams-font-size--small;
+        font-weight: 600;
+        position: 'relative';
+        line-height: 1.5; 
+        cursor: pointer;
+
+        &:hover,
+        &:focus {
+            background-color: $uams-color--gray-10;
+            border-left: 5px solid $uams-color--gray-65;
+        }
+
+        &[aria-current="page"] {
+            border-left: 5px solid $uams-color--crimson-light !important;
+        }
+    }
+
+    button:not([class*='uams-button']):first-child {
+        width: 100%;
+        flex-grow: 0;
+        padding-right: calc( 50px );
+
+        &::after {
+            content: "\F103";
+            font-family: uams-icons;
+            margin-left: 0;
+            color: inherit;
+            font-size: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 50px;
+            position: absolute;
+            display: flex;
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+    }
+
+    a + button:not([class*='uams-button']) {
+        width: 50px;
+        flex-grow: 0;
+        padding: 0;
+
+        &:hover,
+        &:focus {
+            background-color: $uams-color--gray-10;
+        }
+
+        &::after {
+            content: "\F103";
+            font-family: uams-icons;
+            margin-left: 0.75em;
+            color: inherit;
+            font-size: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+    } 
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none; 
+        max-height: 0;
+        visibility: hidden;
+        overflow: hidden;
+        transition: max-height $uams-transition-speed--fast $uams-easing;
+    }
+
+    li[aria-expanded="true"] {
+
+        & > ul { 
+            max-height: none;
+            visibility: visible;
+        } 
+    }
+
+    & li > ul > li {
+        button:first-child:not([class*='uams-button']),
+        a {
+            font-weight: 400;
+            padding-left: calc( #{$uams-spacing--medium} + #{$uams-spacing--sxxsmall});
+        }
+    }
+
+    & ul ul > li {
+        button:first-child:not([class*='uams-button']),
+        a {
+            padding-left: calc( #{$uams-spacing--medium} + ( #{$uams-spacing--sxxsmall} * 2 ) );
+        }
+    }
+
+}
+
+/* ========================================================
+== Menu Items ==
+==========================================================*/
+@mixin uams-menu-item--crimson-bar( $drop: -6px, $thickness: 4px, $element: 'after' ) {
+    position: relative;
+
+    &::#{$element} {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: $uams-color--crimson-light;
+        height: $thickness;
+        opacity: 0;
+        transition: bottom $uams-transition-speed--fast $uams-easing, opacity $uams-transition-speed--fast $uams-easing;
+    }
+
+    &:focus,
+    &:hover {
+
+        &::#{$element} {
+            opacity: 1;
+            bottom: $drop;
+        }
+
+    }
+}
+
+@mixin uams-menu-vertical--item() {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+
+@mixin uams-menu-vertical--button( $menu-padding-vertical: 0.7rem, $menu-padding-horizontal: $uams-spacing--medium  )  {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    border-radius: 0;
+    box-sizing: border-box;
+    background-color: transparent;
+    position: relative;
+    color: inherit;
+    margin: 0;
+    padding: $menu-padding-vertical calc( #{$menu-padding-horizontal} - 5px );
+    text-align: left;
+    font-size: $uams-font-size--small;
+    font-weight: 600;
+    line-height: 1.5; 
+    cursor: pointer;
+}
+
+@mixin uams-menu-vertical--link( $menu-padding-vertical: 0.7rem, $menu-padding-horizontal: $uams-spacing--medium  ) {
+    text-decoration: none;
+    color: inherit;
+    background-color: transparent;
+    border-left: 5px solid transparent;
+    border-right: none;
+    border-bottom: none;
+    border-top: none;
+    outline: none;
+    box-shadow: none;
+    font-weight: inherit;
+    margin: 0;
+    padding: $menu-padding-vertical calc( #{$menu-padding-horizontal} - 5px );
+    flex-grow: 1;
+    border-radius: 0;
+    display: block;
+    box-sizing: border-box;
+    text-align: left;
+    font-size: $uams-font-size--small;
+    font-weight: 600;
+    position: 'relative';
+    line-height: 1.5; 
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        background-color: $uams-color--gray-10;
+        border-left: 5px solid $uams-color--gray-65;
+    }
+
+    &[aria-current="page"] {
+        border-left: 5px solid $uams-color--crimson-light !important;
+    }
+}
+
+@mixin uams-menu-vertical--item-link( $menu-padding-vertical: 0.7rem, $menu-padding-horizontal: $uams-spacing--medium  ) {
+    padding: $menu-padding-vertical calc( #{$menu-padding-horizontal} - 5px );
+}
+
+@mixin uams-menu-vertical--secondary-item-link( $menu-padding-left: calc( #{$uams-spacing--medium} + #{$uams-spacing--sxxsmall}) ) {
+    font-weight: 400;
+    padding-left: $menu-padding-left;
+}
+
+@mixin uams-menu-vertical--tertiary-item-link( $menu-padding-left: calc( #{$uams-spacing--medium} + ( #{$uams-spacing--sxxsmall} * 2 ) ) ) {
+    padding-left: $menu-padding-left;
+}
+
+
+
+@mixin uams-menu-vertical--item-button {
+    width: 100%;
+    flex-grow: 0;
+    padding-right: calc( 50px );
+    border-left: 5px solid transparent;
+
+    &:hover,
+    &:focus {
+        background-color: $uams-color--gray-10;
+        border-left: 5px solid $uams-color--gray-65;
+    }
+
+    &::after {
+        content: "\F103";
+        font-family: uams-icons;
+        margin-left: 0;
+        color: inherit;
+        font-size: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 50px;
+        position: absolute;
+        display: flex;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+}
+
+@mixin uams-menu-vertical--item-button-split {
+    width: 50px;
+    flex-grow: 0;
+    padding: 0;
+
+    &:hover,
+    &:focus {
+        background-color: $uams-color--gray-10;
+    }
+
+    &::after {
+        content: "\F103";
+        font-family: uams-icons;
+        margin-left: 0.75em;
+        color: inherit;
+        font-size: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@mixin uams-menu-vertical--submenu() {
+    margin: 0;
+    padding: 0;
+    list-style-type: none; 
+    max-height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition: max-height $uams-transition-speed--fast $uams-easing, visibility 0s $uams-easing 300ms;
+}
+
+@mixin uams-menu-vertical--submenu-open() {
+    max-height: none;
+    visibility: visible;
+    transition: max-height $uams-transition-speed--fast $uams-easing, visibility 0s $uams-easing 0s;
+}
+
+@mixin uams-navigation-panel() {
+    position: fixed;
+    top: 0;
+    padding-top: calc( 65px + #{$uams-spacing--medium} );
+    height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid $uams-color--gray-10;
+    width: $uams-width--navigation-open;
+    left: 0;
+    transition: transform $uams-transition-speed--medium $uams-easing, opacity $uams-transition-speed--medium $uams-easing;
+    opacity: 1;
+    visibility: hidden;
+    box-sizing: border-box;
+    z-index: $uams-zindex--navigation;
+    background-color: #fff;
+    transform: translateX( $uams-width--navigation-open );
+    
+}
+
+@mixin uams-navigation-panel--open() {
+    visibility: visible;
+    transform: translateX( 0);
+}
+
+@mixin uams-navigation-panel--mobile() {
+    left: auto;
+    right: 0;
+}
+
+
+
+/* ========================================================
+== Modals ==
+==========================================================*/
+
+@mixin uams-modal-box--low {
+    box-shadow: $uams-dropshadow--low;
+    border-radius: $uams-border-radius--medium;
+    padding: $uams-spacing--small 0;
+    box-sizing: border-box;
+}
+
+@mixin uams-modal-box {
+    box-shadow: $uams-dropshadow--low;
+    border-radius: $uams-border-radius--medium;
+}
+
+/* ========================================================
+== Transitions ==
+==========================================================*/
+
+@mixin uams-transition-navigation-vertical {
+    transition-duration: $uams-transition-speed--fast;
+    transition-timing-function: $uams-easing;
+}
+
+/* ========================================================
+== Buttons ==
+==========================================================*/
+
+@mixin uams-pattern-background--uams-dark() {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 163.87 108'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:none;stroke:%23000;%7D%3C/style%3E%3C/defs%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Cpolygon stroke='%23000' fill='none' points='64.91 1.24 53.35 33.66 42.93 1.24 33.95 1.24 23.49 33.7 12.04 1.57 11.94 1.24 0.71 1.24 18.38 50.89 29.23 50.89 38.42 22.21 47.64 50.89 58.44 50.89 76.16 1.24 64.91 1.24'/%3E%3Cpath stroke='%23000' fill='none' d='M86.63,14.71c0-3,2.53-5,7.07-5a21.29,21.29,0,0,1,14.43,5.43L114,7.42C109.1,2.88,102.55.5,94.67.5,83,.5,75.84,7.35,75.84,15.61c0,18.67,28.57,12.65,28.57,21.43,0,2.83-2.82,5.5-8.63,5.5A21.77,21.77,0,0,1,80,35.85l-5.73,8c4.61,4.69,11.46,7.89,21,7.89,13.4,0,19.87-6.85,19.87-15.92C115.13,17.32,86.63,22.6,86.63,14.71Z'/%3E%3Cpath stroke='%23000' fill='none' d='M118.37,31.08V1.24h10.71V30.71c0,6.92,4,11.68,11.68,11.68s11.61-4.76,11.61-11.68V1.24h10.79V31c0,12.35-7.29,20.76-22.4,20.76S118.37,43.29,118.37,31.08Z'/%3E%3Cpolygon stroke='%23000' fill='none' points='98.96 105.3 110.52 72.88 120.94 105.3 129.91 105.3 140.38 72.84 151.83 104.97 151.93 105.3 163.16 105.3 145.49 55.66 134.64 55.66 125.45 84.33 116.23 55.66 105.43 55.66 87.72 105.3 98.96 105.3'/%3E%3Cpath stroke='%23000' fill='none' d='M77.24,91.83c0,3-2.53,5-7.07,5a21.3,21.3,0,0,1-14.43-5.44l-5.88,7.74C54.77,103.66,61.32,106,69.2,106,80.89,106,88,99.2,88,90.94c0-18.68-28.57-12.65-28.57-21.43,0-2.83,2.82-5.51,8.63-5.51a21.71,21.71,0,0,1,15.77,6.7l5.73-8C85,58,78.13,54.77,68.61,54.77c-13.4,0-19.87,6.85-19.87,15.93C48.74,89.23,77.24,83.94,77.24,91.83Z'/%3E%3Cpath stroke='%23000' fill='none' d='M45.51,75.46V105.3H34.79V75.83c0-6.92-4-11.68-11.68-11.68S11.5,68.91,11.5,75.83V105.3H.71V75.53C.71,63.18,8,54.77,23.11,54.77S45.51,63.26,45.51,75.46Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 100px;
+    background-position: center center;
+}
+
+@mixin uams-pattern-background--uams-light {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 163.87 108'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:none;stroke:%23fff;%7D%3C/style%3E%3C/defs%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Cpolygon stroke='%23fff' fill='none' points='64.91 1.24 53.35 33.66 42.93 1.24 33.95 1.24 23.49 33.7 12.04 1.57 11.94 1.24 0.71 1.24 18.38 50.89 29.23 50.89 38.42 22.21 47.64 50.89 58.44 50.89 76.16 1.24 64.91 1.24'/%3E%3Cpath stroke='%23fff' fill='none' d='M86.63,14.71c0-3,2.53-5,7.07-5a21.29,21.29,0,0,1,14.43,5.43L114,7.42C109.1,2.88,102.55.5,94.67.5,83,.5,75.84,7.35,75.84,15.61c0,18.67,28.57,12.65,28.57,21.43,0,2.83-2.82,5.5-8.63,5.5A21.77,21.77,0,0,1,80,35.85l-5.73,8c4.61,4.69,11.46,7.89,21,7.89,13.4,0,19.87-6.85,19.87-15.92C115.13,17.32,86.63,22.6,86.63,14.71Z'/%3E%3Cpath stroke='%23fff' fill='none' d='M118.37,31.08V1.24h10.71V30.71c0,6.92,4,11.68,11.68,11.68s11.61-4.76,11.61-11.68V1.24h10.79V31c0,12.35-7.29,20.76-22.4,20.76S118.37,43.29,118.37,31.08Z'/%3E%3Cpolygon stroke='%23fff' fill='none' points='98.96 105.3 110.52 72.88 120.94 105.3 129.91 105.3 140.38 72.84 151.83 104.97 151.93 105.3 163.16 105.3 145.49 55.66 134.64 55.66 125.45 84.33 116.23 55.66 105.43 55.66 87.72 105.3 98.96 105.3'/%3E%3Cpath stroke='%23fff' fill='none' d='M77.24,91.83c0,3-2.53,5-7.07,5a21.3,21.3,0,0,1-14.43-5.44l-5.88,7.74C54.77,103.66,61.32,106,69.2,106,80.89,106,88,99.2,88,90.94c0-18.68-28.57-12.65-28.57-21.43,0-2.83,2.82-5.51,8.63-5.51a21.71,21.71,0,0,1,15.77,6.7l5.73-8C85,58,78.13,54.77,68.61,54.77c-13.4,0-19.87,6.85-19.87,15.93C48.74,89.23,77.24,83.94,77.24,91.83Z'/%3E%3Cpath stroke='%23fff' fill='none' d='M45.51,75.46V105.3H34.79V75.83c0-6.92-4-11.68-11.68-11.68S11.5,68.91,11.5,75.83V105.3H.71V75.53C.71,63.18,8,54.77,23.11,54.77S45.51,63.26,45.51,75.46Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 100px;
+    background-position: center center;
+}
+
+@mixin uams-pattern-background--lines-light {
+    background-image: url("data:image/svg+xml,%3Csvg id='Layer_3' data-name='Layer 3' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 30 30' width='30' height='30'%3E%3Cdefs%3E%3Cstyle%3E.cls-1,.cls-3%7Bfill:none;%7D.cls-2%7Bclip-path:url(%23clip-path);%7D.cls-3%7Bstroke:%23e6e7e8;stroke-miterlimit:10;%7D%3C/style%3E%3CclipPath id='clip-path'%3E%3Crect class='cls-1' width='30' height='30'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg class='cls-2'%3E%3Cline class='cls-3' x1='-1.38' y1='23.97' x2='23.32' y2='-0.73'/%3E%3Cline class='cls-3' x1='6.6' y1='30.99' x2='30.75' y2='6.85'/%3E%3Cline class='cls-3' x1='22.02' y1='30.59' x2='30.46' y2='22.15'/%3E%3Cline class='cls-3' x1='-1.06' y1='8.69' x2='8.54' y2='-0.91'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-position: center center;
+}
+
+
+@mixin uams-menu-admin--to-dropdown {
+    width: $uams-width--navigation-xnarrow;
+    display: block;
+    background-color: #fff;
+    padding: $uams-spacing--sxxsmall $uams-spacing--small;
+
+    li {
+        display: block;
+
+        a {
+            &:hover,
+            &:focus {
+                color: $uams-color--crimson;
+            }
+        }
+  }
+}
+
+/* ========================================================
+== Forms ==
+==========================================================*/
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
+}
+
+@mixin placeholder {
+  @include optional-at-root("::-webkit-input-placeholder") {
+    @content;
+  }
+
+  @include optional-at-root(":-moz-placeholder") {
+    @content;
+  }
+
+  @include optional-at-root("::-moz-placeholder") {
+    @content;
+  }
+
+  @include optional-at-root(":-ms-input-placeholder") {
+    @content;
+  }
+}
+
+
+@import './mixins/background';
+@import './mixins/form';
+@import './mixins/button';

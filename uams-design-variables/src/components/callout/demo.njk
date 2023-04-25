@@ -1,0 +1,30 @@
+{% extends "component.njk" %}
+{% from "callout/_macro.njk" import callout %}
+{% block content %}
+<div class="wsu-demo-component">
+{{ callout() }} 
+</div>
+<div class="wsu-demo-component">
+{{ callout(' wsu-color-background--gray-85') }}
+{{ callout(' wsu-callout--color-crimson') }}
+{{ callout(' wsu-callout--color-crimson-light') }}
+{{ callout(' wsu-callout--color-autumn') }} 
+{{ callout(' wsu-callout--color-goldfinch') }}
+{{ callout(' wsu-callout--color-autumn') }} 
+{{ callout(' wsu-callout--color-goldfinch') }}
+{{ callout(' wsu-callout--color-vineyard') }}
+{{ callout(' wsu-callout--color-pacificsky') }}
+{{ callout(' wsu-callout--color-midnight') }}
+{{ callout(' wsu-callout--style-white') }} 
+{{ callout(' wsu-callout--style-border-top') }} 
+{{ callout(' wsu-callout--style-border-bottom') }} 
+{{ callout(' wsu-callout--style-border-left') }} 
+{{ callout(' wsu-callout--style-border-right') }} 
+</div>
+<hr />
+<div class="wsu-demo-component">
+{{ callout(' wsu-callout--color-autumn', true ) }} 
+</div>
+<style>
+</style>
+{%  endblock %}   

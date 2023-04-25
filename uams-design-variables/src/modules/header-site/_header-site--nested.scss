@@ -1,0 +1,10 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-header-site--nested {
+    .uams-header-site {
+        &__title{
+            font-size:$uams-font-size--large;
+        }
+    }
+}

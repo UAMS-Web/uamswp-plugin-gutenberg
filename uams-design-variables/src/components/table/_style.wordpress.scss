@@ -1,0 +1,63 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+@import '../../../_assets/scss/placeholders';
+
+
+.wp-block-table {
+    margin-bottom: $uams-spacing--component;
+    overflow-x: visible !important;
+    table {
+        @extend %table;
+        margin-bottom: 0;
+    
+    }
+}
+
+.tablepress-scroll-wrapper,
+.dataTables_wrapper {
+
+    .tablepress {
+        border-top: 4px solid $uams-color--crimson !important;
+        border-collapse: collapse !important;
+        margin-bottom: $uams-spacing--component !important;
+
+        th {
+            background-color: transparent !important;
+        }
+
+        .row-hover th:hover {
+            background-color: #f3f3f3 !important;
+        }
+    }
+
+    .dataTables_scrollHead {
+        .tablepress {
+            margin-bottom: 0 !important;
+        }
+    }
+
+    .dataTables_scrollBody {
+
+        .tablepress {
+
+            border-top: 0px solid transparent !important;
+        }
+
+    }
+
+    & + .tablepress-table-description {
+        margin-top: -$uams-spacing--component;
+        margin-bottom: $uams-spacing--component;
+    }
+
+}
+
+.dataTables_length,
+.dataTables_filter {
+    margin-bottom: $uams-spacing--xsmall !important;
+}
+
+.dataTables_info {
+    font-size: $uams-font-size--xxsmall !important;
+}
+

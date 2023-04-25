@@ -1,0 +1,68 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-note {
+
+    box-sizing: border-box;
+    margin: -$uams-spacing--xsmall 0 $uams-spacing--component $uams-spacing--medium;
+    padding-left: $uams-spacing--small;
+    padding-right: 10%;
+    border-left: 3px solid $uams-color--crimson;
+    max-width: $uams-width--copy;
+
+    &__icon {
+      display: inline-block;
+      line-height: 1;
+      color: inherit;
+      text-decoration: none;
+      font-size: $uams-font-size--xxmedium !important;
+      margin: 0 $uams-spacing--sxxsmall $uams-spacing--sxxsmall 0;
+      vertical-align: middle;
+
+      &::before {
+        font-family: uams-icons !important;
+        font-style: normal;
+        font-weight: normal !important;
+        vertical-align: middle;
+      }
+    }
+
+    &__title {
+        @include uams-font--xmedium();
+        display: inline-block;
+        font-weight: $uams-font-weight--semibold;
+        margin-bottom: $uams-spacing--sxxsmall;
+    }
+
+    > p,
+    ul,
+    ol {
+      font-size: $uams-font-size--medium;
+      margin-bottom: $uams-spacing--sxxsmall;
+    }
+
+    &--size-small {
+        > p {
+          font-size: $uams-font-size--small;
+        }
+    }
+
+    &--border-crimson-light {
+        border-left: 3px solid $uams-color--crimson-light;
+    }
+    &--border-autumn {
+        border-left: 3px solid $uams-color--accent-autumn;
+    }
+    &--border-goldfinch {
+        border-left: 3px solid $uams-color--accent-goldfinch;
+    }
+    &--border-vineyard {
+        border-left: 3px solid $uams-color--accent-vineyard;
+    }
+    &--border-pacificsky {
+        border-left: 3px solid $uams-color--accent-pacificsky;
+    }
+    &--border-midnight {
+        border-left: 3px solid $uams-color--accent-midnight;
+    }
+}

@@ -1,0 +1,6 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-overlap-spotlight--style-right-bottom{
+    @extend %uams-overlap-spotlight-content-bottom;
+}

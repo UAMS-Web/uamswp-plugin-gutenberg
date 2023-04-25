@@ -1,0 +1,57 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+@import './mixins';
+
+.uams-menu-collapse--style-vertical {
+
+    @extend %uams-menu-collapse-vertical--level-1--ul;
+
+    ul {
+        width: 100%;
+        @extend %uams-menu-collapse-vertical--ul;
+    }
+
+    li {
+        @extend %uams-menu-collapse-vertical--li;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    button {
+        @extend %uams-menu-collapse-vertical--button;
+    }
+
+    button:first-child,
+    a {
+        @extend %uams-menu-collapse-vertical--menu-item;
+    }
+
+    button:first-child {
+        @extend %uams-menu-collapse-vertical--menu-item-button;
+    }
+
+    a ~ button {
+        @extend %uams-menu-collapse-vertical--menu-item-split-button;
+    }
+
+    li[aria-expanded] {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    & > li {
+
+        @extend %uams-menu-collapse-vertical--level-1--menu-item;
+    }
+
+    & > li li {
+
+        @extend %uams-menu-collapse-vertical--level-2--menu-item;
+    }
+
+    & > li li li {
+
+        @extend %uams-menu-collapse-vertical--level-3--menu-item;
+    }
+
+}

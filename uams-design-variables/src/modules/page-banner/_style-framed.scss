@@ -1,0 +1,10 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-page-banner--style-framed .uams-image-frame img {
+    outline-style: solid;
+    outline-width: 1px;
+    outline-offset: -$uams-spacing--xxmedium;
+    outline-color: #fff; 
+}
+

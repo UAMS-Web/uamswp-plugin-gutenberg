@@ -1,0 +1,176 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+@import './partials/navigation_states';
+
+@import './partials/media-desktop';
+
+.uams-navigation-site {
+
+    &__overlay {
+        position: fixed;
+        top: 0;
+        left: $uams-width--navigation-open;
+        width: 100vw;
+        height: 100Vh;
+        background-color: rgba(0,0,0,0.6);
+        z-index: $uams-zindex--modal-backdrop;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity $uams-transition-speed--medium $uams-easing;
+    }
+
+    &__site-nav {
+        flex-grow: 1; 
+    }
+
+    .uams-button-ui-close:first-child {
+        min-height: $uams-spacing--medium;
+        margin: $uams-spacing--xmedium $uams-spacing--small $uams-spacing--xmedium auto;
+    }
+
+    .uams-button-ui-close:last-child {
+        min-height: $uams-spacing--medium;
+        margin: $uams-spacing--medium $uams-spacing--small $uams-spacing--small auto;
+    }
+
+    .uams-menu-toggle {
+
+        position: relative;
+
+        &::after {
+            content: '';
+            height: 1px;
+            width: 100%;
+            bottom: 0;
+            background-color: $uams-color--gray-10;
+            display: block;
+            opacity: 0;
+            position: absolute;
+            transition: opacity $uams-transition-speed--xmedium $uams-easing;
+        }
+
+        & > li {
+            position: relative; 
+
+            &::before {
+                content: '';
+                height: 1px;
+                width: 100%;
+                top: 0;
+                background-color: $uams-color--gray-10;
+                display: block;
+                opacity: 0;
+                position: absolute;
+                transition: opacity $uams-transition-speed--xmedium $uams-easing;
+            } 
+
+            &:first-child a::before {
+                content: '\F122';
+                font-family: 'uams-icons';
+                margin-right: 0.3em;
+            }
+        }
+
+        & > li[aria-expanded] > a {
+
+            position: relative;
+
+            &::after {
+                content: '';
+                height: 100%;
+                width: 1px;
+                top: 0;
+                right: 0;
+                background-color: $uams-color--gray-10;
+                display: block;
+                opacity: 0;
+                position: absolute;
+                transition: opacity $uams-transition-speed--xmedium $uams-easing;
+            }
+        }
+
+
+    }
+
+    .uams-button-ui-menu-animated {
+        width: $uams-width--navigation-closed;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity $uams-transition-speed--xfast $uams-easing;
+        z-index: $uams-zindex--navigation;
+        background-color: #fff;
+        visibility: hidden;
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 100%;
+            top: 0;
+            right: -1px;
+            background-color: $uams-color--gray-30;
+            opacity: 0;
+            transition: opacity $uams-transition-speed--medium $uams-easing;
+        }
+
+        &:focus-within,
+        &:hover,
+        &:focus {
+            background-color: $uams-color--gray-5;
+
+            &::after {
+                opacity: 1; 
+            }
+        }
+    }
+
+    &:hover .uams-menu-toggle {
+
+        &::after,
+        & > li::before {
+            opacity: 1;
+        }
+
+        & > li[aria-expanded] > a {
+
+            &::after {
+
+                opacity: 1;
+            }
+        }
+
+    }
+
+    &:not(.uams-navigation-site--horizontal) ~ .uams-wrapper-site {
+        margin-left: $uams-width--navigation-open;
+        @include uams-transition-navigation-vertical;
+        transition-property: margin-left;
+    }
+
+    /* Menu Closed */
+    &[aria-expanded="false"] {
+       @include uams-navigation-site--closed();
+
+        & ~ .uams-wrapper-site {
+            margin-left: $uams-width--navigation-closed;
+        }
+
+        .uams-button-menu-ui-animated {
+            visibility: visible;
+        } 
+    } 
+
+}
+
+@import 'navigation-site--dark';
+
+@import './partials/media-tablet.scss';
+@import './partials/media-phone.scss';

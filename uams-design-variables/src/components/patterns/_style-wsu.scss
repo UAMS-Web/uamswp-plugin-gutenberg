@@ -1,0 +1,25 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+
+.uams-pattern--style-uams {
+
+    &::before {
+        @extend %uams-pattern--before;
+        @extend %uams-pattern--uams-dark;
+        @extend %uams-pattern--mask;
+        opacity: 0.8;
+    }
+
+}
+
+.uams-pattern--style-uams-light {
+
+    &::before {
+        @extend %uams-pattern--before;
+        @extend %uams-pattern--uams-light;
+        @extend %uams-pattern--mask;
+        opacity: 0.8;
+    }
+
+}

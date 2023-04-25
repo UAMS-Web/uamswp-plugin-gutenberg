@@ -1,0 +1,92 @@
+{% macro menuCollapse( classes='', isContext=false, style='' ) %}
+
+<ul class="wsu-menu-collapse {{ classes }}{% if style %} wsu-menu-collapse--style-{{ style }}{% endif %}">
+
+    {% if style == 'context' %}
+    <li>
+        <a href="#">Menu Item</a>
+        <ul>
+            <li><a href="#">Menu Item</a></li>
+            <li aria-expanded="false" aria-haspopup="true">
+                <a href="#">Menu Item</a>
+                <button class="wsu-menu-collapse--action-toggle" aria-label="open submenu"></button>
+                <ul>
+                    <li><a href="#">Menu Item</a></li>
+                    <li><a href="#">Menu Item</a></li>
+                    <li><a href="#">Menu Item</a></li>
+                    <li><a href="#">Menu Item</a></li>
+                </ul>
+            </li>
+             <li aria-expanded="false" aria-haspopup="true">
+                <button class="wsu-menu-collapse--action-toggle">Menu Item</button>
+                <ul>
+                    <li><a href="#">Menu Item</a></li>
+                    <li><a href="#">Menu Item</a></li>
+                    <li><a href="#">Menu Item</a></li>
+                    <li><a href="#">Menu Item</a></li>
+                </ul>
+            </li>
+            <li aria-expanded="false" aria-haspopup="true">
+                <button class="wsu-menu-collapse--action-toggle">Menu Item</button>
+                <ul>
+                    <li><a href="#">Menu Item</a></li>
+                    <li><a href="#">Menu Item</a></li>
+                    <li aria-expanded="false" aria-haspopup="true">
+                        <button class="wsu-menu-collapse--action-toggle">Menu Item</button>
+                        <ul>
+                            <li><a href="#">Menu Item</a></li>
+                            <li><a href="#">Menu Item</a></li>
+                            <li><a href="#">Menu Item</a></li>
+                            <li><a href="#">Menu Item</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Menu Item</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Menu Item</a></li>
+        </ul>
+    </li>
+    {% else %}
+    <li><a href="#">Menu Item</a></li>
+    <li><a href="#">Menu Item</a></li>
+    <li aria-expanded="false" aria-haspopup="true">
+        <button class="wsu-menu-collapse--action-toggle">Menu Item</button>
+        <ul>
+            <li><a href="#">Menu Item</a></li>
+            <li><a href="#">Menu Item</a></li>
+            <li aria-expanded="false" aria-haspopup="true">
+                <button class="wsu-menu-collapse--action-toggle">Menu Item</button>
+                <ul>
+                    <li><a href="#">Menu Item</a></li>
+                    <li><a href="#">Menu Item</a></li>
+                    <li><a href="#">Menu Item</a></li>
+                    <li><a href="#">Menu Item</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Menu Item</a></li>
+        </ul>
+    </li>
+     <li aria-expanded="false" aria-haspopup="true">
+        <a href="#">Menu Item</a>
+        <button class="wsu-menu-collapse--action-toggle" aria-label="open submenu"></button>
+        <ul>
+            <li><a href="#">Menu Item</a></li>
+            <li><a href="#">Menu Item</a></li>
+            <li><a href="#">Menu Item</a></li>
+            <li><a href="#">Menu Item</a></li>
+        </ul>
+    </li>
+    <li class="wsu-menu-collapse--current-item"><a href="#">Menu Item</a></li>
+    <li aria-expanded="false" aria-haspopup="true">
+        <a href="#">Menu Item</a>
+        <button class="wsu-menu-collapse--action-toggle" aria-label="open submenu"></button>
+        <ul>
+            <li><a href="#">Menu Item</a></li>
+            <li><a href="#">Menu Item</a></li>
+            <li><a href="#">Menu Item</a></li>
+            <li><a href="#">Menu Item</a></li>
+        </ul>
+    </li>
+    {% endif %}
+</ul>
+{% endmacro %}

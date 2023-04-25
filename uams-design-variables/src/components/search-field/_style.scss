@@ -1,0 +1,56 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-search-field {
+
+    position: relative;
+
+
+    &--secondary {
+
+        .uams-search-field {
+
+            &__input {
+                width: 100%;
+                padding-right: 70px;
+                box-sizing: border-box;
+            }
+
+            &__button {
+                @include uams-button();
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                display: block;
+                width: 60px;
+                right: 0;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                font-size: 0;
+                background-color: transparent;
+                justify-content: center;
+                align-items: center;
+                box-shadow: none;
+                color: $uams-color--gray-40;
+
+                &::before {
+                    content: '\F140';
+                    font-family: 'uams-icons';
+                    color: inherit;
+                    font-size: $uams-font-size--medium;
+                }
+
+                &:hover,
+                &:focus {
+                    color: $uams-color--gray-0;
+                }
+            }
+
+        }
+
+    }
+
+}

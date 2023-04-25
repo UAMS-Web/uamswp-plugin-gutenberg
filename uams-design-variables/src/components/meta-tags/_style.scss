@@ -1,0 +1,28 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-meta-tags {
+
+    font-size: $uams-font-size--xsmall;
+    font-weight: 600;
+
+    &::before {
+        content: "\F14C";
+        font-family: 'uams-icons';
+        color: inherit;
+        font-size: 0.9em;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 0.2em;
+    }
+
+    a {
+        @include uams-link--secondary();
+
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+            text-decoration-color: $uams-color--crimson-light;
+        }
+    }
+} 

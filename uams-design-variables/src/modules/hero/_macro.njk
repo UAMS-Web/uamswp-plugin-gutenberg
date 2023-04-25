@@ -1,0 +1,48 @@
+{% from "experimental_article-title/macros/article-title.macro.njk" import articleTitle %}
+{% from "caption/macros/caption.macro.njk" import caption %}
+{% from "meta-date/macros/meta-date.macro.njk" import metaDate %}
+{% from "meta-byline/macros/meta-byline.macro.njk" import metaByline %}
+{% from "meta-tags/macros/macro.njk" import metaTags %}
+{% from "image-frame/_macro.njk" import imageFrame %}
+{% from "overlay/_macro.njk" import overlay %}
+{% from "eyebrow-header/_macro.njk" import eyebrowHeader %}
+{% from "experimental_video-frame/_macro.njk" import videoFrame %}
+{% from "background-slider/_macro.njk" import backgroundSlider %}
+
+{% macro hero(classes = '', linked = false, showCaption = true, titleTag = "div", eyebrowHeaderText = "Lorem ipsum dolor", isVideo = false, imageSrc = 'https://source.unsplash.com/collection/895539', heroTitle = 'Hero Banner Title', isSlider = false, caption = '' ) %}
+  <div class="wsu-hero wsu-width--full{{ classes }}">
+    {% if imageSrc %}
+      {{ imageFrame( ' wsu-image-frame--fill', '', false, imageSrc ) }}
+    {% endif %}
+    {% if isVideo %}
+      {{ videoFrame( ' wsu-video-frame--position-fill', true ) }}
+    {% endif %}
+    {% if isSlider %}
+      {{ backgroundSlider( ' wsu-background-slider--effect-fade', delay = 3000 ) }}
+    {% endif %}
+    {{ overlay(' wsu-overlay--dark-left wsu-pattern--style-wsu-light') }}
+    <div class="wsu-hero__content">
+      <div class="wsu-hero__caption">
+        {% if eyebrowHeaderText %}
+          {{ eyebrowHeader('', eyebrowHeaderText) }}
+        {% endif %}
+        <{{ titleTag }} class="wsu-title wsu-hero__title" id="unique-id-hero-banner-title">
+          <span>{{ heroTitle }}</span>
+        </{{ titleTag }}>
+        {% if showCaption %}
+        <div class="wsu-caption wsu-hero__copy">
+          {% if caption %}
+            {{ caption }}
+          {% else %}
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pharetra nunc nec rutrum porta. Praesent neque velit, dignissim sit amet massa sit amet, dapibus aliquam metus. Ut sapien lacus, fringilla non arcu elementum, blandit egestas justo.
+          {% endif %}
+        </div>
+        {% endif %}
+        {% if linked %}
+          <a class="wsu-button wsu-button--size-small" href="#" aria-labelledby="unique-id-hero-banner-title">Read More</a>
+        {% endif %}
+      </div>
+      <div class="wsu-hero__image-caption">Image caption <a href="#">linked</a> here.</div>
+    </div>
+  </div>
+{% endmacro %}

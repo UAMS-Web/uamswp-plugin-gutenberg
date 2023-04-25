@@ -1,0 +1,12 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-caption {
+
+    @include uams-font--small();
+    font-weight: 400;
+    
+    p:last-child {
+        margin-bottom: 0;
+    }
+}

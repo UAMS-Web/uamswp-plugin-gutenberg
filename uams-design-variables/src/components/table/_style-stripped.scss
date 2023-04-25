@@ -1,0 +1,23 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-table--style-striped {
+    border-top: 4px solid $uams-color--crimson;
+    border-collapse: collapse;
+    margin-bottom: $uams-spacing--component;
+    
+    th,
+    td {
+        padding: $uams-spacing--xxsmall;
+        border-top: none !important;
+        border-left: none !important;
+        border-right: none !important;
+        border-bottom: 1px solid $uams-color--gray-30;
+        border-collapse: collapse;
+    }
+
+    tr:nth-child(even) {
+        background-color: $uams-color--gray-5 !important;
+    }
+}
+

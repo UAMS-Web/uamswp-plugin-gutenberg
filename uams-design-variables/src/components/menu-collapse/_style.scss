@@ -1,0 +1,187 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+@import './mixins';
+
+$uams-menu-collapse-spacing--nav-horizontal: $uams-spacing--medium;
+$uams-menu-collapse-spacing--nav-vertical: $uams-spacing--xxsmall;
+$uams-menu-collapse-spacing--nav-vertical-secondary: $uams-spacing--sxxsmall;
+
+.uams-menu-collapse {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    a {
+        text-decoration: none;
+    }
+
+    li,
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    li[aria-expanded="false"] {
+
+        & > ul {
+            @include uams-menu-collapse--menu-slide-up();
+        }
+    }
+
+    li[aria-expanded="true"] {
+
+        & > ul {
+            @include uams-menu-collapse--menu-slide-down()
+        }
+    }
+
+}
+
+%uams-menu-collapse-horizontal--ul {
+    margin: 0;
+    padding: 0;
+}
+
+%uams-menu-collapse-horizontal--li {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: flex;
+}
+
+%uams-menu-collapse-horizontal--button {
+    cursor: pointer;
+    background-color: transparent;
+    border-radius: 0;
+    border: none;
+}
+
+%uams-menu-collapse-vertical--ul {
+    margin: 0;
+    padding: 0;
+}
+
+%uams-menu-collapse-vertical--li {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+%uams-menu-collapse-vertical--button {
+    cursor: pointer;
+    background-color: transparent;
+    border-radius: 0;
+    border: none;
+}
+
+%uams-menu-collapse-vertical--menu-item {
+    text-decoration: none;
+    font-size: $uams-font-size--small;
+    color: $uams-color--gray-75;
+    font-weight: 600;
+    display: block;
+    flex-grow: 1;
+    text-align: left;
+}
+
+%uams-menu-collapse-vertical--menu-item-button {
+    &::after {
+        content: '\F103';
+        font-family: uams-icons;
+        transition: transform .2s;
+        font-size: $uams-font-size--xsmall;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+        width: 50px;
+        position: absolute;
+        height: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+%uams-menu-collapse-vertical--menu-item-split-button {
+    width: 50px;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &::before {
+        content: '\F103';
+        font-family: uams-icons;
+        transition: transform .2s;
+        font-size: $uams-font-size--xsmall;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+    }
+
+    &::after {
+        content:'';
+        position: absolute;
+        height: auto;
+        left: 0;
+        width: 1px;
+        top: 0;
+        bottom: 0;
+        background-color: $uams-color--gray-10;
+    }
+}
+
+%uams-menu-collapse-vertical--level-1--ul {
+    position: relative;
+
+    &::before {
+        content:'';
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        top: 0;
+        background-color: $uams-color--gray-10;
+    }
+}
+
+%uams-menu-collapse-vertical--level-1--menu-item {
+    &::after {
+        content:'';
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        bottom: 0;
+        background-color: $uams-color--gray-10;
+    }
+
+    & > button:first-child,
+    & > a {
+        padding: $uams-menu-collapse-spacing--nav-vertical $uams-menu-collapse-spacing--nav-horizontal;
+    }
+}
+
+%uams-menu-collapse-vertical--level-2--menu-item {
+    & > button:first-child,
+    & > a {
+        font-weight: 500;
+        padding: $uams-menu-collapse-spacing--nav-vertical-secondary $uams-menu-collapse-spacing--nav-horizontal $uams-menu-collapse-spacing--nav-vertical-secondary calc( ( #{$uams-spacing--xxsmall} * 1 ) + #{$uams-menu-collapse-spacing--nav-horizontal} );
+    }
+}
+
+%uams-menu-collapse-vertical--level-3--menu-item {
+    & > button:first-child,
+    & > a {
+        font-weight: 500;
+        padding: $uams-menu-collapse-spacing--nav-vertical-secondary $uams-menu-collapse-spacing--nav-horizontal $uams-menu-collapse-spacing--nav-vertical-secondary calc( ( #{$uams-spacing--xxsmall} * 1 ) + #{$uams-menu-collapse-spacing--nav-horizontal} );
+    }
+}
+
+
+@import './style-vertical';
+@import './style-horizontal';
+@import './style-context.scss';
+@import './style-mobile.scss';

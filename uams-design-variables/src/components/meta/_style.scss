@@ -1,0 +1,119 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+
+.uams-meta-byline,
+.uams-meta-date,
+.uams-meta-email,
+.uams-meta-location,
+.uams-meta-phone,
+.uams-meta-tags,
+.uams-meta-website {
+    font-size: $uams-font-size--xsmall;
+    font-weight: 500;
+    font-style: normal;
+    margin: 0.4rem 0 0.4rem 1.5rem;
+    position: relative;
+
+
+    &::before {
+        font-family: 'uams-icons';
+        color: inherit;
+        font-size: 1.2em;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 0.2em;
+        position: absolute;
+        right: calc( 100% + 0.2rem );
+        top: -0.1rem;
+    }  
+}
+
+.uams-meta--icon-crimson [class*="uams-meta-"],
+.uams-meta--icon-crimson[class*="uams-meta-"] {
+
+    &::before {
+        color: $uams-color--crimson;
+    }
+
+}
+
+.uams-meta-byline::before {
+    content: "\F13C";
+}
+
+.uams-meta-categories {
+
+    @include uams-font--small();
+    font-weight: 600;
+
+    a {
+        @include uams-link--secondary();
+
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+            text-decoration-color: $uams-color--crimson-light; 
+        }
+    }
+}  
+
+
+.uams-meta-date::before {
+    content: "\F101";
+}
+
+.uams-meta-email {
+    word-wrap: break-word;
+
+    &::before {
+        content: "\F11A";
+    }
+}
+
+.uams-meta-location {
+    &::before {
+        content: "\F127"; 
+    } 
+}
+
+.uams-meta-location::before {
+    content: "\F127";  
+}
+
+.uams-meta-phone::before {
+    content: "\F133";
+}
+
+.uams-meta-tags {
+
+    &::before {
+        content: "\F14C";
+    }
+
+    a {
+        @include uams-link--secondary();
+
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+            text-decoration-color: $uams-color--crimson-light;
+        }
+    }
+}
+
+.uams-meta-website::before {
+    content: "\F10D";     
+}
+
+.uams-meta--secondary {
+    a {
+        @include uams-link--secondary();
+
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+            text-decoration-color: $uams-color--crimson-light; 
+        }
+    }
+}

@@ -1,0 +1,20 @@
+{% extends "component.njk" %}
+{% from "carousel/_macro.njk" import carousel %}
+
+{% block styles %}
+    <style>
+        .wsu-custom-demo {
+            display: unset!important;
+            margin: 0!important;
+            padding: 0!important;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+{{ carousel('', '5')}}
+{{ carousel('', '4')}}
+{{ carousel('', '3')}}
+{{ carousel('', '2')}}
+{{ carousel('', '1')}}
+{%  endblock %}

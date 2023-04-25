@@ -1,0 +1,17 @@
+{% extends "component.njk" %}
+{% from "search/_macro.njk" import search %}
+
+
+{% block content %}
+{% include 'search/html.njk' %}
+<hr />
+{{ search( showOptions=false ) }}
+
+<hr />
+{{ search( style='underline', showOptions=false ) }}
+
+<hr />
+<div style="background: #222; padding: 1rem">
+{{ search( classes="wsu-search--background-dark", style='underline', showOptions=false ) }}
+</div>
+{%  endblock %}   

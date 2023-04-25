@@ -1,0 +1,17 @@
+@import '../variables';
+
+@mixin uams-form-input-text( $border-radius: $uams-border-radius--medium ) {
+    border-radius: $border-radius;
+    background-color: #fff;
+    border: 1px solid $uams-color--gray-30;
+    outline: none;
+    transition: box-shadow $uams-transition-speed--medium $uams-easing;
+    font-size: inherit;
+    padding: $uams-spacing--small $uams-spacing--small;
+    box-sizing: border-box;
+
+    &:focus {
+        box-shadow: $uams-dropshadow--low;
+        border-color: $uams-color--gray-80;
+    }
+}

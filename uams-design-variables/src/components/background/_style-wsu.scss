@@ -1,0 +1,18 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-background--style-uams {
+
+    &-crimson {
+        @include uams-background-uams-pattern-crimson(); 
+    }
+
+    &-crimson-solid {
+        @include uams-background-uams-pattern();
+        background-color: $uams-color--crimson;
+    }
+
+    &-gray {
+
+    }
+}

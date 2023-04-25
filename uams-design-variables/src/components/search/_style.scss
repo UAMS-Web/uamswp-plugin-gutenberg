@@ -1,0 +1,87 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+
+.uams-search:not([class*="-search--style-"]) {
+
+    margin-bottom: $uams-spacing--component;
+
+    .uams-search {
+
+        &__search-bar {
+            display: flex;
+        }
+
+        &__input {
+            @include uams-form-input-text( $border-radius:  $uams-border-radius--medium 0 0 $uams-border-radius--medium );
+            min-width: 125px;
+            display: block;
+            flex-grow: 1;
+        }
+        
+        &__submit {
+            @include uams-button( $padding: 0 $uams-spacing--xmedium, $border-radius:  0 $uams-border-radius--large $uams-border-radius--large 0  );
+
+            &::after {
+                content:"\F140";
+                font-family: 'uams-icons';
+                font-size: $uams-font-size--xxmedium;
+                font-weight: 500;
+            }
+        }
+
+        &__search-options {
+            display: flex;
+            margin-top: $uams-spacing--xxsmall;
+
+            input {
+                position: absolute;
+                left: -200vw;
+                opacity: 0;
+            }
+        }
+
+        &__search-toggle {
+            position: absolute;
+            left: -200vw;
+            opacity: 0;
+
+            &:focus + label::before {
+                background-color: $uams-color--gray-30;
+                outline: 2px solid $uams-color--gray-85;
+                box-shadow: $uams-shadow--xlow;  
+            }
+
+            &:checked + label::before {
+                background-color: $uams-color--crimson-light;
+            }
+
+            
+        }
+
+        &__search-toggle-label {
+            margin-right: $uams-spacing--small;
+            display: flex;
+            align-items: center;
+            line-height: 1;
+            min-height: 20px;
+            font-weight: 500;
+
+            &::before {
+                content: "";
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                background-color: #fff;
+                outline: 1px solid $uams-color--gray-50;
+                outline-offset: 2px;
+                border-radius: 50%;
+                margin-right: $uams-spacing--sxxsmall;
+            }
+
+        }
+    }
+
+}
+
+@import './style-underline';

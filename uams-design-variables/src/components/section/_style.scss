@@ -1,0 +1,26 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-section {
+    margin-top: $uams-spacing--large;
+    background-color: $uams-color--gray-5;
+    padding-top: $uams-spacing--large;
+    padding-bottom: $uams-spacing--medium;
+    position: relative;
+}
+
+.uams-row + .uams-section {
+    margin-top: calc( #{$uams-spacing--large} - #{$uams-spacing--component} );
+}
+
+.uams-section + .uams-section {
+    margin-top: 0;
+}
+
+
+.uams-wrapper-content .uams-section:not(.uams-width--full) {
+    margin-left: -$uams-spacing--column;
+    margin-right: -$uams-spacing--column;
+    padding-left: $uams-spacing--column;
+    padding-right: $uams-spacing--column; 
+}  

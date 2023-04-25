@@ -1,0 +1,32 @@
+.uams-callout--style-border-right,
+.uams-callout--style-border-left,
+.uams-callout--style-border-bottom,
+.uams-callout--style-border-top {
+    background-color: white;
+    padding: $uams-spacing--medium $uams-spacing--xmedium 1px;
+    box-sizing: border-box;
+    margin-bottom: $uams-spacing--component;
+    position: relative;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+}
+
+.uams-callout--style-border-top {
+    border-top: 4px solid $uams-color--crimson;
+}
+
+
+.uams-callout--style-border-bottom {
+    border-bottom: 4px solid $uams-color--crimson;
+}
+
+.uams-callout--style-border-left {
+    border-left: 4px solid $uams-color--crimson;
+}
+
+.uams-callout--style-border-right {
+    border-right: 4px solid $uams-color--crimson;
+}
+

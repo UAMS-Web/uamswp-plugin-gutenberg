@@ -1,0 +1,37 @@
+@mixin uams-navigation-site--closed {
+
+        transform: translateX( calc( #{$uams-width--navigation-closed} - #{$uams-width--navigation-open}) );
+
+        .uams-navigation-site__panel {
+            opacity: 0;
+        }
+
+        .uams-button-ui-menu-animated {
+            opacity: 1;
+            visibility: visible;
+        }
+
+
+        &:not(.uams-animating) {
+
+            .uams-navigation-site__panel {
+                visibility: hidden;
+            }
+        }
+
+}
+
+
+@mixin uams-navigation-site--openned {
+
+    transform: translateX( 0 );
+
+    .uams-navigation-site__panel {
+        opacity: 1;
+    }
+
+    .uams-button-ui-menu-animated {
+        opacity: 0;
+    }
+
+}

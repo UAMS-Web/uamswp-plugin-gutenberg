@@ -1,6 +1,6 @@
 <?php namespace UAMSWP\Plugin\Gutenberg;
 
-class WSU_Query {
+class UAMS_Query {
 
 	protected static $queired_posts = array();
 
@@ -91,7 +91,7 @@ class WSU_Query {
 
 		if ( in_array( 'image', $fields ) ) {
 
-			$image_attrs = WSU_Image::get_image_attrs( get_post_thumbnail_id( $wp_post->ID ), $attrs );
+			$image_attrs = UAMS_Image::get_image_attrs( get_post_thumbnail_id( $wp_post->ID ), $attrs );
 
 			$post = array_merge( $post, $image_attrs );
 

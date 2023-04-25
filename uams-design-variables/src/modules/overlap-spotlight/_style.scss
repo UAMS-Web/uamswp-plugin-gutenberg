@@ -1,0 +1,48 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-overlap-spotlight {
+    &__caption{
+        background-color: white;
+        padding: $uams-spacing--xmedium;
+    }
+}
+
+%uams-overlap-spotlight-reverse {
+    @media screen and ( min-width: $uams-breakpoint--tablet-medium ) {
+        .uams-overlap__container{
+            flex-direction: row-reverse;
+        }
+    }
+}
+
+%uams-overlap-spotlight-content-top {
+    .uams-overlap__column-inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+}
+
+%uams-overlap-spotlight-content-middle {
+    .uams-overlap__column-inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+%uams-overlap-spotlight-content-bottom {
+    .uams-overlap__column-inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+}
+
+@import './style-left-top';
+@import './style-left-middle';
+@import './style-left-bottom';
+@import './style-right-top';
+@import './style-right-middle';
+@import './style-right-bottom'

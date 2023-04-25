@@ -1,0 +1,187 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+
+.uams-button {
+    display: inline-block; 
+    box-sizing: border-box;
+    position: relative;
+
+    @include uams-button();
+
+    &-menu::before {
+        content: '\F12A';
+    }
+
+    &-more {
+        font-weight: 400;
+        &::before {
+            content: '\F12F';
+        }
+    }
+
+    &-more-horizontal::before {
+        content: '\F130';
+    }
+
+    &-search::before {
+        content: '\F140';
+    }
+
+}
+
+// Buttons in sidebar are full width
+.uams-wrapper-sidebar .uams-button {
+    width: 100%;
+}
+
+.uams-content input[type="reset"],
+.uams-content input[type="submit"],
+.uams-content input[type="button"],
+.uams-content button,
+.uams-button {
+
+    &.uams-button {
+        &--size-small,
+        &--small { 
+            font-size: 0.82rem;
+        }
+        &--size-large, 
+        &--large {
+            font-size: $uams-font-size--xxmedium;
+        }
+        &--style-round,
+        &--style-outline-round,
+        &--round {
+            border-radius: 2em;
+        }
+        &--width-full,
+        &--full-width {
+            display: block;
+            width: 100%;
+        }
+        &--style-outline,
+        &--style-outline-round, 
+        &--secondary {
+            color: $uams-color--gray-60;
+            border: 1px solid $uams-color--gray-30;
+            background-color: #fff;
+        
+            &:focus,
+            &:hover {
+                background-color: #fff;
+                color: $uams-color--crimson-light;
+                border-color: $uams-color--crimson-light;
+            }
+        }
+        
+        &--tertiary {
+            color: $uams-color--gray-60;
+            border: none;
+            background-color: transparent;
+            padding-left: 0;
+            padding-right: 0;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            font-weight: 500;
+            
+        
+            &:focus,
+            &:hover {
+                color: $uams-color--gray-60;
+                border-color: transparent;
+                box-shadow: none;
+                background-color: transparent;
+                text-decoration-thickness: 2px;
+            }
+        }
+    }
+}
+
+
+.uams-button-play {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-size: 0;
+    cursor: pointer;
+    position: relative;
+
+    &::before {
+        content: '';
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        //background-color: #fff;
+        background-color: $uams-color--crimson;
+        border-radius: 50%;
+        border: 2px solid #fff;
+    }
+
+    &::after {
+        content: '\F136';
+        display: block;
+        font-family: 'uams-icons';
+        font-size: 40px;
+        color: #fff;
+        position: relative;
+    }
+
+    &:focus,
+    &:hover {
+        &::before {
+            background-color: $uams-color--gray-90;
+        }
+    }
+}
+
+.uams-button-pause-background {
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    font-size: $uams-font-size--medium;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $uams-color--gray-85;
+    color: #fff;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    border: 2px solid #fff;
+
+    &::before {
+        content: '\F132';
+        font-family: 'uams-icons';
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        color: inherit;
+        font-size: inherit;
+    }
+
+    &--active {
+
+        &::before {
+            content: '\F136';
+        }
+
+    }
+
+    &:focus {
+        outline: 2px solid $uams-color--crimson;
+        box-shadow: 0px 0px 0px 4px #FFFFFF;
+    }
+
+    &:focus,
+    &:hover {
+        background-color: $uams-color--crimson-light;
+    }
+
+}
+
+@import './style-action';
+@import './style-skip';

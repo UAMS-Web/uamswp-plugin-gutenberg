@@ -1,0 +1,73 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-heading {
+    &__anchor-link{
+        color: $uams-color--crimson;
+        font-size: $uams-font-size--xxmedium;
+        text-decoration: underline;
+        text-decoration-color: $uams-color--crimson-light;
+    }
+    &__anchor-link:hover{
+        color: $uams-color--crimson-light;
+        font-size: $uams-font-size--xxmedium;
+        text-decoration: none;
+    }
+
+    &--style {
+
+        &-callout {
+            text-align: center;
+            position: relative;
+            padding-bottom: 0.75em;
+            margin-bottom: $uams-spacing--medium;
+            
+            &::after {
+                content:"";
+                width: 1.5em;
+                height: 0.25em;
+                background-color: $uams-color--crimson;
+                display: block;
+                position: absolute;
+                left: calc( 50% - 0.75em );
+                bottom: 0;
+            }
+
+            &.uams-text-align--left,
+            &.has-text-align-left {
+                &::after {
+                    left: 0;
+                }
+            }
+
+            &.uams-text-align--right,
+            &.has-text-align-right {
+                &::after {
+                    left: auto; 
+                    right: 0;
+                }
+            }
+        }
+    }
+    
+}
+h1.uams-heading--style-callout {
+    margin-bottom: $uams-spacing--large;
+
+    &::after {
+        width: $uams-spacing--hero;
+        height: 0.4rem;
+        left: calc( 50% - ( #{$uams-spacing--hero} / 2 ) );
+    }
+    
+}
+
+h2.uams-heading--style-callout {
+
+    &::after {
+        height: 0.4rem;
+    }
+}
+
+@import './style-marked';
+@import './style-outline';

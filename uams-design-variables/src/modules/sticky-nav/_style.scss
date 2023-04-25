@@ -1,0 +1,36 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-sticky-nav {
+
+    .uams-sticky-box__content {
+        z-index: $uams-zindex--navigation;
+        transition: top $uams-easing 1200ms;
+    }
+
+    .uams-sticky-box {
+
+        &.uams-sticky-box--stuck {
+
+            .uams-sticky-box__content {
+                top: -150px;
+
+                &:hover,
+                &:focus-within {
+                    top: 0;
+                }
+            }
+
+            &.uams-active {
+                .uams-sticky-box__content {
+                    top: 0;
+                }
+            }
+        }
+        
+    }
+
+}
+
+@import './style-default';
+@import './style-crimson';

@@ -1,0 +1,210 @@
+@import "../../../_assets/scss/variables";
+@import "../../../_assets/scss/mixins";
+
+.uams-hero-slider {
+  position: relative;
+  transition: margin-left $uams-transition-speed--medium $uams-easing,
+    margin-right $uams-transition-speed--fast $uams-easing;
+  margin-bottom: -($uams-spacing--hero - $uams-spacing--xxsmall);
+
+  .uams-hero {
+    transition: opacity 300ms ease-in, visibility 300ms ease-out;
+    padding-bottom: 150px; //for swiper nav/pagination height
+    margin-bottom: $uams-spacing--xxlarge * 2;
+  }
+
+  .uams-hero::after {
+    height: $uams-spacing--xxlarge * 2;
+  }
+
+  .uams-hero__content {
+    padding-top: 0;
+    padding-bottom: 0;
+
+    padding-top: $uams-spacing--large;
+    padding-bottom: $uams-spacing--large;
+  }
+
+  .uams-hero__image-caption {
+    position: fixed;
+  }
+
+  &__slider-elements {
+    position: absolute;
+    width: 100%;
+    max-width: 100%;
+    bottom: $uams-spacing--xlarge * 3;
+    left: $uams-spacing--large + $uams-spacing--xlarge;
+  }
+
+  &__navigation {
+    position: relative;
+    bottom: 30px;
+    z-index: 1;
+  }
+
+  &__pagination {
+    position: relative;
+    bottom: 0;
+    text-align: left;
+    max-width: 900px;
+    display: flex;
+    align-items: flex-start;
+    z-index: 1;
+  }
+
+  &__icon {
+    display: inline-block;
+    line-height: 1;
+    color: #fff;
+    text-decoration: none;
+    font-size: $uams-font-size--large !important;
+    cursor: pointer;
+    text-align: left;
+    border: none;
+    background: transparent;
+    padding: 0;
+
+    &::before {
+      font-family: uams-icons !important;
+      font-style: normal;
+      font-weight: normal !important;
+      vertical-align: middle;
+    }
+  }
+
+  .uams-i-arrow-right-carrot,
+  .uams-i-pause {
+    margin-left: $uams-spacing--xmedium;
+  }
+
+  button.swiper-pagination-bullet {
+    color: #fff;
+    font-size: $uams-font-size--small;
+    font-weight: $uams-font-weight--medium;
+    background: transparent;
+    border-radius: 0;
+    flex: 0 0 20%;
+    opacity: 1;
+    padding-right: 15px;
+    cursor: pointer;
+    text-align: left;
+    height: auto;
+
+    &::before {
+      content: "";
+      display: block;
+      margin: 0 0 18px;
+      border-top: solid 2px rgba(255, 255, 255, 0.3);
+      width: 100%;
+    }
+  }
+
+  button.swiper-button-disabled,
+  .uams-i-pause {
+    opacity: 0.5;
+  }
+
+  .uams-i-pause.paused {
+    opacity: 1;
+  }
+
+  button.swiper-pagination-bullet-active {
+    &::before {
+      border-top: solid 2px #fff;
+    }
+  }
+
+  .uams-button-video-pause,
+  .uams-button-pause-background {
+    z-index: 1;
+  }
+}
+
+.uams-wrapper-content {
+  .uams-hero-slider {
+    &:first-child {
+      margin-top: -5.125rem;
+    }
+  
+    .swiper-wrapper {
+      position: relative;
+    }
+  
+    .swiper-slide {
+      opacity: 0;
+      height: auto;
+      visibility: hidden;
+  
+      &.swiper-slide-active {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  
+    .test {
+      @extend .swiper-slide;
+  
+      opacity: 0;
+      height: auto;
+      visibility: hidden;
+  
+      &-active {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $uams-breakpoint--desktop) {
+  .uams-hero-slider {
+    &__slider-elements {
+      left: calc(#{$uams-spacing--xmedium} + #{$uams-spacing--xlarge});
+    }
+
+    &__pagination {
+      max-width: 70%;
+      padding-left: 6px;
+    }
+  }
+}
+
+@media screen and (max-width: $uams-breakpoint--tablet-large) {
+  .uams-hero-slider {
+    &__slider-elements {
+      bottom: calc(#{$uams-spacing--xlarge} * 3);
+    }
+
+    button.swiper-pagination-bullet {
+      font-size: 0;
+      flex: 0 0 30px;
+
+      &::before {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: transparent;
+        outline: 2px solid #fff;
+        border: none;
+      }
+    }
+
+    button.swiper-pagination-bullet-active {
+      font-size: 0;
+      flex: 0 0 30px;
+
+      &::before {
+        background-color: $uams-color--crimson;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $uams-breakpoint--tablet) {
+  .uams-hero-slider {
+    &__slider-elements {
+      left: calc(#{$uams-spacing--medium} + #{$uams-spacing--xxmedium});
+    }
+  }
+}

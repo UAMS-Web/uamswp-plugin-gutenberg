@@ -1,0 +1,48 @@
+
+@import './navigation_states';
+@import '../../../../_assets/scss/variables';
+@import '../../../../_assets/scss/mixins';
+@import './mixins';
+
+
+@media screen and (max-width: $uams-breakpoint--desktop) and (min-width: $uams-breakpoint--tablet-large) {
+
+    .uams-navigation-site {
+
+        @include uams-site-navigation-table();
+
+        .uams-navigation-site__panel {
+
+            @include uams-site-navigation-panel();
+
+        }
+
+        &:not(.uams-navigation-site--openned) {
+        
+            @include uams-navigation-site--closed;
+     
+         }
+     
+         & ~ .uams-wrapper-site {
+             margin-left: $uams-width--navigation-closed !important;
+             transition-property: left;
+             left: 0;
+         }
+     
+         &.uams-navigation-site--openned {  
+             
+            & ~ .uams-wrapper-site {
+                position: relative;
+                left: calc( #{$uams-width--navigation-open} - #{ $uams-width--navigation-closed } );
+            }
+
+            .uams-navigation-site__overlay {
+                opacity: 1;
+                visibility: visible;
+            }
+         }
+
+    }
+    
+}
+

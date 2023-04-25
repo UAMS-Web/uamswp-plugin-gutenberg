@@ -1,0 +1,23 @@
+{% extends "component.njk" %}
+{% from "navigation-audience/_macro.njk" import navigationAudience %}
+
+{% block styles %}
+<style>
+ body {
+    background: #eee;
+ }
+ .wsu-navigation-audience {
+    background: #fff;
+ }
+</style>
+{%  endblock %} 
+
+{% block content %}
+
+{{ navigationAudience() }}
+
+<hr />
+
+{{ navigationAudience( style='vertical') }}
+
+{%  endblock %}   

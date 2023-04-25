@@ -1,0 +1,38 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+@media screen and (min-width: $uams-breakpoint--tablet )  {
+    .uams-card--style-horizontal-50 {
+        display: flex;
+        margin-bottom: $uams-spacing--xxmedium !important;
+        
+        .uams-card {
+
+            &__content {
+                padding-left: $uams-spacing--xxmedium;
+                padding-right: $uams-spacing--xxmedium;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                p, li,
+                .uams-caption {
+                    font-size: $uams-font-size--xmedium;
+                }
+            }
+        }
+        .uams-image-frame {
+            width: 50%;
+            flex-shrink: 0;
+            min-height: $uams-height--small;
+        }
+        .uams-title {
+            font-size: $uams-font-size--xlarge;
+        }
+
+    }
+    .uams-card-group--per-row-2 .uams-card--style-horizontal-50 .uams-image-frame, .uams-card-wrapper--per-row-2 .uams-card--style-horizontal-50 .uams-image-frame {
+        min-height: 0;
+    }
+}
+    

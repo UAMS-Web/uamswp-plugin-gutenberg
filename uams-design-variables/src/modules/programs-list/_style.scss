@@ -1,0 +1,186 @@
+@import "../../../_assets/scss/variables";
+@import "../../../_assets/scss/mixins";
+
+.uams-programs-list {
+  $this: &;
+
+  z-index: 1;
+  position: relative;
+
+  /*=============================================
+    =            Filter Controls            =
+    =============================================*/
+  &__controls {
+    display: flex;
+    flex-flow: row wrap;
+    background-color: $uams-color--crimson;
+    padding: $uams-spacing--medium $uams-spacing--xxmedium;
+    margin: 0 (-$uams-spacing--xxmedium) $uams-spacing--xxmedium
+      (-$uams-spacing--xxmedium);
+    // flex-direction: column;
+    // gap: $uams-spacing--small;
+    // padding-bottom: $uams-spacing--xxmedium;
+    // border-bottom: 5px solid $uams-color--gray-10;
+    align-items: center;
+    column-gap: $uams-spacing--xxmedium;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__control--select {
+    position: relative;
+  }
+
+  &__control--search {
+    flex-grow: 1;
+
+    // margin-right: $uams-spacing--medium;
+    // margin-bottom: $uams-spacing--sxxsmall;
+  }
+
+  &__search-input {
+    width: 100%;
+
+    &[type="text"] {
+      font-size: 0.85rem;
+      color: map-get($uams-color-map, "white");
+      border: none;
+      background-color: rgba($uams-color--crimson-dark, 0.45);
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    @include placeholder {
+      color: rgba(map-get($uams-color-map, "white"), 0.8);
+    }
+  }
+
+  &__control-group {
+    display: flex;
+    flex-flow: row wrap;
+    column-gap: $uams-spacing--xxmedium;
+    padding-left: 4px;
+  }
+
+  &__control-button {
+    padding: 0;
+
+    @at-root .uams-button#{&} {
+      color: #fff;
+
+      &:hover,
+      &:focus {
+        color: #fff;
+      }
+    }
+
+    &[aria-expanded="false"] + #{$this}__filter-options {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-$uams-spacing--medium);
+    }
+  }
+
+  &__button-text {
+  }
+
+  &__button-icon {
+    margin-right: 0;
+    margin-left: $uams-spacing--sxxsmall;
+  }
+
+  &__filter-options {
+    background: map-get($uams-color-map, "white");
+    box-shadow: $uams-dropshadow--low;
+    padding: $uams-spacing--small $uams-spacing--medium;
+    position: absolute;
+    margin-top: $uams-spacing--small;
+    border-radius: 4px;
+    width: max-content;
+    right: -$uams-spacing--xxmedium;
+    transition-property: opacity, visibility, transform;
+    transition-timing-function: $uams-easing;
+    transition-duration: $uams-transition-speed--fast;
+  }
+
+  &__filter-option {
+    &:not(:last-child) {
+      margin-bottom: $uams-spacing--sxxsmall;
+    }
+  }
+
+  /*=====  End of Filter Controls  ======*/
+
+  /*=============================================
+    =            Program List            =
+    =============================================*/
+  &__list-group {
+    & + & {
+      margin-top: $uams-spacing--xxmedium;
+      //   padding-top: 0.75rem;
+      //   border-top: 3px solid $uams-color--gray-10;
+    }
+  }
+
+  &__list-heading {
+    font-size: $uams-font-size--xxmedium;
+    font-weight: $uams-font-weight--semibold;
+    padding-top: 0;
+    margin-top: 0;
+    margin-bottom: $uams-spacing--xxsmall;
+  }
+
+  &__list,
+  &__list-item {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__list {
+    font-size: $uams-font-size--medium;
+    margin-bottom: 0.75rem;
+  }
+
+  &__list-item {
+    // margin-bottom: $uams-spacing--small;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-flow: row wrap;
+    column-gap: $uams-spacing--xxsmall;
+    row-gap: 0.25rem;
+    align-items: center;
+    // margin-bottom: .25rem;
+  }
+
+  &__program-link {
+  }
+
+  &__degree-types {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 0.25em;
+    // margin-top: 0.25rem;
+  }
+
+  &__degree-type {
+    font-size: $uams-font-size--small;
+    background: $uams-color--gray-5;
+    padding: 0.1em 0.75em;
+    border-radius: 1em;
+    font-weight: $uams-font-weight--medium;
+    // margin: 2px 0 2px 0;
+    // display: inline-block;
+  }
+  /*=====  End of Links  ======*/
+
+  @media screen and (min-width: $uams-breakpoint--tablet) {
+    &__controls {
+      //   display: flex;
+      //   flex-direction: row;
+      //   gap: $uams-spacing--medium;
+    }
+  }
+}

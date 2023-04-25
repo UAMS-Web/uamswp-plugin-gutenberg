@@ -1,0 +1,49 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-stat--style-caption {
+    flex-direction: column;
+    display: flex;
+
+    .uams-stat {
+
+        &__value-wrapper {
+            display: block;
+            order: 10;
+            margin-top: 0.6rem;
+
+            &::after {
+                content: '';
+                display: block;
+                width: 133px;
+                max-width: 100%;
+                margin-right: auto;
+                background-color: $uams-color--gray-30;
+                height: 8px;
+                margin-top: 0.6rem;
+            }
+        }
+
+        &__value,
+        &__unit {
+            @extend %uams-stat--crimson; 
+            display: inline-block;
+            font-size: $uams-font-size--xxlarge;
+            line-height: 1.1;
+        }
+
+        &__citation,
+        &__caption {
+            font-size: $uams-font-size--medium;
+            display: block;
+            color: $uams-color--gray-60
+        }
+
+        &__caption {
+            font-weight: 700;
+            
+        }
+
+    }
+
+}

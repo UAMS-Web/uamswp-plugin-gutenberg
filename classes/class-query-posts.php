@@ -79,7 +79,7 @@ class Query_Posts {
 
 		$response = wp_remote_get( $request_url );
 
-		if( is_wp_error( $request ) ) {
+		if( is_wp_error( $response ) ) { // Fix for wrong var name
 
 			return $posts;
 
@@ -115,7 +115,7 @@ class Query_Posts {
 				$image_id             = get_post_thumbnail_id();
 				$image_src_array      = wp_get_attachment_image_src( $image_id, $this->image_size );
 				$post['imageId']      = $media['id'];
-				$post['imageSrc']     = $image_src_array[0];
+				$post['imageSrc']     = isSet($image_src_array[0]) ?: ''; // Fix for lack of img src set
 				$post['imageAlt']     = $media['alt_text'];
 				$post['imageCaption'] = $media['caption']['rendered'];
 

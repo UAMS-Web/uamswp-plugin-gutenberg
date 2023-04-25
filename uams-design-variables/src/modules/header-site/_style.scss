@@ -1,0 +1,168 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-header-site {
+
+    min-height: 110px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    flex-wrap: wrap;
+
+    &__label {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: $uams-spacing--small $uams-spacing--xmedium;
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            font-size: inherit;
+            font-weight: inherit;
+        }
+    }
+
+    &__subtitle {
+
+        font-style: italic;
+        font-weight: 400;
+        font-size: $uams-font-size--xsmall;
+        color: $uams-color--gray-60;
+        line-height: 1;
+        margin-bottom: 0.1rem;
+        padding-top: 0.7rem;
+
+        
+
+    }
+
+    &__title {
+
+        font-size: $uams-font-size--xlarge;
+        color: $uams-color--gray-70;
+        font-weight: 700;
+        line-height: 1.3;
+
+    }
+
+    
+}
+
+.uams-navigation-horizontal {
+    display: flex;
+    margin: 0 $uams-spacing--medium;
+    max-width: 1200px;
+    box-sizing: border-box;
+
+    /*&-menu {
+        display: flex;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        & > li {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+
+            & > button {
+                background-color: transparent;
+                border: none;
+
+                &::after {
+                    content: "\F103";
+                    font-family: uams-icons;
+                    margin-left: 0.75em;
+                    color: $uams-color--gray-85;
+                    font-size: 12px;
+                    //background-color: $uams-color--gray-15;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                }
+
+            }
+
+            & > button,
+            & > a {
+                @include uams-font--medium();
+                display: flex;
+                flex-grow: 1;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                color: inherit;
+                padding: $uams-spacing--small $uams-spacing--medium $uams-spacing--small;
+                font-weight: 500;
+                position: relative;
+                cursor: pointer;
+                
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                width: auto;
+                bottom: 0;
+            }
+
+            &:hover,
+            &:focus,
+            &:focus-within {
+
+                background-color: $uams-color--gray-0;
+
+                &::after {
+                    background-color: $uams-color--gray-65;
+                    height: 5px;
+                }
+
+            }
+
+            &:first-child > a::before {
+                content: '\F122';
+                font-family: uams-icons;
+                margin-right: 0.4em;
+                font-size: 0.9em;
+                display: inline-block;
+                vertical-align: middle;
+                transform: translateY(-2px);
+            }
+
+            &.uams-menu-item--parent::after,
+            &.uams-menu-item--current::after {
+                background-color: $uams-color--crimson-light;
+                height: 5px;
+            } 
+        }
+    }*/
+}
+
+@media screen and (max-width: $uams-breakpoint--phone ) {
+
+    .uams-header-site__title {
+
+        font-size: $uams-font-size--xxmedium; 
+
+    }
+    
+}
+
+@import 'header-site--dark';
+@import 'header-site--nested';
+
+
+/* ------------------- Print Styles ----------------- */
+
+@media print { 
+    .uams-header-site {
+        display: none !important;
+    }
+}

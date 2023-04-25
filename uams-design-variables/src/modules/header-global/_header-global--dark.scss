@@ -1,0 +1,56 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-header-global--dark {
+    background-color: $uams-color--gray-80 !important;
+    color: #fff;
+
+    .uams-wordmark {
+
+        &__title-mobile,
+        &__title {
+            color: $uams-color--gray-10 !important;
+        }
+
+    }
+
+    .uams-button-ui-more-horizontal,
+    .uams-button-ui-more,
+    .uams-button-ui-search,
+    .uams-button-ui-menu,
+    .uams-menu-tertiary > li > a {
+        color: $uams-color--gray-10;
+    }
+
+    .uams-menu-utility-horizontal > li:last-child::before {
+        background-color: $uams-color--gray-60;
+    }
+
+    .uams-header-global__menu-items a {
+        color: inherit;
+    }
+
+    .uams-wordmark {
+
+    }
+
+    
+
+    @media screen and (max-width: $uams-breakpoint--tablet ) {
+
+        .uams-menu-admin a {
+            color: $uams-color--text;
+        }
+    
+    }
+
+    @media screen and (max-width: $uams-breakpoint--phone ) {
+
+        .uams-header-global__menu-items a {
+            color: $uams-color--text;
+        }
+    
+    }
+
+}
+

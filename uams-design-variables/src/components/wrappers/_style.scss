@@ -1,0 +1,145 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-wrapper-global {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.uams-wrapper-site {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    transition: transform $uams-transition-speed--medium $uams-easing, margin-left $uams-transition-speed--medium $uams-easing;
+    overflow: hidden;
+}
+
+.uams-wrapper-content {
+    position: relative;
+    flex: 1 1;
+    margin: 0 auto;
+    padding: $uams-spacing--xxlarge $uams-spacing--xlarge $uams-spacing--xlarge;
+    box-sizing: border-box;
+    max-width: $uams-width--content;
+    width: 100%;
+
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: calc( (100vw - 100%) / -2);
+        right: calc( (100vw - 100%) / -2);
+        top: 0;
+        width: auto;
+        height: 3px;
+        background-color: $uams-color--gray-10;
+    }
+}
+
+.uams-wrapper-content--layout-sidebar-right {
+    width: 100%;
+    display: flex;
+}
+
+.uams-wrapper-content--layout-sidebar-right {
+    .uams-wrapper-main {
+        width: 60%;
+    }
+}
+
+.uams-wrapper-main {
+    flex-grow: 1;
+    flex-shrink: 10;
+}
+
+.uams-wrapper-sidebar {
+    width: 30%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding-left: $uams-spacing--column;
+    padding-right: $uams-spacing--column;
+    margin-left: $uams-spacing--column;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: $uams-breakpoint--tablet-large) {
+
+    .uams-wrapper-content {
+        display: block;
+    }
+
+    .uams-wrapper-sidebar {
+        width: 100%;
+        margin-left: 0;
+        padding-left: 0;
+        padding-right: 0;
+        margin-top: $uams-spacing--large;
+    }
+
+    .uams-wrapper-content--layout-sidebar-right {
+        .uams-wrapper-main {
+            width: auto;
+        }
+    }
+}
+
+.uams-wrapper-content .uams-hero:first-child {
+    margin-top: -$uams-spacing--xxlarge;
+}
+
+@media screen and (min-width: $uams-breakpoint--desktop) {
+    .uams-navigation-site-vertical ~ .uams-wrapper-site .uams-wrapper-content:not(.uams-wrapper-content--fluid) {
+        max-width: calc( 100vw - #{$uams-width--navigation-open} - 30px );
+    }
+}
+
+@media screen and (min-width: calc( #{$uams-width--content} + #{$uams-width--navigation-open} - 30px )) {
+    .uams-navigation-site-vertical ~ .uams-wrapper-site .uams-wrapper-content:not(.uams-wrapper-content--wide):not(.uams-wrapper-content--xwide):not(.uams-wrapper-content--full):not(.uams-wrapper-content--fluid) {
+        max-width: $uams-width--content;
+    }
+}
+
+@media screen and (min-width: calc( #{$uams-width--content-wide} + #{$uams-width--navigation-open} - 20px )) {
+    .uams-navigation-site-vertical ~ .uams-wrapper-site .uams-wrapper-content.uams-wrapper-content--wide {
+        max-width: $uams-width--content-wide;
+    }
+}
+
+@media screen and (min-width: calc( #{$uams-width--content-xwide} + #{$uams-width--navigation-open} - 20px )) {
+    .uams-navigation-site-vertical ~ .uams-wrapper-site .uams-wrapper-content.uams-wrapper-content--xwide {
+        max-width: $uams-width--content-xwide;
+    } 
+} 
+
+@media screen and (min-width: $uams-breakpoint--tablet-large) {
+
+    .uams-wrapper-content--has-sidebar {
+        display: flex;
+        flex-grow: 1;
+    }
+    
+    .uams-wrapper-content--has-sidebar .uams-page-content {
+        flex-grow: 1;
+        margin-right: 2rem;
+    }
+    
+    .uams-page-sidebar {
+        width: 25%;
+        margin-left: 2rem;
+        flex-shrink: 0;
+    }
+
+}
+
+@media screen and (max-width: $uams-breakpoint--phone) {
+
+    .uams-wrapper-content {
+        padding: $uams-spacing--xxlarge $uams-spacing--xxmedium $uams-spacing--xlarge;
+    }
+}
+
+

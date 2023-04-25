@@ -147,7 +147,7 @@ const Edit = ( props ) => {
 						label="Pattern"
 						value={ attributes.pattern }
 						options={ [
-							{ label: 'WSU', value: 'uams-light-radial-left' },
+							{ label: 'UAMS', value: 'uams-light-radial-left' },
 							{ label: 'None', value: 'none' },
 						] }
 						onChange={ ( pattern ) => { setAttributes( { pattern } ) } }

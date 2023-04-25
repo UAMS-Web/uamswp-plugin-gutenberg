@@ -1,0 +1,88 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+%uams-navigation-audience {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+%uams-navigation-audience__menu {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+}
+
+%uams-navigation-audience__label {
+    font-weight: 700;
+    font-size: $uams-font-size--small;
+}
+
+%uams-navigation-audience__list-item {
+    display: block;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+%uams-navigation-audience__link {
+    color: inherit;
+    font-size: $uams-font-size--small;
+    font-weight: 500;
+    text-decoration: none;
+    display: block;
+}
+
+%uams-navigation-audience__li-after {
+    content:'';
+    position: absolute;
+    top: calc( ( 100% - #{$uams-font-size--small} ) / 2 );
+    bottom: calc( ( 100% - #{$uams-font-size--small} ) / 2 );
+    right: 0;
+    width: 1px;
+    height: auto;
+    background-color: $uams-color--gray-20;
+}
+
+
+.uams-navigation-audience:not([class*="-audience--style-"]) {
+    @extend %uams-navigation-audience;
+    min-height: $uams-spacing--large;
+    background-color: $uams-color--gray-5;
+    padding: 0 $uams-spacing--xmedium;
+
+    .uams-navigation-audience {   
+
+        &__label {
+            @extend %uams-navigation-audience__label;
+        }
+
+        &__menu {
+            @extend %uams-navigation-audience__menu;
+
+            li {
+                @extend %uams-navigation-audience__list-item;
+                padding: 0 $uams-spacing--xxsmall;
+
+                &::after:not(:last-child) {
+                    @extend %uams-navigation-audience__li-after;
+                }
+
+                a {
+                    @extend %uams-navigation-audience__link;
+                }
+            }
+        }
+
+        
+    }
+
+    @media screen and (max-width: $uams-breakpoint--tablet-large ){
+        display: none;
+        
+    }
+
+}
+
+@import './style-vertical';

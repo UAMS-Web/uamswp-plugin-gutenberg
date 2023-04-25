@@ -1,0 +1,19 @@
+{% macro button( classes='', title='Lorem ipsum', tag='button', style='', ariaLabel='', data='' ) %}
+<{{ tag }} class="wsu-button {{ classes }}{% if style %} wsu-button--style-{{ style }}{% endif %}"{% if ariaLabel %} aria-label="{{ ariaLabel }}{% endif %}{% if data %} {{ data }}{% endif %}">
+    {{ title }}
+</{{ tag }}>
+{% endmacro %}
+
+{% macro buttonPlay( classes='', title='Play Video' ) %}
+<button class="wsu-button-play{{ classes }}">
+    {{ title }}
+</button>
+{% endmacro %}
+
+{% macro buttonPauseBackground( classes='', title='Pause Background' ) %}
+<button class="wsu-button-pause-background{{ classes }}" aria-label="Pause Animation"></button>
+{% endmacro %} 
+
+
+
+

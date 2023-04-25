@@ -1,0 +1,114 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+@import '../../components/menu/mixins';
+
+/*$uams-mobile-menu-width: $uams-breakpoint--phone;
+
+%uams-mobile-button--clean {
+    color: inherit;
+    border-radius: 0;
+    cursor: pointer;
+    border: none;
+}
+
+
+.uams-mobile-menu {
+    
+
+    &__toggle-button {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        height: auto;
+        right: 0;
+        width: 80px;
+        font-size: 0;
+        background-color: #fff;
+        @extend %uams-mobile-button--clean;
+        z-index: calc( #{$uams-zindex--navigation} + 2 );
+        border-top: 4px solid $uams-color--crimson;
+
+        &::before {
+            content: '\F12A';
+            font-family: 'uams-icons';
+            font-size: $uams-font-size--xmedium;
+            font-weight: 500; 
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            background-color: $uams-color--crimson;
+            bottom: 0;
+            height: 0;
+            left: 0;
+            width: 100%;
+            transition: height 200ms $uams-easing;
+        }
+
+        &:hover,
+        &:focus {
+            &::after {
+                height: 4px;
+            }
+        }
+
+        &:focus {
+            outline: 2px solid $uams-color--crimson;
+        }
+    }
+
+    &__overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100vh;
+        opacity: 0;
+        @extend %uams-mobile-button--clean;
+        background-color: rgb(0,0,0);
+        z-index: calc( #{$uams-zindex--navigation} - 1 );
+        
+    }
+
+    &__panel {
+        top: 100%;
+        position: absolute;
+        width: 0;
+        max-width: 100%;
+        right: 0;
+        background-color: #fff;
+        z-index: calc( #{$uams-zindex--navigation} + 3 );
+        overflow: hidden;
+        margin-bottom: $uams-spacing--xmedium;
+        transition: width 300ms $uams-easing;
+        padding-top: $uams-spacing--xxmedium; 
+    }
+
+    &__panel-inner {
+        width: $uams-mobile-menu-width;
+    }
+
+
+    &[aria-expanded="true"] {
+
+        .uams-mobile-menu {
+    
+            &__panel {
+                width: $uams-mobile-menu-width;
+            }
+    
+            &__overlay {
+                opacity: 0.6;
+                width: 100vw;
+            }
+        }
+    
+        
+    }
+
+    .uams-button-ui-close {
+        padding: $uams-spacing--xmedium;
+    }
+
+}*/

@@ -1,0 +1,33 @@
+{% from "menu-utility/macro.njk" import menuUtility %}
+{% from "meta-address/_macro.njk" import metaAddress %}
+{% from "caption/macros/caption.macro.njk" import caption %}
+{% from "social-icons/macros/social-icons.macro.njk" import socialIcons %}
+{% from "coug-head/_macro.njk" import cougHead %}
+{% from "experimental_menu-deep-links/_macro.njk" import menuDeepLinks %}
+
+{% macro footerSite( classes='', showTitle=true, showContent=true, showMenu=true, showOffsite=true ) %}
+<footer class="wsu-footer-site{{classes}}" id="wsu-footer-site">
+    <div class="wsu-footer-site__content">
+    {% if showOffsite %}
+        <h2 class="wsu-footer-site__offsite-title">More Resources</h2>
+        <ul class="wsu-footer-site__offsite-menu" aria-lable="Offsite menu">
+            <li><a href="" class="wsu-link--external">news.wsu.edu</a></li>
+            <li><a href="" class="wsu-link--external">news.wsu.edu</a></li>
+            <li><a href="" class="wsu-link--external">news.wsu.edu</a></li>
+            <li><a href="" class="wsu-link--external">news.wsu.edu</a></li>
+            <li><a href="" class="wsu-link--external">news.wsu.edu</a></li>
+        </ul>
+    {% endif %}
+    {% if showTitle %}<h2 class="wsu-footer-site__title">Lorem ipsum dolor</h2>{% endif %}
+    {% if showContent %}{{ caption() }}{% endif %}
+    {% if showMenu %}
+    <nav class="wsu-footer-site__navigation" aria-label="Site footer menu">
+    {{ menuDeepLinks() }}
+    </nav>
+    {% endif %} 
+    {{ metaAddress() }}
+    {{ socialIcons( ' wsu-social-icons--small' ) }}
+    {{ cougHead(' wsu-coug-head--white') }}
+    </div>
+</footer>
+{% endmacro %}

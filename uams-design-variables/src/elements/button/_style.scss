@@ -1,0 +1,20 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+input[type="reset"],
+input[type="submit"],
+input[type="button"],
+button {
+    position: relative;
+}
+
+.uams-content {
+    input[type="reset"],
+    input[type="submit"],
+    input[type="button"],
+    button {
+        @include uams-button();
+    }
+}
+  
+

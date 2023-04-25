@@ -1,0 +1,87 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-wordmark {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-family: $uams-font-family;
+	color: inherit;
+	outline: none;
+	position: relative;
+	flex-grow: 0;
+
+	&__title-mobile,
+	&__title {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+    
+        @include uams-font--xsmall;
+        font-weight: 500;
+    
+        padding: 0 $uams-spacing--xxsmall;
+		margin: 0 $uams-spacing--xxsmall;
+
+		&::after {
+			content: "";
+			display: inline-block;
+			width: 0px;
+			height: 12px;
+			visibility: hidden;
+			margin-left: $uams-spacing--sxxsmall;
+			background-color: $uams-color--crimson-light;
+			transition: width $uams-transition-speed--fast $uams-easing;
+		}
+
+		&:visited {
+			color: inherit;
+		}
+	}
+
+	&__title-mobile {
+		display: none;
+	}
+
+	&:hover,
+	&:focus,
+	&:focus-within {
+
+		.uams-wordmark__title-mobile,
+		.uams-wordmark__title {
+
+			color: $uams-color--crimson;
+
+			&::after {
+				visibility: visible;
+				width: 5px; 
+			} 
+			
+		} 
+
+		.uams-coug-head-boxed__icon {
+			width: 42px;
+			height: 42px;
+		}
+	}
+
+	&:focus,
+	&:focus-within {
+		@include uams-focus--link();
+	}
+
+	@media screen and (max-width: $uams-breakpoint--tablet ) {
+		&__title {
+			display: none;
+		}
+
+		&__title-mobile {
+			display: block;
+			@include uams-font--medium;
+		}
+	}
+
+}

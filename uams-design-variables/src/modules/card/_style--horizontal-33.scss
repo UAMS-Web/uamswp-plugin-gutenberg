@@ -1,0 +1,34 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+@media screen and (min-width: $uams-breakpoint--tablet )  {
+    .uams-card--style-horizontal-33 {
+        display: flex;
+        margin-bottom: 2.25rem !important;
+        
+        .uams-card{
+
+            &__content {
+                padding-left: $uams-spacing--xxmedium;
+                padding-right: $uams-spacing--xxmedium;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                p, li,
+                .uams-caption {
+                    font-size: $uams-font-size--medium;
+                }
+            }
+        }
+        .uams-image-frame{
+            width: 33.3%;
+            flex-shrink: 0;
+            min-height: $uams-height--xxsmall;
+        }
+
+        .uams-title {
+            font-size: $uams-font-size--xlarge;
+        }
+    }
+}

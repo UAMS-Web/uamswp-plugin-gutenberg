@@ -1,0 +1,20 @@
+{% from "menu-collapse/_macro.njk" import menuCollapse %}
+{% from "slide-in-panel/_macro.njk" import slideInPanel %}
+{% from "navigation-audience/_macro.njk" import navigationAudience %}
+
+{% macro navigationMobile(classes ='', style='', quickLinks=false, startOpen='false' ) %}
+{% call slideInPanel( tag='nav', classes='wsu-navigation-mobile', style='crimson-mark', startOpen=startOpen, panelID='wsu-navigation-mobile' ) -%}
+    <div class="wsu-navigation-mobile__close">
+        <button class="wsu-button wsu-button--style-action wsu-slide-in-panel--close">Close Menu</button>
+    </div>
+    <div class="wsu-navigation-mobile__search">
+        <button data-panel="wsu-quicklinks-panel" class="wsu-navigation-mobile__search-button wsu-slide-in-panel--close-this wsu-slide-in-panel--open">Search/Quicklinks</button>
+    </div>
+    <div class="wsu-navigation-mobile__menu">
+        {{ menuCollapse( style='mobile') }}
+    </div>
+    <div class="wsu-navigation-mobile__audience">
+        {{ navigationAudience( style='vertical') }}
+    </div>
+{%- endcall %}
+{% endmacro %} 

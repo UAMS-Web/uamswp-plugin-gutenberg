@@ -1,0 +1,45 @@
+.uams-logo-lockup--style-unit {
+
+    svg {
+        height: 5.375em;
+        width: 5.375em;
+        margin: 0.75em 1em 1.5em 1.5em;
+    }
+
+    .uams-logo-lockup{
+
+        &__title-wrapper {
+            padding: 0.2em 0 0.2em 1.25em;
+
+            &::before {
+                content: '';
+                height: auto;
+                width: 1px;
+                top: calc( ( 100% - 4.5em ) / 2 );
+                bottom: calc( ( 100% - 4.5em ) / 2 );
+                left: 0;
+                background-color: $uams-color--gray-30;
+                position: absolute; 
+            }
+        }
+
+        &__subtitle {
+            display: block;
+            font-weight: 400;
+            font-size: $uams-font-size--small;
+        }
+
+        &__title {
+            display: block;
+            font-size: 2.4em;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+    }
+
+}
+
+a.uams-logo-lockup {
+    text-decoration: none;
+}

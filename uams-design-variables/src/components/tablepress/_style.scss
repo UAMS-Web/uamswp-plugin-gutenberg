@@ -1,0 +1,18 @@
+table.tablepress {
+    border-top: 4px solid $uams-color--crimson;
+
+    th,
+    thead th {
+        background-color: transparent;
+
+    }
+
+    td {
+        border-top: 1px solid $uams-color--gray-20;
+    }
+
+    .odd td {
+        background-color: transparent;
+    }
+    
+}

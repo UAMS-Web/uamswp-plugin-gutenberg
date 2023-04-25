@@ -1,0 +1,182 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-hero--style-caption {
+    color: #fff;
+
+    .uams-hero {
+
+        &__content {
+            padding-top: $uams-spacing--xhero;
+            padding-bottom: $uams-spacing--xhero;
+            padding-left: $uams-spacing--xlarge;
+            padding-right: $uams-spacing--xlarge;
+            position: relative;
+            display: flex;
+            min-height: 650px;
+            box-sizing: border-box;
+
+            &::after {
+                display: block;
+                content: '';
+                position: absolute;
+                height: $uams-spacing--xlarge;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: linear-gradient(0deg,#fff 0,rgba(255,255,255,.8) 100%);
+                
+            }
+        }
+
+        &__caption {
+            align-self: center;
+            padding-top: $uams-spacing--hero;
+            padding-bottom: $uams-spacing--xmedium;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        &__image-caption {
+            position: absolute;
+            bottom: $uams-spacing--sxxsmall;
+            right: 0;
+            @include uams-font--xxsmall();
+            color: #fff;
+            background-color: $uams-color--gray-85;
+            padding: $uams-spacing--sxxsmall $uams-spacing--xxsmall;
+            border-radius: 2px 0 0 2px;
+
+            a {
+                color: #fff;
+                text-decoration-color: $uams-color--crimson-light;
+            }
+
+            &::before {
+                content: "\F134";
+                font-family: 'uams-icons';
+                display: inline-block;
+                font-size: $uams-font-size--xsmall;
+                vertical-align: middle;
+                margin-right: 0.5rem;
+            }
+        }
+         
+    }
+
+    &
+
+    .uams-title {
+        @include uams-font--hero();
+        margin: 0 0 $uams-spacing--xsmall;
+        text-shadow: 0px 0px 8px #000000;
+        font-weight: 800;
+        position: relative;
+        word-break: break-word;
+        z-index: 1;
+        max-width: 900px;
+    }
+
+    .uams-caption {
+        @include uams-hero-caption-size-large();
+        position: relative;
+        margin-left: -$uams-spacing--large;
+        margin-top: -3.8rem;
+        padding: $uams-spacing--large $uams-spacing--xlarge $uams-spacing--xxmedium $uams-spacing--large;
+        position: relative;
+        display: table;
+        background: -moz-linear-gradient(left,  rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.4) 100%);
+        background: -webkit-linear-gradient(left,  rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.4) 100%);
+        background: linear-gradient(to right,  rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.4) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', endColorstr='#66000000',GradientType=1 );
+        border-left: 12px solid $uams-color--gray-50;
+        box-sizing: border-box;
+        box-shadow: -4px 1px 14px 0px rgba(0,0,0,0.38);
+        -webkit-box-shadow: -4px 1px 14px 0px rgba(0,0,0,0.38);
+        -moz-box-shadow: -4px 1px 14px 0px rgba(0,0,0,0.38);
+        max-width: 900px;
+    }
+
+    .uams-background-slider {
+        bottom: -$uams-spacing--xlarge;
+        height: auto;
+        width: auto;
+    }
+
+    .uams-background-slider ~ .uams-hero__content,
+    .uams-background-slider ~ .uams-overlay {
+        z-index: 4;
+    }
+    .uams-background-slider ~ .uams-hero__content {
+
+        &::after {
+            z-index: 4;
+        }
+    }
+
+    .uams-image-frame {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        left: 0;
+        top: 0;
+        bottom: -$uams-spacing--xlarge;
+    }
+
+    .uams-pattern-after::after {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: auto;
+        height: auto;
+    }
+
+    &.uams-hero--caption-size-small {
+        .uams-caption {
+            @include uams-hero-caption-size-small();
+        }
+    }
+
+    @media screen and (max-width: $uams-breakpoint--tablet-large ) {
+
+        .uams-title {
+            @include uams-font--xxlarge(); 
+        }
+
+        .uams-caption {
+            @include uams-font--large();
+            margin-top: -2.8rem;
+            padding-top: $uams-spacing--xxmedium;
+            padding-bottom: $uams-spacing--xmedium;
+        }
+        
+    }
+
+    @media screen and (max-width: $uams-breakpoint--phone ) {
+
+        .uams-title {
+            @include uams-font--xlarge(); 
+        }
+
+        .uams-caption {
+            @include uams-font--medium();
+            margin-top: -2.2rem;
+            padding-top: $uams-spacing--xmedium;
+            padding-bottom: $uams-spacing--medium;
+            margin-left: -$uams-spacing--medium;
+            padding: $uams-spacing--xmedium $uams-spacing--xmedium $uams-spacing--medium $uams-spacing--medium;
+        }
+
+        .uams-hero__content {
+            padding-top: $uams-spacing--large;
+            padding-bottom: $uams-spacing--large;
+            padding-left: $uams-spacing--xxmedium;
+            padding-right: $uams-spacing--xxmedium;
+        }
+        
+    }
+
+}

@@ -1,0 +1,16 @@
+.uams-row {
+    display: flex;
+    box-sizing: border-box;
+    position: relative;
+    flex-wrap: wrap;
+
+    &[class*="uams-color-background"] {
+        padding-top: $uams-spacing--xmedium;
+        margin-bottom: $uams-spacing--xmedium;
+    }
+}
+
+.uams-wrapper-content .uams-row {
+    margin-left: -$uams-spacing--column;
+    margin-right: -$uams-spacing--column; 
+}  

@@ -1,0 +1,138 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+$uams-space--logo: $uams-spacing--medium;
+
+.uams-header-unit {
+    position: relative;
+    z-index: $uams-zindex--navigation;
+
+    &::after {
+        content:'';
+        height: 5px;
+        width: auto;
+        bottom: -5px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        background: -moz-linear-gradient(top,  rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+        background: -webkit-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%);
+        background: linear-gradient(to bottom,  rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000',GradientType=0 );
+        opacity: 0.2;
+    }
+
+
+    &__banner {
+        background-color: #fff;
+        min-height: 150px;
+        display: flex;
+        width: 100%;
+        position: relative;
+        padding-right: 90px;
+        box-sizing: border-box;
+
+        @media screen and (max-width: $uams-breakpoint--phone ) {
+
+            padding-right: 70px;
+            
+        }
+    }
+
+    .uams-navigation-header {
+        background-color: #fff;
+        height: 45px;
+        border-top: 1px solid $uams-color--gray-10;
+        padding: 0 $uams-spacing--small;
+    }
+
+    .uams-button-menu {
+        top: 0;
+        right: 0;
+    }
+
+    .uams-header-utility-bar {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    @media screen and (min-width: $uams-breakpoint--horizontal-nav ) {
+
+        .uams-button-menu {
+            display: none;
+        }
+
+    }
+
+    @media screen and (max-width: $uams-breakpoint--horizontal-nav ) {
+
+        .uams-header-unit {
+
+            &__banner {
+                min-height: 120px;
+            }
+
+        }
+
+        .uams-header-utility-bar,
+        .uams-navigation-header {
+            display: none;
+        }
+
+        .uams-logo-lockup {
+            font-size: 0.9rem;
+        }
+
+    }
+
+    @media screen and (max-width: $uams-breakpoint--tablet-medium ) {
+
+        .uams-header-unit {
+
+            &__banner {
+                min-height: 110px;
+            }
+
+        }
+
+        .uams-logo-lockup {
+            font-size: 0.7rem;
+        }
+
+    }
+
+    @media screen and (max-width: $uams-breakpoint--tablet) {
+
+        .uams-header-unit {
+
+            &__banner {
+                min-height: 100px;
+            }
+
+        }
+
+        .uams-logo-lockup {
+            font-size: 0.6rem;
+        }
+
+    }
+
+    @media screen and (max-width: $uams-breakpoint--phone) {
+
+        .uams-header-unit {
+
+            &__banner {
+                min-height: 90px;
+            }
+
+        }
+
+        .uams-logo-lockup {
+            font-size: 0.5rem;
+        }
+
+    }
+
+    
+}

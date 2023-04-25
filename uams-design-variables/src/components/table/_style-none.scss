@@ -1,0 +1,13 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-table--style-none {  
+    border-top: 4px solid $uams-color--crimson;
+    border-collapse: collapse;
+    margin-bottom: $uams-spacing--component;
+
+    th,
+    td {
+        border: none !important;
+    }
+}

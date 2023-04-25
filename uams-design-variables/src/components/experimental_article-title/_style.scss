@@ -1,0 +1,38 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+h1.uams-article-title {
+    @include uams-font--xxlarge;
+    font-weight: 700;
+}
+
+.uams-article-title {
+    @include uams-font--large();
+    font-weight: 7600;
+    color: $uams-color--gray-75;
+
+    &::after {
+        display: none;
+    }
+
+    &--medium {
+        font-size: $uams-font-size--large;
+    }
+
+    a::after {
+        display: none;
+    }
+
+    &--large {
+        font-size: $uams-font-size--xlarge;
+    }
+
+    &--medium {
+        font-size: $uams-font-size--large;
+    }
+
+    &--small {
+        font-size: $uams-font-size--xmedium;
+    }
+
+}

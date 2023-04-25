@@ -1,0 +1,122 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+@mixin uams-input-field {
+    border-radius: $uams-border-radius--medium;
+    background-color: #fff;
+    border: 1px solid $uams-color--gray-30;
+    outline: none;
+    transition: box-shadow $uams-transition-speed--medium $uams-easing;
+    font-size: inherit;
+}
+
+@mixin uams-input-spacing {
+    padding: $uams-spacing--small $uams-spacing--small;
+    box-sizing: border-box;
+}
+
+@mixin uams-label {
+    font-size: $uams-font-size--small;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 0.1em;
+}
+
+@mixin uams-label-block {
+    display: block;
+}
+
+@mixin uams-form-input-focus {
+
+    &:focus {
+        box-shadow: $uams-dropshadow--low;
+        border-color: $uams-color--gray-80;
+    }
+
+}
+
+fieldset {
+    border: 1px solid $uams-color--gray-20;
+    border-radius: $uams-border-radius--medium;
+    padding: $uams-spacing--small $uams-spacing--medium;
+    margin-bottom: $uams-spacing--component;
+    margin-top: 0;
+
+    & > legend {
+        padding-left: $uams-spacing--xxsmall;
+        padding-right: $uams-spacing--xxsmall;
+    }
+}
+
+input {
+
+    &[type="file"],
+    &[type="time"],
+    &[type="week"],
+    &[type="month"],
+    &[type="datetime-local"],
+    &[type="datetime"],
+    &[type="date"],
+    &[type="url"],
+    &[type="tel"],
+    &[type="search"],
+    &[type="email"],
+    &[type="number"],
+    &[type="password"],
+    &[type="text"] {
+        @include uams-input-field();
+        @include uams-input-spacing();
+        @include uams-form-input-focus();
+        /*margin-bottom: $uams-spacing--xxsmall;*/
+    }
+
+    &[type="color"] {
+        width: $uams-spacing--large;
+        height: $uams-spacing--xxmedium;
+    }
+
+
+
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+
+    color: $uams-color--crimson;
+
+    & + label {
+        display: inline;
+        vertical-align: middle;
+        margin-left: 0.3em;
+        margin-right: 1.5em;
+        cursor: pointer;
+    }
+    
+}
+
+label {
+    @include uams-label();
+    @include uams-label-block();
+}
+
+legend {
+    @include uams-label();
+    @include uams-label-block();
+}
+
+select {
+    @include uams-input-field();
+    padding: $uams-spacing--small;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    @include uams-form-input-focus();
+
+}
+
+textarea {
+    width: 100%;
+    @include uams-input-field();
+    @include uams-input-spacing();
+    @include uams-form-input-focus();
+}

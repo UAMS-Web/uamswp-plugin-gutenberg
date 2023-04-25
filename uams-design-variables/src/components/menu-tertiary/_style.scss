@@ -1,0 +1,112 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+@mixin uams-menu-tertiary() {
+    font-family: $uams-font-family;
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+        list-style-type: none;
+        visibility: inherit;
+    }
+
+    & > li {
+        margin: 0;
+        padding: 0 $uams-spacing--xxsmall;
+        display: flex;
+        align-items: center;
+        font-size: $uams-font-size--xsmall;
+        text-transform: uppercase;
+        position: relative;
+
+        & > a {
+            text-decoration: none;
+            position: relative;
+            color: inherit;
+            display: block;
+            font-weight: inherit;
+            font-size: inherit;
+            text-transform: inherit;
+
+            @include uams-menu-item--crimson-bar; 
+        }
+
+        & > button {
+
+            background-color: transparent;
+            display: block;
+            color: inherit;
+            padding: 0;
+            margin: 0;
+            box-shadow: none !important;
+            font-weight: inherit;
+            font-size: inherit;
+            text-transform: inherit;
+
+            @include uams-menu-item--crimson-bar;
+
+        }
+
+        & > ul {
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity $uams-transition-speed--fast $uams-easing;
+            position: absolute;
+            top: 100%;
+            padding-top: calc( #{$uams-spacing--xsmall} + #{$uams-spacing--xsmall} );
+            padding-left: $uams-spacing--xsmall;
+            padding-right: $uams-spacing--xsmall;
+            padding-bottom: $uams-spacing--xsmall;
+            margin: 0;
+            left: -$uams-spacing--xxsmall; 
+
+            &::before {
+                content: "";
+                background-color: #fff;
+                position: absolute;
+                width: auto;
+                height: auto; 
+                top: $uams-spacing--xsmall;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                box-shadow: $uams-shadow--xlow;
+                border-radius: $uams-border-radius--medium;
+            }
+
+            &  li {
+                position: relative;
+                padding: 0.5em 0;
+                margin: 0;
+
+                a {
+                    text-decoration: none;
+                    position: relative;
+                    color: inherit;
+                    display: inline-block;
+                    outline: none;
+                    font-weight: inherit;
+                    font-size: inherit;
+                    text-transform: none;
+
+                    @include uams-menu-item--crimson-bar; 
+                }
+            }
+        }
+
+        &[aria-expanded="true"] > ul {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+}
+
+.uams-menu-tertiary {
+
+    @include uams-menu-tertiary();
+
+}

@@ -1,0 +1,75 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-menu--style-inline-split {
+
+    @extend %uams-menu;
+    
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+        margin: 0;
+        padding: 0;
+        position: relative;
+        
+        a {
+            font-weight: 600;
+            color: $uams-color--crimson;
+            text-decoration: none;
+            @include uams-font--medium();
+            padding: $uams-spacing--small $uams-spacing--xmedium;
+            position: relative;
+            display: block;
+
+            &::after,
+            &::before {
+                content: '';
+                background-color: $uams-color--gray-15;
+                position: absolute;
+                bottom: $uams-font-size--medium;
+                top: $uams-font-size--medium;
+                width: 2px;
+                height: auto;
+                transition: height $uams-easing 150ms;
+            }
+
+            &::after {
+                display: none;
+                right: -1px;
+            }
+
+            &::before {
+                display: block;
+                left: -1px;
+            }
+        }
+
+        &:last-child a::after {
+            display: block;
+        }
+
+        &::after {
+            content: '';
+            background-color: $uams-color--crimson-light;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: auto;
+            height: 0;
+            transition: height $uams-easing 150ms;
+        }
+        
+        &:hover,
+        &:focus,
+        &.uams-active {
+
+            &::after {
+                height: 6px;
+            }
+
+        }
+    }
+
+}

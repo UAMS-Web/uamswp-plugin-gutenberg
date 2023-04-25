@@ -1,6 +1,6 @@
 <?php namespace UAMSWP\Plugin\Gutenberg;
 
-class WSU_Image {
+class UAMS_Image {
 
 	protected static $default_attrs = array(
 		'imageId'      => '',

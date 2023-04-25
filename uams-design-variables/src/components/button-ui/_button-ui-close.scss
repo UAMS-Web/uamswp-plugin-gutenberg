@@ -1,0 +1,153 @@
+.uams-button-ui-close {
+    font-size: $uams-font-size--xxsmall;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $uams-color--gray-55;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    cursor: pointer; 
+    position: relative;
+    line-height: 1.5;
+    margin-left: auto;
+    margin-bottom: 0;
+
+    &::after {
+        content: '\F154';
+		font-family: 'uams-icons';
+		display: inline-block;
+		font-size: 1rem;
+		vertical-align: middle;
+        color: $uams-color--gray-75;
+        margin-left: calc( #{$uams-spacing--xxsmall} / 2 ); 
+    }
+
+    &::before {
+        content: '';
+		display: block;
+        position: absolute;
+        background-color: $uams-color--gray-50;
+        width: 0;
+        height: 2px;
+        bottom: 0.15rem;
+        transition: width $uams-transition-speed--fast $uams-easing;
+        box-sizing: border-box;
+    }
+
+    &:hover,
+    &:focus {
+        box-shadow: none;
+        background-color: transparent;
+
+        &::before {
+            width: calc( 100% - #{$uams-font-size--xxmedium } );
+        }
+
+    }
+} 
+
+.uams-button-ui--close {
+    font-size: $uams-font-size--xxsmall;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $uams-color--gray-55;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    cursor: pointer; 
+    position: relative;
+    line-height: 1.5;
+
+    &::before {
+        content: '\F154';
+		font-family: 'uams-icons';
+		display: inline-block;
+		font-size: 1rem;
+		vertical-align: middle;
+        color: $uams-color--gray-75;
+        margin-right: calc( #{$uams-spacing--xxsmall} / 2 ); 
+    }
+
+    &::after {
+        content: '';
+        width: auto;
+        left: 0;
+        right: 0;
+        top: auto;
+        bottom: 0;
+        background-color: $uams-color--gray-65; 
+        height: 3px;
+        position: absolute;
+        display: block;
+        opacity: 0;
+        transition: opacity $uams-transition-speed--fast $uams-easing, bottom $uams-transition-speed--fast $uams-easing;
+    }
+
+    &:focus,
+    &:hover {
+
+        &::after {
+            opacity: 1;
+            bottom: -2px;
+        }
+    }
+}
+
+.uams-button-ui--close-after {
+    font-size: $uams-font-size--xxsmall;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $uams-color--gray-55;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    cursor: pointer; 
+    position: relative;
+    line-height: 1.5;
+
+    &::after {
+        content: '\F154';
+		font-family: 'uams-icons';
+		display: inline-block;
+		font-size: 1rem;
+		vertical-align: middle;
+        color: $uams-color--gray-75;
+        margin-left: calc( #{$uams-spacing--xxsmall} / 2 ); 
+    }
+
+    &::before {
+        content: '';
+        width: auto;
+        left: 0;
+        right: 0;
+        top: auto;
+        bottom: 0;
+        background-color: $uams-color--gray-65; 
+        height: 3px;
+        position: absolute;
+        display: block;
+        opacity: 0;
+        transition: opacity $uams-transition-speed--fast $uams-easing, bottom $uams-transition-speed--fast $uams-easing;
+    }
+
+    &:focus,
+    &:hover {
+
+        &::before {
+            opacity: 1;
+            bottom: -2px;
+        }
+    }
+}

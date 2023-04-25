@@ -1,0 +1,19 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-meta-categories {
+
+    @include uams-font--small();
+    font-weight: 600;
+
+
+    a {
+        @include uams-link--secondary();
+
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+            text-decoration-color: $uams-color--crimson-light; 
+        }
+    }
+}  

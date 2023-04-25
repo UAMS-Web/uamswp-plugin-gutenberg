@@ -1,0 +1,55 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+@mixin uams-menu--to-dropdown {
+    width: $uams-width--navigation-xnarrow;
+    display: block;
+    background-color: #fff;
+    padding: $uams-spacing--sxxsmall $uams-spacing--small;
+}
+
+.uams-menu-admin {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    li {
+        list-style-type: none;
+        margin: 0;
+        padding: 0 $uams-spacing--sxxsmall;
+        display: flex;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+        text-transform: uppercase;
+        @include uams-font--xsmall();
+        padding: $uams-spacing--sxxsmall 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        position: relative;
+
+        @include uams-hover--border-bottom();
+    }
+}
+
+.uams-menu-admin--dropdown {
+    @include uams-menu--to-dropdown();
+}
+
+.uams-menu-admin--mobile-dropdown {
+    @media screen and (max-width: $uams-breakpoint--phone ) {
+        @include uams-menu--to-dropdown();
+    }
+}
+
+.uams-menu-admin--tablet-dropdown {
+    @media screen and (max-width: $uams-breakpoint--tablet ) {
+        @include uams-menu--to-dropdown();
+    }
+}

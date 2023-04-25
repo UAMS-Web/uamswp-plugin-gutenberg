@@ -1,0 +1,17 @@
+
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-card--style-boxed {
+    border: 1px solid $uams-color--gray-10;
+    border-radius: $uams-border-radius--xsmall;
+
+    .uams-card__content {
+        padding-left: $uams-spacing--medium;
+        padding-right: $uams-spacing--medium;
+    }
+
+    .uams-image-frame img {
+        border-radius: $uams-border-radius--xsmall $uams-border-radius--xsmall 0 0;
+    }
+}

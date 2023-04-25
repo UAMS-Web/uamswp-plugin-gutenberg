@@ -1,0 +1,60 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+ol,
+ul {
+	margin-top: 0;
+	margin-left: 0;
+	margin-bottom: $uams-spacing--component;
+	padding-left: $uams-spacing--em-medium; 
+	margin-right: 0;
+    font-size: $uams-font-size--xmedium;
+    //max-width: calc( #{$uams-width--copy} - #{$uams-spacing--em-xxmedium});
+
+    li {
+        padding-top: 0;
+        margin-bottom: $uams-spacing--em-xsmall;
+        margin-top: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+        box-sizing: border-box;
+
+        &::marker {
+            color: $uams-color--crimson-light;
+        }
+    }
+	
+    ol,
+	ul {
+		margin-bottom: $uams-spacing--em-small;
+		margin-top: $uams-spacing--em-xsmall;
+        padding-left: $uams-spacing--em-xxmedium; 
+	}
+
+}
+
+ul {
+
+    li li li {
+        list-style-type: circle;
+    }
+
+}
+
+ol {
+
+    li {
+        list-style-type: decimal;
+
+        li {
+            list-style-type: lower-alpha;
+        }
+
+    }
+
+}
+
+p ~ ul li,
+p ~ ol li {
+    max-width: $uams-width--copy;
+}

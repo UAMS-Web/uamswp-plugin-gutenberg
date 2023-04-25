@@ -14,7 +14,7 @@
  registerBlockType(
      "uamswp/image",
      {
-         title: "WSU Image Block",
+         title: "UAMS Image Block",
          apiVersion: 2,
          parent: [ 'uamswp/card' ],
          category: "design",

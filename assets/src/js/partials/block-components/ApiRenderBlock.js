@@ -35,7 +35,7 @@ const ApiRenderBlock = ( { attributes, blockName, onChange, children } ) => {
     if ( blockRendered ) {
 
         return (
-            <div className="wsu-bc-api-render" dangerouslySetInnerHTML={{ __html: blockRendered } } />
+            <div className="uams-bc-api-render" dangerouslySetInnerHTML={{ __html: blockRendered } } />
         )
 
     } else {

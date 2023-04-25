@@ -1,0 +1,8 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-overlap-spotlight--style-left-top{
+    @extend %uams-overlap-spotlight-reverse;
+
+    @extend %uams-overlap-spotlight-content-top;
+}

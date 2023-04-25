@@ -1,0 +1,30 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-slide-in-panel--style-crimson-mark {
+
+    .uams-slide-in-panel {
+
+        &__panel {
+            border-top: 2px solid $uams-color--crimson-light;
+            border-left: 3px solid $uams-color--crimson;
+
+            &::before {
+                @extend %uams-slide-in-panel__crimson-triangle
+            }
+        }
+    }
+
+}
+
+.uams-slide-in-panel--style-crimson-mark.uams-slide-in-panel--position-left {
+
+    .uams-slide-in-panel {
+
+        &__panel {
+            border-left: none;
+            border-right: 3px solid $uams-color--crimson;
+        }
+    }
+
+}

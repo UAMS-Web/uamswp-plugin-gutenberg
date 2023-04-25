@@ -1,0 +1,71 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+@mixin uams-submenu-toggle() {
+
+    & > li {
+        position: relative;
+    }
+
+}
+
+@mixin uams-submenu-toggle--in() {
+
+    & > li { 
+
+        & > ul {
+            position: absolute;
+            top: 100%;
+            transition: opacity $uams-transition-speed--fast $uams-easing;
+        }
+
+        &[aria-expanded="true"] {
+            
+            & > ul {
+                display: block;
+                opacity: 1;
+                top: 100%;
+            }
+
+        }
+
+        &[aria-expanded="false"]:not(.uams-animating) {
+
+            & > ul {
+                display: none;
+            }
+            
+        }
+
+        &[aria-expanded="false"] {
+
+            & > ul {
+                opacity: 0;
+                top: calc( 100% + #{$uams-spacing--xmedium} );
+            }
+            
+        }
+
+    } 
+
+}
+
+/* General Styles */
+.uams-submenu-toggle { 
+
+    @include uams-submenu-toggle();
+
+}
+
+/* Default Behavior */
+.uams-submenu-toggle:not(.uams-submenu-toggle--in) {
+
+
+}
+
+.uams-submenu-toggle--in .uams-submenu-toggle,
+.uams-submenu-toggle--in.uams-submenu-toggle {
+
+    @include uams-submenu-toggle--in();
+
+}

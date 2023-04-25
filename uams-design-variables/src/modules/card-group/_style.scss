@@ -1,0 +1,228 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+$uams-card-margin: $uams-spacing--xsmall;
+
+.uams-card-group,
+.uams-card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+
+    &__title {
+        margin-bottom: $uams-spacing--small;
+    }
+
+    &__footer,
+    &__title {
+        width: 100%;
+        margin-left: $uams-card-margin;
+        margin-right: $uams-card-margin;
+        box-sizing: border-box;
+    }
+
+    &--per-row-1 {
+        .uams-card {
+            width: 100%;
+
+            &:nth-last-child(1) {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &--per-row-2:not(.uams-card-group--spacing-none),
+    &--per-row-3:not(.uams-card-group--spacing-none),
+    &--per-row-4:not(.uams-card-group--spacing-none) {
+        margin-left: -$uams-card-margin;
+        margin-right: -$uams-card-margin;
+
+        .uams-card {
+            margin-left: $uams-card-margin;
+            margin-right: $uams-card-margin;
+        }
+    }
+
+    &--per-row-2 {
+
+        .uams-card {
+            width: calc( 50% - ( #{$uams-card-margin} * 2 ) );
+
+        }
+
+        @media screen and (max-width: $uams-breakpoint--tablet ) {
+            .uams-card {
+                width: calc( 100% - ( #{$uams-card-margin} * 2 ) );
+
+                &:nth-last-child(2) {
+                    margin-bottom: $uams-spacing--component;
+                }
+            }
+        }
+
+        &.uams-card-wrapper--break-early {
+
+            @media screen and (max-width: $uams-breakpoint--tablet-large ) {
+                .uams-card {
+                    width: calc( 100% - ( #{$uams-card-margin} * 2 ) );
+                }
+            }
+
+        }
+
+    }
+    &--per-row-3 {
+        .uams-card {
+            width: calc( 33.33% - ( #{$uams-card-margin} * 2 ) );
+
+        }
+
+        @media screen and (max-width: $uams-breakpoint--tablet ) {
+            .uams-card {
+                width: calc( 100% - ( #{$uams-card-margin} * 2 ) );
+
+            }
+        }
+
+        &.uams-card-wrapper--break-early {
+
+            @media screen and (max-width: $uams-breakpoint--tablet-large ) {
+                .uams-card {
+                    width: calc( 100% - ( #{$uams-card-margin} * 2 ) );
+                }
+            }
+
+        }
+
+    }
+
+    &--per-row-4 {
+        .uams-card {
+            width: calc( 25% - ( #{$uams-card-margin} * 2 ) );
+
+        }
+
+        @media screen and (max-width: $uams-breakpoint--tablet-large ) {
+            .uams-card {
+                width: calc( 50% - ( #{$uams-card-margin} * 2 ) );
+
+                
+            }
+        }
+
+        @media screen and (max-width: $uams-breakpoint--tablet ) {
+            .uams-card {
+                width: calc( 100% - ( #{$uams-card-margin} * 2 ) );
+
+
+            }
+        }
+
+        &.uams-card-wrapper--break-early {
+
+            @media screen and (max-width: $uams-breakpoint--desktop ) {
+                .uams-card {
+                    width: calc( 50% - ( #{$uams-card-margin} * 2 ) );
+                }
+            }
+
+        }
+    }
+}
+
+.uams-card-group { 
+
+    &--spacing-none { 
+
+        .uams-card {
+            margin-bottom: 0 !important;
+        }
+    }
+
+    &--per-row-2 {
+
+        &.uams-card-group--spacing-none {
+            .uams-card {
+                width: 50%;
+            }
+    
+            @media screen and (max-width: $uams-breakpoint--tablet ) {
+                .uams-card {
+                    width: 100%;
+                }
+            }
+    
+            &.uams-card-wrapper--break-early {
+    
+                @media screen and (max-width: $uams-breakpoint--tablet-large ) {
+                    .uams-card {
+                        width: 100%;
+                    }
+                }
+    
+            }
+        }
+    }
+
+    &--per-row-3 {
+        &.uams-card-group--spacing-none {
+
+            .uams-card {
+                width: 33.33%;
+            }
+    
+            @media screen and (max-width: $uams-breakpoint--tablet ) {
+                .uams-card {
+                    width: 100%;
+                }
+            }
+    
+            &.uams-card-wrapper--break-early {
+    
+                @media screen and (max-width: $uams-breakpoint--tablet-large ) {
+                    .uams-card {
+                        width: 100%;
+                    }
+                }
+    
+            }
+        }
+    }
+
+    &--per-row-4 {
+
+        &.uams-card-group--spacing-none {
+
+            .uams-card {
+                width: 25%;
+            }
+    
+            @media screen and (max-width: $uams-breakpoint--tablet-large ) {
+                .uams-card {
+                    width: 50%;
+                }
+            }
+    
+            @media screen and (max-width: $uams-breakpoint--tablet ) {
+                .uams-card {
+                    width: 100%;
+                }
+            }
+    
+            &.uams-card-wrapper--break-early {
+    
+                @media screen and (max-width: $uams-breakpoint--desktop ) {
+                    .uams-card {
+                        width: 50%;
+                    }
+                }
+    
+            }
+        }
+    }
+
+    
+
+
+
+}

@@ -1,0 +1,10 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-button-ui-menu {
+
+    &::before {
+        content: '\F12A';
+    }
+}
+

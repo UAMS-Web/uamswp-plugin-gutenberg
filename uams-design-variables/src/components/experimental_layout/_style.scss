@@ -1,0 +1,38 @@
+.uams-layout {
+
+    box-sizing: border-box;
+
+    &-panel {
+        flex-grow: 1;
+        box-sizing: border-box;
+    }
+
+    &--sidebar {
+
+        display: flex;
+
+        .uams-layout-panel:first-child {
+            padding-right: $uams-spacing--column;
+        }
+
+        .uams-layout-panel:last-child {
+            flex-grow: 0;
+            flex-shrink: 0;
+            width: 30%;
+            padding-left: $uams-spacing--column;
+        }
+
+        @media screen and ( max-width: $uams-breakpoint--tablet-large ) {
+
+            flex-wrap: wrap;
+
+            .uams-layout-panel:first-child,
+            .uams-layout-panel:last-child {
+                flex-grow: 0;
+                flex-shrink: 0;
+                width: 100%;
+                padding-left: 0; 
+            }
+        }
+    }
+} 

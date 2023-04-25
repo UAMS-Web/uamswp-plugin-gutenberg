@@ -1,0 +1,47 @@
+{% from "menu-collapse/_macro.njk" import menuCollapse %}
+
+{% extends "component.njk" %}
+
+{% block styles %}
+
+<style>
+body {
+    background-color: #f1f1f1;
+    min-height: 100vh;
+}
+
+.wsu-demo-menu {
+    background: #fff;
+    width: 280px;
+}
+
+.wsu-demo-menu-vertical {
+    background: #fff;
+    height: 40px;
+    display: flex;
+}
+
+</style>
+{%  endblock %}
+
+{% block content %}
+<nav class="wsu-demo-menu">
+{{ menuCollapse() }}
+</nav>
+<hr />
+<nav class="wsu-demo-menu">
+{{ menuCollapse( style='vertical') }}
+</nav>
+<hr />
+<nav class="wsu-demo-menu">
+{{ menuCollapse( style='mobile') }}
+</nav>
+<hr />
+<nav class="wsu-demo-menu">
+{{ menuCollapse( style='context' ) }}
+</nav>
+<hr />
+<nav class="wsu-demo-menu-vertical">
+{{ menuCollapse( style='horizontal') }}
+</nav>
+{%  endblock %} 

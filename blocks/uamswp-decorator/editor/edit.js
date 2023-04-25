@@ -97,22 +97,22 @@ const Edit = ( props ) => {
 		},
 		{
 			icon: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 124 60"><rect width="124" height="60" fill="none"/><polygon points="78.69 0 78.69 60 45.31 60 78.69 0" fill="#a61d2f"/></svg>,
-			label: 'Triangle (WSU)',
+			label: 'Triangle (UAMS)',
 			value: 'triangle-crimson-uams-steep-right',
 		},
 		{
 			icon: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 124 60"><rect width="124" height="60" fill="none"/><polygon points="45.31 0 45.31 60 78.69 60 45.31 0" fill="#a61d2f"/></svg>,
-			label: 'Triangle (WSU)',
+			label: 'Triangle (UAMS)',
 			value: 'triangle-crimson-uams-steep-left',
 		},
 		{
 			icon: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 124 60"><rect width="124" height="60" fill="none"/><polygon points="45.31 60 45.31 0 78.69 0 45.31 60" fill="#a61d2f"/></svg>,
-			label: 'Triangle (WSU)',
+			label: 'Triangle (UAMS)',
 			value: 'triangle-crimson-uams-steep-top-left',
 		},
 		{
 			icon: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 124 60"><rect width="124" height="60" fill="none"/><polygon points="78.69 60 78.69 0 45.31 0 78.69 60" fill="#a61d2f"/></svg>,
-			label: 'Triangle (WSU)',
+			label: 'Triangle (UAMS)',
 			value: 'triangle-crimson-uams-steep-top-right',
 		},
 		{
@@ -132,7 +132,7 @@ const Edit = ( props ) => {
 		},
 		{
 			icon: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 124 60"><rect width="124" height="60" fill="none"/><rect x="25.92" width="72.17" height="60" fill="#dad9d9"/></svg>,
-			label: 'Block (WSU)',
+			label: 'Block (UAMS)',
 			value: 'block-gray-uams',
 		},
 		{
@@ -147,7 +147,7 @@ const Edit = ( props ) => {
 		},
 		{
 			icon: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 124 60"><rect width="124" height="60" fill="none"/><rect x="25.92" width="72.17" height="60" fill="#a61d2f"/></svg>,
-			label: 'Block (WSU)',
+			label: 'Block (UAMS)',
 			value: 'block-crimson-uams',
 		},
 		{

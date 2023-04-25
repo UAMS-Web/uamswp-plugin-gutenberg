@@ -1,0 +1,68 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-navigation-header {
+    display: flex;
+
+    & > ul > li {
+
+        &:first-child {
+            & > a::before {
+                content: '\F122';
+                font-family: uams-icons;
+                margin-right: 0.4em;
+                font-size: 0.8em;
+            }
+        }
+    }
+
+    /*
+    ul {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    li {
+        display: flex;
+        padding: 0 $uams-spacing--medium;
+        margin: 0;
+
+        &:first-child {
+            a::before {
+                content: '\F122';
+                font-family: uams-icons;
+                margin-right: 0.4em;
+                font-size: 0.8em;
+            }
+        }
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        color: $uams-color--gray-75;
+        text-decoration: none;
+        font-weight: 600;
+        padding: 0 $uams-spacing--xsmall;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 0;
+            background-color: transparent;
+            left: 0;
+        }
+    }
+
+    li.uams-navigation-header--current-item {
+        a::after {
+            height: 4px;
+            background-color: $uams-color--crimson;
+        }
+    }*/
+}

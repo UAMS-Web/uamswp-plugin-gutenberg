@@ -1,0 +1,45 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-sticky-nav:not([class*="sticky-nav--style-"]) {
+
+    .uams-sticky-nav__top-btn {
+        text-transform: uppercase;
+        @include uams-font--xxsmall();
+        text-decoration: none;
+        font-weight: 500;
+        display: none;
+        text-align: center;
+        flex-shrink: 0;
+        flex-direction: column;
+        /* justify-content: center; */
+
+        &::before {
+            content: "\F10A";
+            display: block;
+            font-family: 'uams-icons';
+        }
+    }
+
+    .uams-sticky-box__content {
+        border-top: 1px solid $uams-color--gray-15;
+        border-bottom: 1px solid $uams-color--gray-15;
+        padding: $uams-spacing--xxsmall 0;
+        background-color: #fff;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .uams-sticky-box {
+
+        &.uams-sticky-box--stuck {
+
+            .uams-sticky-nav__top-btn {
+                display: flex;
+            } 
+
+        }
+        
+    }
+    
+}

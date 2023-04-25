@@ -1,0 +1,39 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+
+
+.uams-navigation-site-vertical--color-dark {
+
+    .uams-navigation-site-vertical__panel {
+        border-right: 1px solid $uams-color--gray-60;
+    }
+
+    .uams-navigation-site-vertical__panel,
+    .uams-navigation-site-vertical__open-button,
+    .uams-button-ui-close,
+    .uams-button-ui-close::before,
+    .uams-button-ui-close::after {
+        color: $uams-color--gray-5;
+    }
+
+    .uams-navigation-site-vertical__panel,
+    .uams-navigation-site-vertical__open-button {
+        background-color: $uams-color--gray-95;
+    }
+
+    .uams-menu > li[aria-expanded] > a::after,
+    .uams-menu > li::after {
+        background-color: $uams-color--gray-80;
+    }
+
+    .uams-menu a + button:focus,
+    .uams-menu a + button:hover,
+    .uams-menu button:first-child:focus,
+    .uams-menu button:first-child:hover,
+    .uams-menu a:focus,
+    .uams-menu a:hover {
+        background-color: $uams-color--gray-85; 
+    }
+
+}

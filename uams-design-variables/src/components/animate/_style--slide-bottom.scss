@@ -1,0 +1,23 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-animate--action-slide-bottom {
+    transition: transform $uams-easing 1s;
+
+    &.uams-animate--timing-early,
+    &:not([class*='--timing-']),
+    &.uams-animate--timing-late {
+        transform: translateY(300px);
+    }
+
+    &.uams-animate--timing-late.uams-animate--do-late,
+    &.uams-animate--timing-early.uams-animate--do-early,
+    &:not([class*='--timing-']).uams-animate--do-default {
+        transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        transform: translateY(0) !important;
+    }
+
+}

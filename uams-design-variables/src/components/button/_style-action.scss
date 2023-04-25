@@ -1,0 +1,80 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-button--style-action,
+.uams-button--style-action-white {
+    background-color: transparent !important;
+    border: none !important;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 !important;
+    font-size: $uams-font-size--xmedium;
+
+    &::before {
+        width: 2em;
+        height: 2em;
+        content:"\F108";
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        margin-right: 0.65em;
+        font-family: uams-icons;
+        font-size: 0.8em;
+        flex-shrink: 0;
+    }
+
+    &:hover,
+    &:focus {
+        box-shadow: none !important;
+
+        &::before {
+            outline-offset: 2px;
+        }
+    }
+
+    &.uams-button--size-large {
+        font-size: $uams-font-size--xxmedium;
+    }
+
+    &.uams-button--size-small {
+        font-size: $uams-font-size--medium;
+    }
+}
+
+.uams-button--style-action {
+    color: $uams-color--crimson;
+
+    &::before {
+        background-color: $uams-color--crimson-light;
+        color: #fff;
+    }
+
+    &:hover,
+    &:focus {
+
+        &::before {
+            outline: 2px solid $uams-color--crimson-light;
+        }
+    }
+}
+
+.uams-has-background--dark .uams-button--style-action,
+.uams-button--style-action.uams-has-background--dark,
+.uams-button--style-action-white {
+
+    color: #fff;
+
+    &::before {
+        background-color: #fff;
+        color: $uams-color--crimson;
+    }
+
+    &:hover,
+    &:focus {
+
+        &::before {
+            outline: 2px solid #fff;
+        }
+    }
+}

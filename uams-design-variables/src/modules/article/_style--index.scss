@@ -1,0 +1,25 @@
+.uams-article.uams-style--index {
+
+    display: flex;
+    margin: $uams-spacing--medium 0;
+
+    .uams-article {
+
+        &__thumbnail {
+            flex: 0 0 120px;
+            padding: $uams-spacing--xsmall 0 0 $uams-spacing--xmedium;
+
+            img {
+                aspect-ratio: 1/1;
+                object-fit: cover;
+                width: 100%;
+                border-radius: 3px;
+            }
+        }
+
+        &__caption {
+            margin-bottom: $uams-spacing--sxxsmall;
+        }
+    }
+    
+}

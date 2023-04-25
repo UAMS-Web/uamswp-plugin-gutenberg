@@ -1,0 +1,26 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+@import '../../../_assets/scss/placeholders';
+
+.uams-cta {
+    margin-bottom: $uams-spacing--component;
+
+    &--width-inline {
+        display: inline-block;
+    }
+
+    &--width-inline {
+        display: inline-block;
+        margin-right: $uams-spacing--xxsmall;
+    } 
+
+    &--width-full .uams-button {
+        display: block;
+        text-align: center;
+    }
+
+    + .uams-cta:not(.uams-cta--width-inline) {
+        margin-top: -0.6rem;
+    }
+
+}

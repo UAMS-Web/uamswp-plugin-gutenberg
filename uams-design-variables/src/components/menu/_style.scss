@@ -1,0 +1,22 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+@import './mixins';
+
+%uams-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+        list-style-type: none;
+    }
+
+}
+
+@include uams-menu--primary-vertical();
+
+@import './style-header-system';
+@import './style-header-campus';
+@import './style-inline';
+@import './style-inline-split';
+@import './style-sidebar';

@@ -1,0 +1,26 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+@import '../../../_assets/scss/placeholders';
+
+
+.uams-table:not([class*="-table--style-"]) {
+    border-top: 4px solid $uams-color--crimson;
+    border-collapse: collapse;
+    margin-bottom: $uams-spacing--component;
+
+    th,
+    td {
+        padding: $uams-spacing--xxsmall;
+        border-top: 1px solid $uams-color--gray-20;
+        border-collapse: collapse;
+    }
+
+    th {   
+        font-weight: 600;
+    }
+}
+
+@import './style-stripped';
+@import './style-lines';
+@import './style-stats';
+@import './style-none';

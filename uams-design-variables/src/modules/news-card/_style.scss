@@ -1,0 +1,43 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+
+.uams-news-card {
+
+    box-sizing: border-box;
+    margin-bottom: $uams-spacing--component;
+
+    .uams-image-frame {
+
+        &::before {
+            padding-top: $uams-ratio--4-3;
+        }
+    }
+
+
+    .uams-image-frame + .uams-news-card__content .uams-article-title {
+        margin-top: 0.4em;
+    }
+
+    .uams-article-title {
+        @include uams-font--xmedium();
+    }
+
+    .uams-article-title + .uams-meta-date,
+    .uams-article-title + .uams-meta-byline,
+    .uams-article-title + .uams-meta-tags,
+    .uams-caption + .uams-meta-date,
+    .uams-caption + .uams-meta-byline,
+    .uams-caption + .uams-meta-tags {
+        margin-top: $uams-spacing--xxsmall;
+    }
+
+    &--large {
+
+        .uams-article-title {
+            @include uams-font--xlarge();
+        } 
+
+    }
+
+}

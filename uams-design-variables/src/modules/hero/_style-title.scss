@@ -1,0 +1,82 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-hero--style-title {
+    
+    @extend %uams-hero;
+    align-items: flex-end;
+
+    .uams-hero {
+
+        &__content {
+            flex-grow: 1;
+            display: flex;
+        }
+
+        &__caption {
+            max-width: 800px;
+            flex-grow: 0;
+            position: relative;
+            padding: $uams-spacing--xxmedium $uams-spacing--large;
+            position: relative;
+            color: #fff;
+            overflow: hidden;
+            -webkit-clip-path: polygon(100% 0,100% calc(100% - 40px),calc(100% - 40px) 100%,0 100%,0 0);
+            clip-path: polygon(100% 0,100% calc(100% - 40px),calc(100% - 40px) 100%,0 100%,0 0);
+        }
+
+        &__copy {
+            font-size: 1.25rem;
+            line-height: 1.4;
+            text-shadow: 0 0 3px #000;
+            font-weight: 500;
+            position: relative;
+        }
+
+        &__title {
+            @extend %uams-hero--title;
+
+            span {
+                position: relative;
+            }
+
+            &::before {
+                content: '';
+                left: -$uams-spacing--large;
+                right: -$uams-spacing--large;
+                top: calc( ( 5.125rem * 1.15 ) / 2 );
+                width: auto;
+                height: 100vh;
+                background-color: rgba( 0,0,0,0.5);
+                position: absolute;
+                border-left: 8px solid $uams-color--crimson-light;
+            }
+        }
+
+    }
+
+    .uams-image-frame {
+        @extend %uams-hero--image-frame;
+    }
+
+    .uams-overlay {
+        @extend %uams-hero--overlay;
+    }
+
+    .uams-video-frame {
+        @extend %uams-hero--video-frame;
+    }
+
+    &.uams-hero--shape-notched {
+
+        .uams-video-frame,
+        .uams-image-frame,
+        .uams-overlay {
+            @extend %uams-hero--notch;
+        }
+
+    }
+
+    
+    
+}

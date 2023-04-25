@@ -1,0 +1,72 @@
+@import '../variables';
+
+$uams-push-map: (
+    'xxhero':   $uams-spacing--xxhero,
+    'xhero':    $uams-spacing--xhero,
+    'hero':     $uams-spacing--hero,
+    'xxlarge':  $uams-spacing--xxlarge,
+    'xlarge':   $uams-spacing--xlarge,
+    'large':    $uams-spacing--large,
+    'xxmedium': $uams-spacing--xxmedium,
+    'xmedium':  $uams-spacing--xmedium,
+    'medium':   $uams-spacing--medium,
+    'small':   $uams-spacing--small,
+);
+
+$uams-breakpoint-map: (
+    'desktop':      $uams-breakpoint--desktop,
+    'tablet-large': $uams-breakpoint--tablet-large,
+    'tablet-medium': $uams-breakpoint--tablet-medium,
+    'tablet':       $uams-breakpoint--tablet,
+    'phone':        $uams-breakpoint--phone,
+);
+
+
+
+@each $breakpointName, $breakpointValue in $uams-breakpoint-map {
+
+    @media screen and ( min-width: $breakpointValue ) {
+
+        @each $pushName, $pushValue in $uams-push-map {
+
+            .uams-push-up--#{$breakpointName}-#{$pushName} {
+                margin-bottom: $pushValue !important;
+            }
+
+            .uams-push-down--#{$breakpointName}-#{$pushName} {
+                margin-top: $pushValue !important;
+            }
+
+            .uams-push-left--#{$breakpointName}-#{$pushName} {
+                margin-right: $pushValue !important;
+            }
+
+            .uams-push-right--#{$breakpointName}-#{$pushName} {
+                margin-left: $pushValue !important;
+            }
+
+        }
+
+    }
+
+}
+
+@each $pushName, $pushValue in $uams-push-map {
+
+    .uams-push-up--#{$pushName} {
+        margin-bottom: $pushValue !important;
+    }
+
+    .uams-push-down--#{$pushName} {
+        margin-top: $pushValue !important;
+    }
+
+    .uams-push-left--#{$pushName} {
+        margin-right: $pushValue !important;
+    }
+
+    .uams-push-right--#{$pushName} {
+        margin-left: $pushValue !important;
+    }
+
+}

@@ -1,0 +1,15 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+@import '../../../_assets/scss/placeholders';
+
+.uams-background {
+
+    &--style {
+
+        &-crimson {
+            background: $uams-color--crimson radial-gradient(circle at 40% 60%, $uams-color--crimson-light 18%, $uams-color--crimson-dark 81%);
+        }
+ 
+    } 
+
+}

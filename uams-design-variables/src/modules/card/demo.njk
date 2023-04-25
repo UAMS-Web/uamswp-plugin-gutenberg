@@ -1,0 +1,103 @@
+{% extends "component.njk" %}
+{% from "card/_macro-reverse.njk" import cardReversed %}
+{% from "card/_macro.njk" import card %}
+{% from "card/_macro.njk" import cardPerson %}
+
+{% block content %}
+<div class="wsu-demo-component" >
+    <div class="wsu-card-group wsu-card-group--per-row-1">
+
+    {{ card( ' wsu-card--style-horizontal-25' ) }}
+    </div>
+</div>
+<div class="wsu-demo-component" >
+    <div class="wsu-card-group wsu-card-group--per-row-1">
+    {{ card( ' wsu-card--style-horizontal-25 wsu-card--layout-reversed' ) }}
+    </div>
+</div>
+<div class="wsu-demo-component" >
+    <div class="wsu-card-group wsu-card-group--per-row-2">
+    {{ card( ' wsu-card--style-horizontal-25' ) }}
+    {{ card( ' wsu-card--style-horizontal-25' ) }}
+    </div>
+</div>
+<div class="wsu-demo-component" >
+    <div class="wsu-card-group wsu-card-group--per-row-1">
+    {{ card( ' wsu-card--style-horizontal-33' ) }}
+    </div>
+</div>
+<div class="wsu-demo-component" >
+    <div class="wsu-card-group wsu-card-group--per-row-1">
+    {{ card( ' wsu-card--style-horizontal-33 wsu-card--layout-reversed' ) }}
+    </div>
+</div>
+<div class="wsu-demo-component" >
+    <div class="wsu-card-group wsu-card-group--per-row-2">
+    {{ card( ' wsu-card--style-horizontal-33' ) }}
+    {{ card( ' wsu-card--style-horizontal-33' ) }}
+    </div>
+</div>
+<div class="wsu-demo-component" >
+    <div class="wsu-card-group wsu-card-group--per-row-1">
+    {{ card( ' wsu-card--style-horizontal-50' ) }}
+    </div>
+</div>
+<div class="wsu-demo-component" >
+    <div class="wsu-card-group wsu-card-group--per-row-1">
+    {{ card( ' wsu-card--style-horizontal-50 wsu-card--layout-reversed' ) }}
+    </div>
+</div>
+<div class="wsu-demo-component" >
+    <div class="wsu-card-group wsu-card-group--per-row-2">
+    {{ card( ' wsu-card--style-horizontal-50' ) }}
+    {{ card( ' wsu-card--style-horizontal-50' ) }}
+    </div>
+</div>
+<div class="wsu-demo-component" >
+    <div class="wsu-card-group wsu-card-group--per-row-3">
+    {{ card() }}
+    {{ card( ' wsu-card--style-boxed' ) }}
+    {{ card( ' wsu-card--style-dropshadow' ) }}
+    </div>
+</div>
+<div class="wsu-demo-component" >
+    <div class="wsu-card-group wsu-card-group--per-row-3">
+    {{ card( ' wsu-color-background--gray-85' ) }}
+    {{ card( ' wsu-card--outline-boxed wsu-color-background--gray-85' ) }}
+    {{ card( ' wsu-card--outline-shadow wsu-color-background--gray-85' ) }}
+    </div>
+</div>
+<hr style="width: 100%" />
+<div class="wsu-demo-component--narrow" >
+    {% include 'card/html-person.njk' %}
+</div>
+<div class="wsu-demo-component" >
+    <div class="wsu-card-group wsu-card-group--per-row-4">
+    {% include 'card/html-person.njk' %}
+    {% include 'card/html-person.njk' %}
+    {% include 'card/html-person.njk' %}
+    {% include 'card/html-person.njk' %}
+    </div>
+    <div class="wsu-card-group wsu-card-group--per-row-3">
+    {% include 'card/html-person.njk' %}
+    {% include 'card/html-person.njk' %}
+    {% include 'card/html-person.njk' %}
+    </div>
+    <div class="wsu-card-group wsu-card-group--per-row-2">
+    {% include 'card/html-person.njk' %}
+    {% include 'card/html-person.njk' %}
+    </div>
+</div>
+<style>
+.wsu-demo-component--narrow {
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.wsu-demo-component {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
+{%  endblock %} 

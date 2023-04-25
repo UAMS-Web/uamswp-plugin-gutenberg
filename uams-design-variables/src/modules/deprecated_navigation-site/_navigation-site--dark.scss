@@ -1,0 +1,77 @@
+.uams-navigation-site--dark {
+    background-color: $uams-color--gray-90;
+    border-right: 1px solid $uams-color--gray-80;
+
+    .uams-navigation-site {
+        &__panel {
+            background-color: $uams-color--gray-90;
+        }
+    }
+
+    .uams-button-ui-menu-animated {
+        background-color: $uams-color--gray-90;
+
+        &:focus-within,
+        &:focus,
+        &:hover {
+            background-color: $uams-color--gray-80;
+        }
+
+        &__button,
+        &__text {
+            color: $uams-color--gray-10;
+        }
+
+        &__icon {
+            background-color: $uams-color--gray-10;
+        }
+    }
+
+    .uams-menu-toggle {
+
+        a {
+            color: $uams-color--gray-10 !important;
+
+            &:hover,
+            &:focus {
+                background-color: $uams-color--gray-75;
+            }
+        }
+
+        & > li {
+
+            &[aria-expanded] > a::after,
+            &::before {
+                background-color: $uams-color--gray-70;
+            }
+        }
+
+        li[aria-expanded] {
+
+            & > button {
+                color: $uams-color--gray-10 !important;
+
+                &:hover,
+                &:focus {
+                    background-color: $uams-color--gray-75;
+                }
+            }
+
+        } 
+
+        &::after {
+            background-color: $uams-color--gray-70;
+        }
+
+        
+    }
+
+    .uams-button-ui-close {
+        color: $uams-color--gray-10;
+
+        &::after {
+            color: $uams-color--gray-40; 
+        }
+    }
+
+}

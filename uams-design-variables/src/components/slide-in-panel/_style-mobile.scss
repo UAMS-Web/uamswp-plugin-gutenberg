@@ -1,0 +1,78 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+
+$uams-slide-in-panel-mobile-width: 400px;
+
+.uams-slide-in-panel--style-mobile {
+    //visibility: hidden;
+    @extend %uams-slide-in-panel;
+
+
+    .uams-slide-in-panel {
+
+        &__overlay {
+            @extend %uams-slide-in-panel__overlay;
+            @extend %uams-slide-in-panel-overlay-fade-base;
+        }
+
+        &__panel {
+            @extend %uams-slide-in-panel__panel;
+            @extend %uams-slide-in-panel__panel--right;
+            @extend %uams-slide-in-panel-shadow-left;
+            background-color: #fff;
+            width: $uams-slide-in-panel-mobile-width;
+            border-left: 3px solid $uams-color--crimson;
+            transform: translateX(calc( #{$uams-slide-in-panel-mobile-width} + 6px ) );
+            transition: transform $uams-slide-in-panel--speed $uams-easing;
+
+            &::before {
+                @extend %uams-slide-in-panel__crimson-triangle
+            }
+
+            &::after {
+                opacity: 0.5;
+            }
+        }
+
+        &__panel-inner {
+            @extend %uams-slide-in-panel__panel-inner;
+        }
+
+        &__header {
+            @extend %uams-slide-in-panel__header;
+            padding-left: $uams-spacing--xmedium;
+            padding-right: $uams-spacing--xmedium;
+        }
+
+        &__content {
+            @extend %uams-slide-in-panel__content;
+        }
+
+        &__footer {
+            //@extend %uams-slide-in-panel__footer;
+        }
+    }
+
+    &[aria-expanded="true"] {
+        visibility: visible;
+        width: 100vw;
+        
+        transition: width 0s $uams-easing 0s;
+
+        .uams-slide-in-panel {
+
+            &__panel {
+                transform: translateX(0);
+            }
+
+            &__overlay {
+                @extend %uams-slide-in-panel-overlay-fade-in;
+            }
+        }
+        
+    }
+
+
+}
+

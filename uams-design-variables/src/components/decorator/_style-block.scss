@@ -1,0 +1,42 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+.uams-decorator--style-block-white,
+.uams-decorator--style-block-gray-uams,
+.uams-decorator--style-block-crimson-uams,
+.uams-decorator--style-block-uams,
+.uams-decorator--style-block-gray-dark,
+.uams-decorator--style-block-crimson-light,
+.uams-decorator--style-block-crimson,
+.uams-decorator--style-block-gray {
+	@extend %uams-decorator--position-absolute;
+}
+
+.uams-decorator--style-block-crimson-uams,
+.uams-decorator--style-block-crimson {
+    background-color: $uams-color--crimson;
+}
+
+.uams-decorator--style-block-crimson-light {
+    background-color: $uams-color--crimson-light;
+}
+
+.uams-decorator--style-block-gray {
+    background-color: $uams-color--gray-10;
+}
+
+.uams-decorator--style-block-gray-dark {
+    background-color: $uams-color--gray-40;
+}
+
+.uams-decorator--style-block-gray-darker {
+    background-color: $uams-color--gray-70;
+}
+
+.uams-decorator--style-block-white {
+    background-color: #fff;
+}
+
+.uams-decorator--style-block-gray-uams {
+    opacity: 0.6;
+}
+

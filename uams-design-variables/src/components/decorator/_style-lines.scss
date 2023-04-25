@@ -1,0 +1,31 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-decorator--style-lines-gray-dark,
+.uams-decorator--style-lines-crimson,
+.uams-decorator--style-lines-gray {
+    content: '';
+	display: block;
+	position: absolute;
+}
+
+.uams-decorator--style-lines-gray {
+	
+	background-image: repeating-linear-gradient(135deg, $uams-color--gray-5, $uams-color--gray-5 2px, transparent 2px, transparent 10px);
+    background-position: 0 -4px;
+    background-repeat: no-repeat;
+}
+
+.uams-decorator--style-lines-gray-dark {
+	
+	background-image: repeating-linear-gradient(135deg, $uams-color--gray-40, $uams-color--gray-40 2px, transparent 2px, transparent 10px);
+    background-position: 0 -4px;
+    background-repeat: no-repeat;
+}
+
+.uams-decorator--style-lines-crimson {
+	
+	background-image: repeating-linear-gradient(135deg, $uams-color--crimson-light, $uams-color--crimson-light 2px, transparent 2px, transparent 10px);
+    background-position: 0 -4px;
+    background-repeat: no-repeat;
+}

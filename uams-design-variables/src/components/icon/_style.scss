@@ -1,0 +1,64 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-icon {
+    display: inline-block;
+    line-height: 1;
+    color: inherit;
+    text-decoration: none;
+    margin-right: $uams-spacing--em-medium;
+
+    &--small {
+        &::before {
+            font-size: $uams-font-size--xlarge; 
+        }
+    }
+
+    &--medium {
+        &::before {
+            font-size: $uams-font-size--xxlarge; 
+        }
+    }
+
+    &--large {
+        &::before {
+            font-size: $uams-font-size--hero;  
+        }
+    } 
+
+    &--xlarge {
+        &::before {
+            font-size: calc( #{$uams-font-size--hero} * 1.5 ); 
+        }
+    }
+
+    &--xxlarge {
+        &::before {
+            font-size: calc( #{$uams-font-size--hero} * 2.25 ); 
+        }
+    }
+
+    &.uams-color {
+        &--crimson {
+            color: $uams-color--crimson;
+        }
+        &--crimson-light {
+            color: $uams-color--crimson-light;
+        }
+        &--accent-autumn {
+            color: $uams-color--accent-autumn;
+        }
+        &--accent-goldfinch {
+            color: $uams-color--accent-goldfinch;
+        }
+        &--accent-vineyard {
+            color: $uams-color--accent-vineyard;
+        }
+        &--accent-pacificsky {
+            color: $uams-color--accent-pacificsky;
+        }
+        &--accent-midnight {
+            color: $uams-color--accent-midnight;
+        }
+    }
+}

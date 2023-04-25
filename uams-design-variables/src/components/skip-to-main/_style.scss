@@ -1,0 +1,17 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-skip-to-main {
+    position: absolute;
+    top: -9999rem;
+    left: $uams-spacing--xxsmall;
+    z-index: 99999;
+    background-color: #fff;
+    font-weight: 600;
+    display: inline-block;
+    padding: $uams-spacing--sxxsmall $uams-spacing--medium;
+
+    &:focus {
+        top: $uams-spacing--xxsmall; 
+    }
+}

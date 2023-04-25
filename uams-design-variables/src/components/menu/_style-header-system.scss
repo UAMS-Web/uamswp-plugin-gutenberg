@@ -1,0 +1,67 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-menu--style-header-system{
+
+    @extend %uams-menu;
+    
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+        margin: 0;
+        padding: 0;
+        position: relative;
+        
+        a {
+            font-weight: 600;
+            font-size: $uams-font-size--xxmedium;
+            color: $uams-color--gray-85;
+            text-decoration: none;
+            padding: $uams-spacing--medium $uams-spacing--medium;
+            position: relative;
+            display: block;
+
+            @media screen and (max-width: $uams-breakpoint--xultrawide ) {
+                font-size: $uams-font-size--xmedium;
+                padding: $uams-spacing--medium $uams-spacing--medium;
+            }
+        }
+        a:hover,a:focus {
+            background: rgb(247,247,247);
+            background: linear-gradient(0deg, rgba(247,247,247,1) 0%, rgba(247,247,247,0) 100%);
+        }
+
+        &:last-child a::after {
+            display: block;
+        }
+
+        &::after {
+            content: '';
+            background-color: $uams-color--gray-55;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: auto;
+            height: 0;
+            transition: height $uams-easing 150ms;
+        }
+
+        &.uams-menu-item--current::after {
+            background-color: $uams-color--crimson-light;
+            height: 5px;
+        }
+        
+        &:hover,
+        &:focus,
+        &.uams-active {
+
+            &::after {
+                height: 5px;
+            }
+
+        }
+    }
+
+}

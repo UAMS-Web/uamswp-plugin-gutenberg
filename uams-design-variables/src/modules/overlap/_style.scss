@@ -1,0 +1,122 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-overlap {
+
+    &__container{
+        display: flex;
+        margin: 0 auto;
+    }
+    &__column{
+        display: flex;
+        width: 50%;
+    }
+    &__column-inner {
+        flex-grow: 1;
+    }
+    &:not([class*='--style-left'] ) {
+        .uams-overlap__column:first-child{
+            .uams-overlap__column-inner {
+                margin-right: -50px;
+            }
+        }
+        .uams-overlap__column:last-child{
+            .uams-overlap__column-inner {
+                margin-left: -50px;
+            }
+        }
+    }
+    &[class*='--style-left']  {    
+        .uams-overlap__column:first-child{
+            .uams-overlap__column-inner {
+                margin-left: -50px;
+            }
+        }
+        .uams-overlap__column:last-child{
+            .uams-overlap__column-inner {
+                margin-right: -50px;
+            }
+        }
+    }
+
+    @media screen and (max-width: $uams-breakpoint--tablet )  {
+        .uams-overlap__container{
+            display: flex;
+            flex-direction: column;
+            height: unset;
+        }
+        .uams-overlap__column{
+            width: 100%;
+        }
+        .uams-overlap__column-inner{
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+    }
+}
+
+.uams-overlap--surface-column {
+    position: relative;
+    z-index: $uams-zindex--content;
+}
+
+$uams-overlap-map: (
+    'xxhero':   $uams-spacing--xxhero,
+    'xhero':    $uams-spacing--xhero,
+    'hero':     $uams-spacing--hero,
+    'xxlarge':  $uams-spacing--xxlarge,
+    'xlarge':   $uams-spacing--xlarge,
+    'large':    $uams-spacing--xlarge,
+    'xxmedium': $uams-spacing--xxmedium,
+    'xmedium':  $uams-spacing--xmedium,
+    'medium':   $uams-spacing--medium,
+    'none':     0,
+);
+
+@media screen and (min-width: $uams-breakpoint--tablet )  {
+
+    @each $uamsOverlapName, $uamsOverlapValue in $uams-overlap-map {
+
+        .uams-overlap:not([class*='--style-left'] ) {
+
+            .uams-overlap__column:first-child{
+
+                &.uams-overlap--overlap-#{$uamsOverlapName} {
+                    .uams-overlap__column-inner {
+                        margin-right: -$uamsOverlapValue !important;
+                    }
+                }
+            }
+        
+            .uams-overlap__column:last-child{
+                &.uams-overlap--overlap-#{$uamsOverlapName} {
+                    .uams-overlap__column-inner {
+                        margin-left: -$uamsOverlapValue !important;
+                    }
+                } 
+            }
+
+        }
+
+        .uams-overlap[class*='--style-left']  {
+
+            .uams-overlap__column:first-child{
+
+                &.uams-overlap--overlap-#{$uamsOverlapName} {
+                    .uams-overlap__column-inner {
+                        margin-left: -$uamsOverlapValue !important;
+                    }
+                }
+            }
+        
+            .uams-overlap__column:last-child{
+                &.uams-overlap--overlap-#{$uamsOverlapName} {
+                    .uams-overlap__column-inner {
+                        margin-right: -$uamsOverlapValue !important;
+                    }
+                } 
+            }
+
+        }
+    }
+}

@@ -1,0 +1,377 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+
+.uams-hero {
+    position: relative;
+    transition: margin-left $uams-transition-speed--medium $uams-easing, margin-right $uams-transition-speed--fast $uams-easing;
+}
+
+.uams-hero:not([class*="-hero--style-"]):not([class*="uams-style--"]) {
+
+    margin-bottom: $uams-spacing--xlarge;
+
+    &::after {
+        display: block;
+        content:'';
+        position: absolute;
+        height: 20%;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.8) 100%);
+    }
+
+    .uams-hero {
+
+        &__content {
+            padding-top: $uams-spacing--hero;
+            padding-bottom: $uams-spacing--hero;
+            padding-left: $uams-spacing--large;
+            padding-right: $uams-spacing--large;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow: hidden;
+            min-height: 650px;
+            box-sizing: border-box; 
+
+
+            &::before {
+                transition: opacity $uams-transition-speed--slow $uams-easing;
+                opacity: 0;
+            }
+        }
+
+        &__caption {
+            position: relative;
+            padding-top: $uams-spacing--large;
+            padding-bottom: $uams-spacing--large;
+            padding-left: $uams-spacing--xlarge;
+            padding-right: $uams-spacing--xlarge;
+            max-width: 800px;
+            color: #fff;
+
+            &::before {
+                display: block;
+                content:'';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: auto;
+                width: auto;
+                -webkit-clip-path: polygon(100% 0,100% calc(100% - 100px),calc(100% - 80px) 100%,0 100%,0 0);
+                clip-path: polygon(100% 0,100% calc(100% - 100px),calc(100% - 80px) 100%,0 100%,0 0);
+            }
+
+            & > *:last-child {
+                margin-bottom: 0;
+            }
+
+        }
+
+        &__image-caption {
+            position: absolute;
+            bottom: $uams-spacing--sxxsmall;
+            right: 0;
+            @include uams-font--xxsmall();
+            color: #fff;
+            background-color: $uams-color--gray-85;
+            padding: $uams-spacing--sxxsmall $uams-spacing--xxsmall;
+            border-radius: 2px 0 0 2px;
+
+            a {
+                color: #fff;
+                text-decoration-color: $uams-color--crimson-light;
+            }
+
+            &::before {
+                content: "\F134";
+                font-family: 'uams-icons';
+                display: inline-block;
+                font-size: $uams-font-size--xsmall;
+                vertical-align: middle;
+                margin-right: 0.5rem;
+            }
+        }
+
+    }
+
+    .uams-pattern-after::after{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }    
+
+    .uams-image-frame, .uams-slider-frame {
+        position: absolute;
+        top: 0;
+        bottom: -20%;
+        left: 0;
+        right: 0;
+        background-color: #000;
+    }    
+
+    .uams-slider-frame {
+        overflow: hidden;
+    }
+
+    .uams-title {
+        @include uams-font--hero();
+        margin: 0 0 $uams-spacing--xsmall;
+        padding: 0;
+        text-shadow: 0px 0px 8px #000000;
+        font-weight: 800;
+        position: relative;
+        word-break: break-word; 
+    }
+
+    h1::after {
+        display: none;
+    }
+
+    .uams-caption { 
+
+        @include uams-hero-caption-size-small();
+        margin-right: $uams-spacing--large;
+        margin-bottom: $uams-spacing--xxmedium;
+        position: relative;
+    }
+
+    &.uams-hero--caption-size-large {
+        .uams-caption {
+            @include uams-hero-caption-size-large();
+        }
+
+        @media screen and (max-width: $uams-breakpoint--tablet-large ) {
+    
+            .uams-caption {
+                @include uams-font--xxmedium();
+            }
+            
+        }
+    }
+
+    .uams-eyebrow-heading {
+        position: relative;
+    }
+
+    .uams-button {
+        text-transform: uppercase;
+        box-shadow: 0 8px 10px 1px rgba(0,0,0,0.03),0 3px 14px 2px rgba(0,0,0,0.03),0 4px 15px 0 rgba(0,0,0,0.02);
+        border: 2px solid #fff;
+        padding-top: $uams-spacing--small;
+        padding-bottom: $uams-spacing--small;
+
+        &::after {
+            content: '\F107';
+            display: inline-block;
+            color: inherit;
+            font-size: inherit;
+            font-family: uams-icons;
+            vertical-align: middle;
+            margin-left: $uams-spacing--sxxsmall; 
+        }
+    }
+
+    .uams-button-video-pause,
+    .uams-button-pause-background {
+        z-index: 5;
+    }
+
+    &.uams-hero {
+
+        &--size-full {
+
+            .uams-hero__content {
+                min-height: 100vh;
+            }
+
+        }
+
+        &--size-large {
+
+            .uams-hero__content {
+                min-height: 950px;
+            }
+
+        }
+
+        &--size-medium {
+
+            .uams-hero__content {
+                min-height: 800px;
+            }
+
+        }
+
+        &--size-small {
+
+            .uams-hero__content {
+                min-height: 500px;
+                padding-top: $uams-spacing--large;
+                padding-bottom: $uams-spacing--large;
+            }
+
+        }
+
+        &--size-xsmall {
+
+            .uams-hero__content {
+                min-height: 300px;
+                padding-top: $uams-spacing--large;
+                padding-bottom: $uams-spacing--large;
+
+            }
+
+        }
+
+    }
+
+    .uams-background-slider {
+        bottom: -$uams-spacing--xlarge;
+        height: auto;
+        width: auto;
+    }
+
+    .uams-background-slider ~ .uams-hero__content,
+    .uams-background-slider ~ .uams-overlay {
+        z-index: 4;
+    }
+    .uams-background-slider ~ .uams-hero__content {
+        overflow: visible;
+
+        &::after {
+            display: block;
+            content: '';
+            position: absolute;
+            height: $uams-spacing--xlarge;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: linear-gradient(0deg,#fff 0,rgba(255,255,255,.8) 100%);
+            z-index: 4;
+        }
+    }
+
+    @media screen and (min-width: $uams-breakpoint--xultrawide ) {
+
+        .uams-hero {
+    
+            &__content {
+                padding-top: calc( #{$uams-spacing--hero} * 1.5 );
+                padding-bottom: calc( #{$uams-spacing--hero} * 1.5 );
+            }
+    
+        }
+            
+    }
+    
+    @media screen and (min-width: $uams-breakpoint--xxultrawide ) {
+    
+        .uams-hero {
+    
+            &__content {
+                padding-top: calc( #{$uams-spacing--hero} * 2 );
+                padding-bottom: calc( #{$uams-spacing--hero} * 2 );
+            }
+    
+        }
+            
+    }
+
+    @media screen and (max-width: $uams-breakpoint--desktop ) {
+
+        .uams-hero {
+    
+            &__content {
+                padding-left: $uams-spacing--xmedium;
+                padding-right: $uams-spacing--xmedium;
+            }
+    
+        }
+            
+    }
+
+    @media screen and (max-width: $uams-breakpoint--tablet-large ) {
+
+        .uams-title {
+            @include uams-font--sxxlarge();
+        }
+
+        
+    }
+
+    @media screen and (max-width: $uams-breakpoint--tablet ) {
+
+        .uams-hero {
+    
+            &__content {
+                padding-left: $uams-spacing--medium;
+                padding-right: $uams-spacing--medium;
+            }
+    
+            &__caption {
+                padding-top: $uams-spacing--large;
+                padding-bottom: $uams-spacing--large;
+                padding-left: $uams-spacing--xxmedium;
+                padding-right: $uams-spacing--xxmedium;
+            }
+    
+            
+    
+        }
+    
+        .uams-title {
+            @include uams-font--xxlarge();
+        }
+            
+    }
+    
+    @media screen and (max-width: $uams-breakpoint--phone ) {
+    
+        .uams-hero {
+    
+            &__content {
+                padding-left: $uams-spacing--medium;
+                padding-right: $uams-spacing--medium;
+                padding-top: $uams-spacing--xxlarge;
+                padding-bottom: $uams-spacing--xxlarge;
+            }
+    
+            
+    
+        }
+    
+        .uams-title {
+            @include uams-font--xlarge();
+        }
+    
+        .uams-caption {
+            @include uams-font--medium();
+        }
+            
+    }
+    
+}
+
+.uams-header-global ~ .uams-wrapper-site .uams-hero--size-full {
+
+    .uams-hero__content {
+        min-height: calc( 100vh - 64px );
+    }
+
+}
+
+.uams-header-global ~ .uams-wrapper-site .uams-header-site ~ .uams-wrapper-content .uams-hero--size-full {
+
+    .uams-hero__content {
+        min-height: calc( 100vh - 64px - 110px );
+    }
+
+}

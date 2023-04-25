@@ -1,0 +1,231 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-header-campus{
+    background-color: white;
+    border-bottom: 4px solid $uams-color--gray-20;
+    display: grid;
+    grid-template-columns: [col-1] 400px [col-2] auto; /* First column 400px, second auto width */
+    grid-template-rows: [row-1] auto [row-2] auto; /* two rows, both auto width */
+    
+    &__top-bar{
+        display: flex;
+        justify-content: flex-end;
+        max-height: 56px;
+        height: 56px;
+        grid-column-start: 2; /* Start at second column */
+        grid-column-end: span 1; /* And span only one column */
+        grid-row-start: 1; /* Start at first row */
+        grid-row-end: span 1; /* And span only one row */
+    }
+    &__nav{
+        color: #262626;
+        padding-right: $uams-spacing--medium;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        box-sizing: border-box;
+        grid-column-start: 2; /* Start at second column */
+        grid-column-end: span 1; /* And span only one column */
+        grid-row-start: 2; /* Start at second row */
+        grid-row-end: span 1; /* And span only one row */
+    }
+    &__logo{
+        display: flex;
+        grid-column-start: 1; /* Start at first column */
+        grid-column-end: span 1;  /* And span only one column */
+        grid-row-start: 1; /* Start at first row */
+        grid-row-end: span 2; /* but span two rows */
+        min-height: 200px; /* with everything else set to auto - this is setting the height */
+        z-index: $uams-zindex--global-header;
+        position: relative;
+        background: white;
+    }
+    &__right{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+    &__coug-head-box{
+        display: flex;
+        height: 100%;
+        min-height: 165px;
+        min-width: 140px;
+        align-items: center;
+        justify-content: center;
+        background-color: $uams-color--crimson;
+    }
+    &__coug-head-box > svg{
+        width: 70px;
+    }
+    &__wordmark{
+        display: flex;
+        width: 100%;
+        padding: 1em 1em;
+        align-items: center;
+    }
+    &__mobile-wrapper{
+        display: none;
+    }
+    .uams-mobile-menu {
+
+        &__panel {
+            top: $uams-height--system-header;
+        }
+
+        &__quicklinks {
+            text-decoration: none;
+            color: #fff;
+            background-color: #595959;
+            border-right: none;
+            border-bottom: 2px solid #d9d9d9;
+            border-top: none;
+            outline: 0;
+            box-shadow: none;
+            margin: 0;
+            padding: $uams-spacing--xmedium $uams-spacing--large !important;
+            border-radius: 0;
+            display: block;
+            box-sizing: border-box;
+            text-align: left;
+            font-size: $uams-font-size--xxmedium !important;
+            font-weight: 700;
+            position: relative;
+            line-height: 1.5;
+            cursor: pointer;
+
+            &::after {
+                font-size: 0.8em;
+            }
+        }
+
+        &__toggle-container {
+            height: $uams-height--system-header;
+            width: 80px;
+        }
+
+        .uams-menu {
+            li {
+                margin: 0;
+            }
+            a {
+                color: $uams-color--crimson !important;
+                border-bottom: 1px solid $uams-color--gray-10 !important;
+                padding: $uams-spacing--small $uams-spacing--large !important;
+                font-size: $uams-font-size--large !important;
+                font-weight: 700 !important;
+            }
+        }
+
+        .uams-menu-audience {
+            margin-top: $uams-spacing--xxmedium;
+        }
+
+        .uams-menu-audience__link {
+            padding: $uams-spacing--sxxsmall $uams-spacing--large !important;
+            display: block;
+        }
+    }
+}
+.svg-fill{
+    fill:#4D4D4D;
+}
+.uams-menu--style-header-campus li a{
+    font-size: 1rem;
+    padding: 1rem;
+}
+.uams-menu--style-header-campus{
+    width: 100%;
+    justify-content: space-between;
+}
+
+// 1750px breakpoint
+@media screen and (max-width: $uams-breakpoint--xultrawide ) {
+    .uams-header-campus__wordmark{
+        padding: 0.5em 1em;
+    }
+}
+
+@media screen and (max-width: 1500px ) {
+    .uams-header-campus{
+        border-bottom: 1px solid $uams-color--gray-10;
+        grid-template-columns: [col-1] 400px [col-2] auto;
+    }
+    .uams-header-campus__logo {
+        grid-row-start: 1;
+        grid-row-end: span 1;
+        min-height: 160px;
+    }
+    
+    .uams-header-campus__nav {
+        grid-column-start: 1;
+        grid-column-end: span 2;
+        grid-row-start: 2;
+        grid-row-end: span 1;
+        justify-content: center;
+        padding: 0 10px;
+        border-top: 1px solid $uams-color--gray-10;
+    }
+    .uams-header-campus__top-bar{
+        flex-direction: column-reverse;
+    }
+    .uams-menu-audience{
+        margin-top: 15px;
+    }
+    
+    .uams-menu--style-header-campus{
+        width: 100%;
+        justify-content: space-between;
+    }
+    .uams-menu--style-header-campus li a{
+        font-size: 1rem;
+        padding: 1rem;
+    }
+    
+    .uams-header-system__coug-head-box{
+        width: 175px;
+        min-height: 190px;
+    }
+}
+
+// 992px breakpoint
+@media screen and (max-width: $uams-breakpoint--tablet-large ) {
+    .uams-header-campus__logo {
+        min-height: 100px;
+    }
+    .uams-header-campus__top-bar{
+        display: none;
+    }
+    .uams-header-campus__nav{
+        display: none;
+    }
+    .uams-header-campus__mobile-wrapper{
+        display: flex;
+    } 
+    .uams-custom-demo{
+        display: unset !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .uams-header-campus__wordmark{
+        display: flex;
+        width: 200px;
+        padding: 1em 1em;
+    }
+
+    .uams-header-campus__coug-head-box{
+        margin-left: 0;
+        min-height: 50px;
+        height: 100%;
+        width: 90px;
+        min-width: 90px;
+    }
+    .uams-header-campus__coug-head-box > svg{
+        display: flex;
+        padding: 0 15px 0 15px;
+        width: 50px;
+        margin-left: 0;
+    }
+
+}

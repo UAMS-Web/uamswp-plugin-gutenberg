@@ -1,0 +1,16 @@
+.uams-button-ui-search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: $uams-width--button-small;
+    padding: $uams-spacing--sxxsmall 0;
+    text-decoration: none;
+    font-size: $uams-font-size--medium;
+    position: relative;
+    
+    &::before {
+        content: '\F140';
+        font-size: inherit;
+    }
+}

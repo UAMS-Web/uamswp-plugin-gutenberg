@@ -1,0 +1,23 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-animate--action-fade {
+    transition: opacity ease-in 1s;
+
+    &.uams-animate--timing-early,
+    &:not([class*='--timing-']),
+    &.uams-animate--timing-late {
+        opacity: 0;
+    }
+
+    &.uams-animate--timing-late.uams-animate--do-late,
+    &.uams-animate--timing-early.uams-animate--do-early,
+    &:not([class*='--timing-']).uams-animate--do-default {
+        opacity: 1;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        opacity: 1 !important;
+    }
+
+}

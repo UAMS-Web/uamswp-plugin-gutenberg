@@ -1,0 +1,161 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+
+$uams-space--logo: $uams-spacing--medium;
+
+.uams-header-campus {
+    z-index: $uams-zindex--navigation;
+    position: relative;
+
+    &::after {
+        content:'';
+        height: 5px;
+        width: auto;
+        bottom: -5px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        background: -moz-linear-gradient(top,  rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+        background: -webkit-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%);
+        background: linear-gradient(to bottom,  rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000',GradientType=0 );
+        opacity: 0.2;
+    }
+
+   
+
+    &__banner {
+        background-color: #fff;
+        height: 150px;
+        display: flex;
+        z-index: $uams-zindex--navigation;
+        position: relative;
+        box-sizing: border-box;
+    }
+
+    &__utility-options {
+        flex-grow: 1;
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+    }
+
+    .uams-logo-lockup__icon-wrapper {
+        width: 150px;
+    }
+
+    .uams-navigation-header {
+        background-color: #fff;
+        height: 45px;
+        border-top: 1px solid $uams-color--gray-10;
+        padding: 0 $uams-spacing--small;
+    }
+
+    .uams-button-menu {
+        right: 0;
+        display: none;
+    }
+
+    @media screen and (min-width: $uams-breakpoint--horizontal-nav ) {
+
+        .uams-navigation-mobile,
+        .uams-mobile-menu {
+            display: none;
+        }
+
+    }
+
+    @media screen and (max-width: $uams-breakpoint--horizontal-nav ) {
+
+        .uams-button-menu {
+            display: flex;
+        }
+
+        .uams-header-campus__banner {
+            height: 125px;
+        }
+
+        .uams-logo-lockup__icon-wrapper {
+            width: 125px;
+        }
+
+        .uams-logo-lockup {
+            font-size: 0.7rem;
+        }
+
+
+        .uams-header-campus__utility-options,
+        .uams-navigation-header {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: $uams-breakpoint--tablet ) {
+
+        .uams-header-campus__banner {
+            height: 100px;
+        }
+
+        .uams-logo-lockup__icon-wrapper {
+            width: 100px;
+        }
+
+        .uams-logo-lockup {
+            font-size: 0.5rem;
+        }
+
+    }
+
+    @media screen and (max-width: $uams-breakpoint--phone) {
+
+        .uams-header-campus__banner {
+            height: 80px;
+        }
+
+        .uams-logo-lockup__icon-wrapper {
+            width: 80px;
+        }
+
+        .uams-logo-lockup {
+            font-size: 0.4rem;
+        }
+
+    }
+}
+
+@media screen and (max-width: $uams-breakpoint--horizontal-nav ) {
+
+    .uams-header-campus ~ .uams-navigation-vertical {
+        display: none;
+    }
+
+    .uams-header-campus ~ .uams-navigation-vertical ~ .uams-wrapper-site {
+        margin-left: 0;
+    }
+    
+}
+
+.uams-header-global ~ .uams-header-campus .uams-header-campus__utility-options {
+
+    .uams-header-utility-bar {
+        position: relative;
+    }
+
+    .uams-header-utility-bar::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        height: 35px;
+        width: 6px;
+        left: -6px;
+        display: block;
+        background: -moz-linear-gradient(left,  rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.5) 100%);
+        background: -webkit-linear-gradient(left,  rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.5) 100%);
+        background: linear-gradient(to right,  rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.5) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d000000', endColorstr='#80000000',GradientType=1 );
+        opacity: 0.5;
+    }
+}
+

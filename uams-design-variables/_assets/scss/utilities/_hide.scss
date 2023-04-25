@@ -1,0 +1,14 @@
+@import '../variables';
+
+
+@each $breakpointName, $breakpointValue in $uams-breakpoint-map {
+
+    @media screen and ( max-width: $breakpointValue ) {
+
+        .uams-hide--#{$breakpointName} {
+            display: none !important;
+        }
+
+    }
+
+}

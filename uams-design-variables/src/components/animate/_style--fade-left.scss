@@ -1,0 +1,26 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-animate--action-fade-left {
+    transition: transform $uams-easing 1s, opacity ease-in 1s;
+
+    &.uams-animate--timing-early,
+    &:not([class*='--timing-']),
+    &.uams-animate--timing-late {
+        transform: translateX(-300px);
+        opacity: 0;
+    }
+
+    &.uams-animate--timing-late.uams-animate--do-late,
+    &.uams-animate--timing-early.uams-animate--do-early,
+    &:not([class*='--timing-']).uams-animate--do-default {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        transform: translateX(0) !important;
+        opacity: 1 !important;
+    }
+
+}

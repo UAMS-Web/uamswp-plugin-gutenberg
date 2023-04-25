@@ -1,0 +1,411 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+@import '../../../_assets/scss/animations';
+
+@media screen and (min-width: $uams-breakpoint--desktop ) {
+
+    .uams-navigation-site-horizontal {
+        color: $uams-color--gray-85;
+        display: flex;
+        margin: 0 $uams-spacing--medium;
+        max-width: 1200px;
+        box-sizing: border-box;
+
+        &__panel {
+            display: flex;
+        }
+
+        &__menu {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            
+            button:not([class*='uams-button']) {
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+                box-sizing: border-box;
+                text-align: left;
+
+                &::after {
+                    content: "\F103";
+                    font-family: uams-icons;
+                    margin-left: 0.75em;
+                    color: inherit;
+                    font-size: 12px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                }
+            }
+
+            ul {
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+                position: relative;
+                box-sizing: border-box;
+            }
+
+            li {
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+                position: relative;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+                box-sizing: border-box;
+                display: block;
+            }
+
+            & > li {
+
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                position: relative;
+            
+                & > button:not([class*='uams-button']),
+                & > a {
+                    @include uams-font--medium();
+                    display: flex;
+                    flex-grow: 1;
+                    align-items: center;
+                    justify-content: center;
+                    padding: $uams-spacing--small $uams-spacing--xmedium $uams-spacing--small;
+                    font-weight: 500;
+                }
+            
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    width: auto;
+                    bottom: 0; 
+                }
+            
+                &:hover,
+                &:focus,
+                &:focus-within {
+            
+                    background-color: $uams-color--gray-0;
+            
+                    &::after {
+                        background-color: $uams-color--gray-65;
+                        height: 5px;
+                    }
+            
+                }
+            
+                &:first-child > a::before {
+                    content: '\F122';
+                    font-family: uams-icons;
+                    margin-right: 0.4em;
+                    font-size: 0.9em;
+                    display: inline-block;
+                    vertical-align: middle;
+                    transform: translateY(-2px);
+                }
+            
+                &.uams-menu-item--parent::after,
+                &.uams-menu-item--current::after {
+                    background-color: $uams-color--crimson-light; 
+                    height: 5px; 
+                }
+            
+                @include uams-animation--submenu-collapsible();
+            
+                & > ul {
+                    position: absolute; 
+                    top: calc(100% + 0.3rem);
+                    width: $uams-width--navigation;
+                    left: 0;
+                    background-color: #fff;
+                    //border: 1px solid $uams-color--gray-10;
+                    border-radius: 3px;
+                    z-index: $uams-zindex--navigation;
+                    box-shadow: $uams-dropshadow--low;
+                }
+            }
+
+            & > li > ul {
+
+                li {
+                    @include uams-menu-vertical--item(); 
+                }
+                
+                button:not([class*='uams-button']),
+                a {
+                    text-decoration: none;
+                    color: inherit;
+                    background-color: transparent;
+                    border-left: 5px solid transparent;
+                    border-right: none;
+                    border-bottom: none;
+                    border-top: none;
+                    outline: none;
+                    box-shadow: none;
+                    font-weight: inherit;
+                    margin: 0;
+                    padding: 0.7rem calc( #{$uams-spacing--medium} - 5px );
+                    flex-grow: 1;
+                    border-radius: 0;
+                    display: block;
+                    box-sizing: border-box;
+                    text-align: left;
+                    font-size: $uams-font-size--small;
+                    font-weight: 600;
+                    position: 'relative';
+                    line-height: 1.5;  
+                    cursor: pointer;
+
+                    &:hover,
+                    &:focus {
+                        background-color: $uams-color--gray-10;
+                        border-left: 5px solid $uams-color--gray-65;
+                    }
+
+                    &[aria-current="page"] {
+                        border-left: 5px solid $uams-color--crimson-light !important;
+                    }
+                }
+            
+                button:not([class*='uams-button']):not(:first-child) {
+                    @include uams-menu-vertical--item-button-split();
+                }
+            
+                button:not([class*='uams-button']):not([class*='uams-button']):first-child {
+                    @include uams-menu-vertical--item-button(); 
+                }
+            
+                ul {
+                    width: 100%;
+                    @include uams-menu-vertical--submenu();
+                }
+            
+                li[aria-expanded="true"] {
+            
+                    & > ul { 
+                        @include uams-menu-vertical--submenu-open();
+                    } 
+                }
+            
+            }
+
+            & > li > ul > li > ul > li {  
+
+                button:not([class*='uams-button']),
+                a {
+                    @include uams-menu-vertical--secondary-item-link();
+                }
+            
+            }
+
+        }
+
+        &__menu-item-close {
+
+            &::before {
+                content: '';
+                width: auto;
+                left: $uams-spacing--medium;
+                right: $uams-spacing--medium;
+                top: 0;
+                bottom: auto;
+                background-color: $uams-color--gray-10; 
+                height: 1px;
+                position: absolute;
+                display: block;
+            }
+
+            button {
+                margin: $uams-spacing--xsmall $uams-spacing--medium;
+            }
+        }
+
+        &__overlay {
+            display: none;
+        }
+
+        .uams-button-ui--close-after {
+            display: none;
+        }
+
+        .uams-button-ui--navigation-menu {
+            display: none; 
+        }
+    }
+
+    .uams-header-site--dark {
+
+        .uams-navigation-site-horizontal {
+            color: $uams-color--gray-0;
+
+            /*button {
+                color: $uams-color--gray-0;
+            }*/
+
+            &__menu {
+
+                ul {
+                    color: $uams-color--gray-85;
+                }
+
+                & > li {
+                    &:hover,
+                    &:focus,
+                    &:focus-within {
+    
+                        background-color: $uams-color--gray-75;
+
+                        &::after {
+                            background-color: $uams-color--gray-40;
+                        }
+            
+                    }
+
+                    
+                }
+
+                & > li > button,
+                & > li > a {
+                    color: $uams-color--gray-0;
+                    &:hover,
+                    &:focus,
+                    &:focus-within {
+    
+                        background-color: $uams-color--gray-75;
+                
+                        &::after {
+                            background-color: $uams-color--gray-65;
+                            height: 5px;
+                        }
+                
+                    }
+    
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+@media screen and (max-width: $uams-breakpoint--desktop ) {
+
+    .uams-navigation-site-horizontal {
+        
+        &__panel {
+            @include uams-navigation-panel();
+            @include uams-navigation-panel--mobile();
+            border-left: 1px solid $uams-color--gray-10; 
+        }
+
+        &__overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #000;
+            z-index: calc( #{$uams-zindex--navigation} - 10 );
+            cursor: pointer;
+            display: none;
+        }
+
+        &[aria-expanded="true"] {
+            .uams-navigation-site-horizontal {
+                &__panel {
+                    @include uams-navigation-panel--open();
+                }
+
+                &__overlay {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100vw;
+                    height: 100vh;
+                    background-color: #000;
+                    z-index: calc( #{$uams-zindex--navigation} - 10 );
+                    cursor: pointer;
+                    display: block;
+                    opacity: 0.4;
+                }
+            }
+        }
+
+        &__menu {
+            @include uams-navigation-menu();
+            /*margin: 0;
+            padding: 0;
+            list-style-type: none;
+
+            li {
+                @include uams-menu-vertical--item();
+            }
+
+            a {
+                @include uams-menu-vertical--link();
+            }
+
+            button:not([class*='uams-button']) {
+                @include uams-menu-vertical--button();
+            }
+
+            button:not([class*='uamss-button']):first-child {
+                @include uams-menu-vertical--item-button();
+            }
+
+            a + button:not([class*='uams-button']) {
+                @include uams-menu-vertical--item-button-split();
+            } 
+
+            ul {
+                width: 100%;
+                @include uams-menu-vertical--submenu();
+            }
+        
+            li[aria-expanded="true"] {
+        
+                & > ul { 
+                    @include uams-menu-vertical--submenu-open();
+                } 
+            }
+
+            & li > ul > li {
+                button:first-child:not([class*='uams-button']),
+                a {
+                    @include uams-menu-vertical--secondary-item-link();
+                }
+            }
+
+            & ul ul > li {
+                button:first-child:not([class*='uams-button']),
+                a {
+                    @include uams-menu-vertical--tertiary-item-link();
+                }
+            }*/
+        }
+
+        &__menu-item-close {
+            display: none !important; 
+        }
+
+        .uams-button-ui--close-after {
+            margin: $uams-spacing--medium auto $uams-spacing--medium $uams-spacing--medium ;
+        }
+    }
+}
+
+.uams-header-global--dark ~ .uams-wrapper-site .uams-button-ui--navigation-menu {
+    color: #fff;
+}

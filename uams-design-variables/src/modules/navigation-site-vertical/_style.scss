@@ -1,0 +1,385 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+@import '../../components/menu/mixins';
+
+
+@include uams-menu--primary-vertical( '', '.uams-navigation-site-vertical' );
+
+$global-header-height: 65px;
+
+.uams-navigation-site-vertical {
+
+    &__panel {
+        position: fixed; 
+        top: 0;
+        padding-top: 65px;
+        height: 100vh;
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        border-right: 1px solid $uams-color--gray-10;
+        width: $uams-width--navigation-open;
+        left: 0;
+        transition: transform $uams-transition-speed--medium $uams-easing, opacity $uams-transition-speed--medium $uams-easing;
+        opacity: 1;
+        visibility: inherit;
+        box-sizing: border-box;
+        z-index: $uams-zindex--navigation;
+        background-color: #fff;
+    }
+
+    &__overlay {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0,0,0,0.4);
+        z-index: calc( #{$uams-zindex--navigation} - 1 );
+        opacity: 0;
+        visibility: hidden;
+        transition:  opacity $uams-transition-speed--medium $uams-easing, visibility $uams-transition-speed--medium $uams-easing 0s;
+        cursor: pointer;
+    }
+
+    &__toggle-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: $uams-height--global-header;
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        border:none;
+        width: $uams-width--button-small;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        outline: 0;
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        border-top: 4px solid #a60f2d;
+        background-color: transparent;
+        color: inherit;
+        align-items: center;
+        flex-grow: 1;
+        z-index: calc( #{$uams-zindex--global-header} + 1 );
+        border-radius: 0;
+        justify-content: center;
+        font-size: 0;
+        display: none;
+        cursor: pointer;
+
+        &::before {
+            content: '\F12A';
+            font-family: 'uams-icons';
+            font-size: $uams-font-size--xmedium;
+            font-weight: 500; 
+        }
+
+        &:focus,
+        &:hover {
+            box-shadow: none;
+        }
+
+        @include uams-hover--border-bottom();
+
+        &:focus {
+            @include uams-focus--link();
+        } 
+    }
+
+    &__open-button {
+        position: fixed;
+        top: 0;
+        height: calc( 100vh );
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        border-right: 1px solid $uams-color--gray-10;
+        width: $uams-width--navigation-closed;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        outline: 0;
+        border-top: none;
+        border-bottom: none;
+        border-left: none;
+        box-shadow: none;
+        background-color: #fff;
+        color: inherit;
+        font-size: 0.6rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        align-items: center;
+        flex-grow: 1;
+        z-index: $uams-zindex--navigation;
+        border-radius: 0;
+        justify-content: center;
+        transition: transform $uams-transition-speed--medium $uams-easing, opacity $uams-transition-speed--medium $uams-easing;
+        cursor: pointer; 
+
+        &::before {
+            content: '\F12A';
+            font-family: 'uams-icons';
+            font-size: $uams-font-size--large;
+            font-weight: 500;
+        }
+
+        &:focus,
+        &:hover {
+            background-color: $uams-color--gray-10;
+            border-right: 1px solid $uams-color--gray-60;
+            box-shadow: none;
+        }
+
+    }
+
+    &:focus-within,
+    &:hover,
+    &:focus {
+        .uams-menu > li {
+
+            &[aria-expanded] > a::after,
+            &::after {
+                opacity: 1 !important;
+            }
+
+        }
+
+    }
+
+    .uams-button-ui-close {
+        margin-top: $uams-spacing--medium;
+        margin-bottom: $uams-spacing--medium;
+        padding-right: $uams-spacing--small;
+        visibility: inherit;
+    }
+
+    .uams-menu {
+        flex-grow: 1;
+        visibility: inherit;
+
+        & > li:first-child a::before {
+            content: '\F122';
+            font-family: 'uams-icons';
+            margin-right: 0.3em;
+        }
+    }
+}
+
+/**
+* ========================= Desktop Responsive View =======================
+*/
+@media screen and (min-width: $uams-breakpoint--desktop ) {
+
+    .uams-navigation-site-vertical {
+        &__open-button {
+            visibility: hidden;
+            transform: translateX( calc( #{$uams-width--navigation-open} - #{$uams-width--navigation-closed} ) );
+            transition: transform $uams-transition-speed--medium $uams-easing, opacity $uams-transition-speed--fast $uams-easing, visibility $uams-transition-speed--medium $uams-easing 0s;
+            opacity: 0;
+        }
+
+        &__panel {
+            opacity: 1;
+            transition: transform $uams-transition-speed--medium $uams-easing, opacity $uams-transition-speed--medium $uams-easing, visibility 0s $uams-easing 0s;
+        }
+
+        & ~ .uams-wrapper-site {
+            margin-left: $uams-width--navigation-open;
+        }
+    }
+
+    .uams-navigation-site-vertical--is-closed {
+
+        .uams-navigation-site-vertical {
+
+            &__open-button {
+                transform: translateX( 0 );
+                visibility: visible;
+                transition: transform $uams-transition-speed--medium $uams-easing, opacity $uams-transition-speed--fast $uams-easing, visibility 0s $uams-easing 0s;
+                opacity: 1;
+
+                &:focus,
+                &:hover {
+                    background-color: $uams-color--gray-10;
+                    border-right: 1px solid $uams-color--gray-60;
+                    box-shadow: none;
+                }
+            }
+
+            &__panel {
+                transform: translateX( calc( #{$uams-width--navigation-closed} - #{$uams-width--navigation-open} ) );
+                opacity: 0;
+                visibility: hidden;
+                transition: transform $uams-transition-speed--medium $uams-easing, opacity $uams-transition-speed--medium $uams-easing, visibility $uams-transition-speed--medium $uams-easing 0s;
+            }
+
+            & ~ .uams-wrapper-site {
+                margin-left: $uams-width--navigation-closed;
+            }
+        }
+    }
+
+}
+
+/**
+* ========================= Tablet Responsive View =======================
+*/
+@media screen and (min-width: $uams-breakpoint--tablet ) and (max-width: $uams-breakpoint--desktop ) {
+
+    .uams-navigation-site-vertical {
+        &__open-button {
+            transform: translateX( 0 );
+            visibility: visible;
+            opacity: 1;
+        }
+
+        &__panel {
+            transform: translateX( calc( #{$uams-width--navigation-closed} - #{$uams-width--navigation-open} ) );
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        & ~ .uams-wrapper-site {
+            margin-left: $uams-width--navigation-closed;
+        }
+    }
+
+    .uams-navigation-site-vertical--is-open {
+
+        .uams-navigation-site-vertical {
+
+            &__open-button {
+                transform: translateX( calc( #{$uams-width--navigation-open} - #{$uams-width--navigation-closed} ) );
+                visibility: hidden;
+                transition: transform $uams-transition-speed--medium $uams-easing, opacity $uams-transition-speed--fast $uams-easing, visibility 0s $uams-easing 0s;
+                opacity: 0;
+            }
+
+            &__panel {
+                transform: translateX( 0 );
+                opacity: 1;
+                visibility: visible;
+                transition: transform $uams-transition-speed--medium $uams-easing, opacity $uams-transition-speed--medium $uams-easing, visibility $uams-transition-speed--medium $uams-easing 0s;
+            }
+
+            &__overlay {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            & ~ .uams-wrapper-site {
+                transform: translateX( calc( #{$uams-width--navigation-open} - #{$uams-width--navigation-closed} ) )
+            }
+        }
+    }
+
+    .uams-navigation-site-vertical--is-closed {
+
+        .uams-navigation-site-vertical {
+            &__overlay {
+                transition:  opacity $uams-transition-speed--medium $uams-easing, visibility $uams-transition-speed--medium $uams-easing 2s;
+            }
+            
+        }
+    }
+}
+
+/**
+* ========================= Phone Responsive View =======================
+*/
+@media screen and (max-width: $uams-breakpoint--tablet ) {
+
+    .uams-navigation-site-vertical {
+        &__open-button {
+            display: none;
+        }
+
+        &__toggle-button {
+            display: flex; 
+        }
+
+        &__panel {
+            transform: translateX( #{$uams-width--navigation-open} );
+            opacity: 0;
+            visibility: hidden;
+            border-left: 1px solid $uams-color--gray-10;
+
+            & > .uams-button-ui-close:first-child {
+                display: none;
+            }
+        }
+
+        .uams-menu {
+            margin-top: $uams-spacing--medium;
+        }
+    }
+
+    .uams-navigation-site-vertical--is-open {
+
+        .uams-navigation-site-vertical {
+
+            &__panel {
+                transform: translateX( 0 );
+                opacity: 1;
+                right: 0;
+                left: auto;
+                visibility: visible;
+                transition: transform $uams-transition-speed--medium $uams-easing, opacity $uams-transition-speed--medium $uams-easing, visibility $uams-transition-speed--medium $uams-easing 0s;
+            }
+
+            &__overlay {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            & ~ .uams-wrapper-site {
+                transform: translateX( calc( #{$uams-width--navigation-open} * -1 ) )
+            }
+        }
+    }
+
+    .uams-navigation-site-vertical--is-closed {
+
+        .uams-navigation-site-vertical {
+            &__overlay {
+                transition:  opacity $uams-transition-speed--medium $uams-easing, visibility $uams-transition-speed--medium $uams-easing 2s;
+            }
+            
+        }
+    }
+
+}
+
+
+@import "style--style-dark.scss";
+
+
+/**
+* ========================= Make menu color light on dark header =======================
+*/
+
+.uams-header-global--dark ~ .uams-navigation-site-vertical {
+    .uams-navigation-site-vertical__toggle-button {
+        color: $uams-color--gray-5;
+    }
+
+}
+
+
+/* ------------------- Print Styles ----------------- */
+
+@media print { 
+    .uams-navigation-site-vertical {
+        display: none !important;
+    }
+}
+
+
+

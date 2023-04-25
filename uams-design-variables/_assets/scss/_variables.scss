@@ -1,0 +1,509 @@
+/*
+- Colors
+---- Crimsons
+---- UAMS Grays
+- Dropshadows
+- Easing
+- Font Family
+- Font Size
+- Font Weights
+- Heights
+- Media Sizes
+- Spacing
+- Transition Speed
+- Z-Index
+*/
+
+
+/* ========================================================
+== Border Radius ==
+==========================================================*/
+$uams-border-radius--xlarge: 12px;
+$uams-border-radius--large:  6px;
+$uams-border-radius--medium: 4px;
+$uams-border-radius--small:  3px;
+$uams-border-radius--xsmall: 3px;
+
+/* ========================================================
+== Breakpoints ==
+==========================================================*/
+
+
+$uams-breakpoint--sxxultrawide:  2400px;
+$uams-breakpoint--xxultrawide:   1900px;
+$uams-breakpoint--xultrawide:   1750px;
+$uams-breakpoint--ultrawide:    1600px;
+$uams-breakpoint--xdesktop:     1400px;
+$uams-breakpoint--desktop:      1260px;
+$uams-breakpoint--tablet-large: 992px;
+$uams-breakpoint--tablet-medium: 860px;
+$uams-breakpoint--tablet:       768px;
+$uams-breakpoint--phone:        576px;
+$uams-breakpoint--phone-small:  450px;
+$uams-breakpoint--phone-xsmall:  380px;
+
+$uams-breakpoint-map: (
+    'xxultrawide':  2400px,
+    'xultrawide':   1900px,
+    'ultrawide':    1600px,
+    'desktop':      1260px,
+    'tablet-large': 992px,
+    'tablet-medium': 860px,
+    'tablet':       768px,
+    'phone':        576px,
+    'phone-small':  450px,
+);
+
+$uams-breakpoint--horizontal-nav: $uams-breakpoint--desktop;
+
+/* ========================================================
+== Colors ==
+==========================================================*/
+
+/* UAMS Accent colors */
+$uams-color--accent-autumn: #FF6727;
+$uams-color--accent-goldfinch: #F3E700;
+$uams-color--accent-vineyard: #AADC24;
+$uams-color--accent-pacificsky: #5BC3F5;
+$uams-color--accent-midnight: #002D61;
+
+/* UAMS Crimson */
+$uams-color--crimson:        #A60F2D;
+$uams-color--crimson-light:  #CA1237;
+$uams-color--crimson-accent: #FAE6EA;
+$uams-color--crimson-dark:   #78001e;
+
+/* UAMS Grays */
+$uams-color--gray-0:   hsl(0, 0, 97%); // #f7f7f7
+$uams-color--gray-5:   hsl(0, 0, 95%); // #f2f2f2
+$uams-color--gray-10:  hsl(0, 0, 90%); // #e6e6e6
+$uams-color--gray-15:  hsl(0, 0, 85%); // #d9d9d9
+$uams-color--gray-20:  hsl(0, 0, 80%); // #cccccc
+$uams-color--gray-25:  hsl(0, 0, 75%); // #bfbfbf
+$uams-color--gray-30:  hsl(0, 0, 70%); // #b3b3b3
+$uams-color--gray-35:  hsl(0, 0, 65%); // #a6a6a6
+$uams-color--gray-40:  hsl(0, 0, 60%); // #999999
+$uams-color--gray-45:  hsl(0, 0, 55%); // #8c8c8c
+$uams-color--gray-50:  hsl(0, 0, 50%); // #808080
+$uams-color--gray-55:  hsl(0, 0, 45%); // #737373
+$uams-color--gray-60:  hsl(0, 0, 40%); // #666666
+$uams-color--gray-65:  hsl(0, 0, 35%); // #595959
+$uams-color--gray-70:  hsl(0, 0, 30%); // #4d4d4d
+$uams-color--gray-75:  hsl(0, 0, 25%); // #404040
+$uams-color--gray-80:  hsl(0, 0, 20%); // #333333
+$uams-color--gray-85:  hsl(0, 0, 15%); // #262626
+$uams-color--gray-90:  hsl(0, 0, 10%); // #1a1a1a
+$uams-color--gray-95:  hsl(0, 0, 3%); // #080808 - 5% and 3% are nearly indistinguishable, so treat them the same and leave the value to maintain consistency
+$uams-color--gray-100: hsl(0, 0, 3%); // #080808
+
+$uams-color--text: $uams-color--gray-85; // #080808
+
+$uams-color-map: (
+    'white':        #ffffff,
+    'gray-0':        $uams-color--gray-0,
+    'gray-5':        $uams-color--gray-5,
+    'gray-10':       $uams-color--gray-10,
+    'gray-15':       $uams-color--gray-15,
+    'gray-20':       $uams-color--gray-20,
+    'gray-25':       $uams-color--gray-25,
+    'gray-30':       $uams-color--gray-30,
+    'gray-35':       $uams-color--gray-35,
+    'gray-40':       $uams-color--gray-40,
+    'gray-45':       $uams-color--gray-45,
+    'gray-50':       $uams-color--gray-50,
+    'gray-55':       $uams-color--gray-55,
+    'gray-60':       $uams-color--gray-60,
+    'gray-65':       $uams-color--gray-65,
+    'gray-70':       $uams-color--gray-70,
+    'gray-75':       $uams-color--gray-75,
+    'gray-80':       $uams-color--gray-80,
+    'gray-85':       $uams-color--gray-85,
+    'gray-90':       $uams-color--gray-90,
+    'gray-95':       $uams-color--gray-95,
+    'gray-100':      $uams-color--gray-100,
+    'crimson':       $uams-color--crimson,
+    'crimson-light': $uams-color--crimson-light,
+);
+
+$uams-color-background-text-map: (
+    'white':         $uams-color--text,
+    'gray-0':        $uams-color--text,
+    'gray-5':        $uams-color--text,
+    'gray-10':       $uams-color--text,
+    'gray-15':       $uams-color--text,
+    'gray-20':       $uams-color--text,
+    'gray-25':       $uams-color--text,
+    'gray-30':       $uams-color--text,
+    'gray-35':       $uams-color--text,
+    'gray-40':       $uams-color--text,
+    'gray-45':       $uams-color--gray-5,
+    'gray-50':       $uams-color--gray-5,
+    'gray-55':       $uams-color--gray-5,
+    'gray-60':       $uams-color--gray-5,
+    'gray-65':       $uams-color--gray-5,
+    'gray-70':       $uams-color--gray-5,
+    'gray-75':       $uams-color--gray-5,
+    'gray-80':       $uams-color--gray-5,
+    'gray-85':       $uams-color--gray-5,
+    'gray-90':       $uams-color--gray-5,
+    'gray-95':       $uams-color--gray-5,
+    'gray-100':      $uams-color--gray-5,
+    'crimson':       #fff,
+    'crimson-light': #fff,
+);
+
+$uams-color-border-map: (
+    'white':         #ffffff,
+    'lighter':       $uams-color--gray-5,
+    'light':         $uams-color--gray-10,
+    'dark':          $uams-color--gray-75,
+    'darker':        $uams-color--gray-95,
+    'crimson':       $uams-color--crimson,
+    'crimson-light': $uams-color--crimson-light,
+    'autumn':        $uams-color--accent-autumn,
+    'goldfinch':     $uams-color--accent-goldfinch,
+    'vineyard':      $uams-color--accent-vineyard,
+    'pacificsky':    $uams-color--accent-pacificsky,
+    'midnight':      $uams-color--accent-midnight,
+);
+
+
+/* ========================================================
+== Dropshadows ==
+==========================================================*/
+$uams-dropshadow--xlow:   0px 0px 5px rgba(0,0,0,0.3);
+$uams-dropshadow--low:    0px 0px 7px rgba(0,0,0,0.4);
+$uams-dropshadow--medium: 0px 0px 14px rgba(0,0,0,0.4);
+$uams-dropshadow--high:   0px 0px 17px rgba(0,0,0,0.5);
+
+$uams-shadow--xlow:   0px 0px 5px rgba(0,0,0,0.3);
+$uams-shadow--low:    0px 0px 7px rgba(0,0,0,0.4);
+$uams-shadow--medium: 0px 0px 14px rgba(0,0,0,0.4);
+$uams-shadow--high:   0px 0px 17px rgba(0,0,0,0.5);
+
+$uams-dropshadow-rise--medium:   0px 5px 14px rgba(0,0,0,0.4);
+
+$uams-dropshadow-rise--medium:   0px 5px 14px rgba(0,0,0,0.4);
+
+
+/* ========================================================
+== Easing ==
+==========================================================*/
+$uams-easing: cubic-bezier(0, 0, 0.03, 1);
+
+
+/* ========================================================
+== Font Family ==
+==========================================================*/
+$uams-font-family: 'Montserrat', sans-serif;
+
+
+/* ========================================================
+== Font Sizes ==
+==========================================================*/
+
+$uams-font-sizes: 'hero','sxxlarge','xxlarge','xlarge','large','xxmedium','xmedium','medium','small','xsmall','xxsmall';
+
+$uams-font-size--hero:     5.125rem;
+$uams-font-size--sxxlarge: 4.125rem;
+$uams-font-size--xxlarge:  3.125rem;
+$uams-font-size--xlarge:   2rem;
+$uams-font-size--large:    1.5rem;
+$uams-font-size--xxmedium: 1.25rem;
+$uams-font-size--xmedium:  1.125rem;
+$uams-font-size--medium:   1rem;
+$uams-font-size--small:    0.875rem;
+$uams-font-size--xsmall:   0.75rem;
+$uams-font-size--xxsmall:  0.6875rem;
+
+$uams-font-size-map: (
+    'hero':     $uams-font-size--hero,
+    'sxxlarge': $uams-font-size--sxxlarge,
+    'xxlarge':  $uams-font-size--xxlarge,
+    'xlarge':   $uams-font-size--xlarge,
+    'large':    $uams-font-size--large,
+    'xxmedium': $uams-font-size--xxmedium,
+    'xmedium':  $uams-font-size--xmedium,
+    'medium':   $uams-font-size--medium,
+    'small':    $uams-font-size--small,
+    'xsmall':   $uams-font-size--xsmall,
+    'xxsmall':  $uams-font-size--xxsmall,
+);
+
+/* ========================================================
+== Font Weights ==
+==========================================================*/
+$uams-font-weight--thin:       100;
+$uams-font-weight--extralight: 200;
+$uams-font-weight--light:      300;
+$uams-font-weight--regular:    400;
+$uams-font-weight--medium:     500;
+$uams-font-weight--semibold:   600;
+$uams-font-weight--bold:       700;
+$uams-font-weight--extrabold:  800;
+$uams-font-weight--xextrabold: 900;
+
+
+/* ========================================================
+== Height ==
+==========================================================*/
+$uams-height--global-header: 64px;
+$uams-height--system-header: 100px;
+
+$uams-height--full: 100vh;
+$uams-height--hero: 1150px;
+$uams-height--xxlarge: 1050px;
+$uams-height--xlarge: 950px;
+$uams-height--large: 850px;
+$uams-height--xxmedium: 750px;
+$uams-height--xmedium: 650px;
+$uams-height--medium: 550px;
+$uams-height--small: 450px;
+$uams-height--xsmall: 350px;
+$uams-height--xxsmall: 250px;
+$uams-height--sxxsmall: 150px;
+
+$uams-height-map: (
+    'full':     $uams-height--full,
+    'hero':     $uams-height--hero,
+    'xxlarge':  $uams-height--xxlarge,
+    'xlarge':   $uams-height--xlarge,
+    'large':    $uams-height--large,
+    'xxmedium': $uams-height--xxmedium,
+    'xmedium':  $uams-height--xmedium,
+    'medium':   $uams-height--medium,
+    'small':    $uams-height--small,
+    'xsmall':   $uams-height--xsmall,
+    'xxsmall':  $uams-height--xxsmall,
+    'sxxsmall':  $uams-height--sxxsmall,
+);
+
+/* ========================================================
+== Image Sizes ==
+==========================================================*/
+$uams-image-sizes: 'full','hero','xxlarge','xlarge','large','xmedium','medium','small','xsmall','xxsmall','sxxsmall';
+
+$uams-image-size--full: 100%;
+$uams-image-size--hero: 1200px;
+$uams-image-size--xxlarge: 1200px;
+$uams-image-size--xlarge: 900px;
+$uams-image-size--large: 600px;
+$uams-image-size--xmedium: 450px;
+$uams-image-size--medium: 350px;
+$uams-image-size--small: 250px;
+$uams-image-size--xsmall: 200px;
+$uams-image-size--xxsmall: 175px;
+$uams-image-size--sxxsmall: 125px;
+
+$uams-image-size-map: (
+    'full':$uams-image-size--full,
+    'hero':$uams-image-size--hero,
+    'xxlarge':$uams-image-size--xxlarge,
+    'xlarge':$uams-image-size--xlarge,
+    'large':$uams-image-size--large,
+    'xmedium':$uams-image-size--xmedium,
+    'medium':$uams-image-size--medium,
+    'small':$uams-image-size--small,
+    'xsmall':$uams-image-size--xsmall,
+    'xxsmall':$uams-image-size--xxsmall,
+    'sxxsmall':$uams-image-size--sxxsmall
+);
+
+/* ========================================================
+== Line Heights ==
+==========================================================*/
+
+$uams-line-heights: 'hero','sxxlarge','xxlarge','xlarge','large','xxmedium','xmedium','medium','small','xsmall','xxsmall';
+
+$uams-line-height--hero:     1.15;
+$uams-line-height--sxxlarge:  1.2;
+$uams-line-height--xxlarge:  1.2;
+$uams-line-height--xlarge:   1.2;
+$uams-line-height--large:    1.3;
+$uams-line-height--xxmedium: 1.4;
+$uams-line-height--xmedium:  1.4;
+$uams-line-height--medium:   1.5;
+$uams-line-height--small:    1.5;
+$uams-line-height--xsmall:   1.5;
+$uams-line-height--xxsmall:  1.5;
+
+$uams-line-height--tight-hero:     1.15;
+$uams-line-height--tight-xxlarge:  1.2;
+$uams-line-height--tight-xlarge:   1.2;
+$uams-line-height--tight-large:    1.3;
+$uams-line-height--tight-xxmedium: 1.3;
+$uams-line-height--tight-xmedium:  1.3;
+$uams-line-height--tight-medium:   1.4;
+$uams-line-height--tight-small:    1.4;
+$uams-line-height--tight-xsmall:   1.4;
+$uams-line-height--tight-xxsmall:  1.4;
+
+$uams-line-height-map: (
+    'hero':     $uams-line-height--hero,
+    'sxxlarge': $uams-line-height--sxxlarge,
+    'xxlarge':  $uams-line-height--xxlarge,
+    'xlarge':   $uams-line-height--xlarge,
+    'large':    $uams-line-height--large,
+    'xxmedium': $uams-line-height--xxmedium,
+    'xmedium':  $uams-line-height--xmedium,
+    'medium':   $uams-line-height--medium,
+    'small':    $uams-line-height--small,
+    'xsmall':   $uams-line-height--xsmall,
+    'xxsmall':  $uams-line-height--xxsmall,
+);
+
+$uams-line-height-tight-map: (
+    'hero':     $uams-line-height--tight-hero,
+    'xxlarge':  $uams-line-height--tight-xxlarge,
+    'xlarge':   $uams-line-height--tight-xlarge,
+    'large':    $uams-line-height--tight-large,
+    'xxmedium': $uams-line-height--tight-xxmedium,
+    'xmedium':  $uams-line-height--tight-xmedium,
+    'medium':   $uams-line-height--tight-medium,
+    'small':    $uams-line-height--tight-small,
+    'xsmall':   $uams-line-height--tight-xsmall,
+    'xxsmall':  $uams-line-height--tight-xxsmall,
+);
+
+
+/* ========================================================
+== Ratios height/width ==
+==========================================================*/
+
+$uams-ratios: '2-5','16-9','6-4','4-3','square','3-4';
+
+$uams-ratio--2-5:    40%;
+$uams-ratio--16-9:   56.25%;
+$uams-ratio--6-4:    66%;
+$uams-ratio--4-3:    75%;
+$uams-ratio--square: 100%;
+$uams-ratio--1-1:    100%;
+$uams-ratio--3-4:    133%;
+
+$uams-image-ratio-map: (
+    '2-5':    $uams-ratio--2-5,
+    '16-9':   $uams-ratio--16-9,
+    '6-4':    $uams-ratio--6-4,
+    '4-3':    $uams-ratio--4-3,
+    'square': $uams-ratio--square,
+    '1-1':    $uams-ratio--1-1,
+    '3-4':    $uams-ratio--3-4,
+);
+
+
+/* ========================================================
+== Spacing ==
+==========================================================*/
+
+$uams-spacing--hero:     6.87rem;
+$uams-spacing--xxlarge:  5.125rem;
+$uams-spacing--xlarge:   4.125rem;
+$uams-spacing--large:    3.125rem;
+$uams-spacing--xxmedium: 2.25rem;
+$uams-spacing--xmedium:  1.75rem;
+$uams-spacing--medium:   1.5rem;
+$uams-spacing--small:    1.125rem;
+$uams-spacing--xsmall:   0.875rem;
+$uams-spacing--xxsmall:  0.6875rem;
+$uams-spacing--sxxsmall: 0.5rem;
+$uams-spacing--xxhero:   ( $uams-spacing--hero + $uams-spacing--xlarge );
+$uams-spacing--xhero:    ( $uams-spacing--hero + $uams-spacing--xmedium );
+
+$uams-spacing--em-hero:     6.87em;
+$uams-spacing--em-xlarge:   5.125em;
+$uams-spacing--em-large:    3.125em;
+$uams-spacing--em-xxmedium: 2em;
+$uams-spacing--em-xmedium:  1.75em;
+$uams-spacing--em-medium:   1.5em;
+$uams-spacing--em-small:    1.125em;
+$uams-spacing--em-xsmall:   0.875em;
+$uams-spacing--em-xxsmall:  0.6875em;
+
+$uams-spacing--component: $uams-spacing--xxmedium;
+$uams-spacing--column:    $uams-spacing--xmedium;
+
+$uams-spacing-map: (
+    'xxhero':   $uams-spacing--xxhero,
+    'xhero':    $uams-spacing--xhero,
+    'hero':     $uams-spacing--hero,
+    'xxlarge':  $uams-spacing--xxlarge,
+    'xlarge':   $uams-spacing--xlarge,
+    'large':    $uams-spacing--xlarge,
+    'xxmedium': $uams-spacing--xxmedium,
+    'xmedium':  $uams-spacing--xmedium,
+    'medium':   $uams-spacing--medium,
+    'small':    $uams-spacing--small,
+    'xsmall':   $uams-spacing--xsmall,
+    'xxsmall':  $uams-spacing--xxsmall,
+    'sxxsmall': $uams-spacing--sxxsmall,
+    'none':     0,
+);
+
+
+/* ========================================================
+== Transition Speed ==
+==========================================================*/
+$uams-transition-speed--xxslow:  600ms;
+$uams-transition-speed--xslow:   500ms;
+$uams-transition-speed--slow:    400ms;
+$uams-transition-speed--xmedium: 350ms;
+$uams-transition-speed--medium:  300ms;
+$uams-transition-speed--fast:    200ms;
+$uams-transition-speed--xfast:   150ms;
+$uams-transition-speed--xxfast:  100ms;
+
+
+/* ========================================================
+== Widths ==
+==========================================================*/
+
+$uams-width--copy:                     900px;
+
+$uams-width--button-small:             60px;
+$uams-width--navigation:               230px;
+$uams-width--navigation-veritcal:      280px;
+$uams-width--navigation-open:          280px;
+$uams-width--navigation-mobile-open:   320px;
+$uams-width--navigation-closed:        60px;
+$uams-width--navigation-width--modal:  200px;
+$uams-width--navigation-narrow:        200px;
+$uams-width--navigation-xnarrow:       150px;
+$uams-width--content-narrow:           990px;
+$uams-width--content:                  1200px;
+$uams-width--content-wide:             1400px;
+$uams-width--content-xwide:            1600px;
+
+$uams-width--auto: auto;
+$uams-width--full: 100%;
+$uams-width--xxlarge: 1200px;
+$uams-width--xlarge: 900px;
+$uams-width--large: 700px;
+$uams-width--xmedium: 550px;
+$uams-width--medium: 450px;
+$uams-width--small: 300px;
+$uams-width--xsmall: 250px;
+$uams-width--xxsmall: 150px;
+
+/* ========================================================
+== Z-Index ==
+
+Bootstrap z-index for reference
+$zindex-dropdown:                   1000;
+$zindex-sticky:                     1020;
+$zindex-fixed:                      1030;
+$zindex-modal-backdrop:             1040;
+$zindex-offcanvas:                  1050;
+$zindex-modal:                      1060;
+$zindex-popover:                    1070;
+$zindex-tooltip:                    1080;
+
+==========================================================*/
+$uams-zindex--background:                 1000;
+$uams-zindex--content:                    1010;
+$uams-zindex--global-footer:              1020;
+$uams-zindex--navigation:                 1030;
+$uams-zindex--global-header:              1035;
+$uams-zindex--modal-backdrop:             1040;
+$uams-zindex--modal:                      1060;
+$uams-zindex--popover:                    1070;
+$uams-zindex--tooltip:                    1080;

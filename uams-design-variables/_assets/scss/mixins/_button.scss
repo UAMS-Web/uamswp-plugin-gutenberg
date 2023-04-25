@@ -1,0 +1,22 @@
+@import '../variables';
+
+@mixin uams-button( $padding: 1em calc( #{$uams-spacing--xxmedium} + 0.25rem ), $border-radius: $uams-border-radius--large  ) {
+    font-family: $uams-font-family;
+    background-color: $uams-color--crimson;
+    color: #fff;
+    border-radius: $border-radius;
+    border: none;
+    padding: $padding;
+    font-size: $uams-font-size--medium;
+    font-weight: 600;
+    line-height: 1.5;
+    cursor: pointer;
+    transition: box-shadow $uams-transition-speed--fast $uams-easing;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+        box-shadow: $uams-dropshadow-rise--medium;
+        background-color: $uams-color--crimson-light;
+    }
+}

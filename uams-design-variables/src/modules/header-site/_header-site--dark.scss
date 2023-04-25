@@ -1,0 +1,28 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-header-site--dark {
+
+    background-color: $uams-color--gray-85;
+
+    .uams-header-site {
+
+        &__subtitle {
+            color: $uams-color--gray-20;
+        }
+
+        &__label {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        &__title {
+
+            color: $uams-color--gray-10;
+
+        }
+
+    }
+
+}

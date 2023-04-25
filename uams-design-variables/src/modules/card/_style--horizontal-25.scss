@@ -1,0 +1,37 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+@media screen and (min-width: $uams-breakpoint--tablet )  {
+    .uams-card--style-horizontal-25 {
+        display: flex;
+        margin-bottom: 2.25rem !important;
+        
+        .uams-card{
+
+            &__content {
+                padding-left: $uams-spacing--xxmedium;
+                padding-right: $uams-spacing--xxmedium;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                box-sizing: border-box;
+
+                p, li,
+                .uams-caption {
+                    font-size: $uams-font-size--small;
+                }
+            }
+        }
+        .uams-image-frame {
+            width: 25%;
+            flex-shrink: 0;
+            aspect-ratio: 4/3;
+            padding-top: 1.25rem;
+            
+            & img {
+                object-fit: contain;
+                object-position: left 1.25rem;
+            }
+        }
+    }
+}

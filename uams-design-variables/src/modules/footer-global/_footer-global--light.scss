@@ -1,0 +1,9 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-footer-global--light {
+
+    background-color: #fff;
+    color: $uams-color--text;
+    border-top: 1px solid $uams-color--gray-20;
+}

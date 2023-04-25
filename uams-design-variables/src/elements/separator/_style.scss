@@ -1,0 +1,13 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+hr:not([class*="separator--style-"]) {
+    border-style: solid;
+    border-color: $uams-color--gray-15;
+    border-top: 8px solid $uams-color--gray-15;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    margin-top: $uams-spacing--large;
+    margin-bottom: $uams-spacing--large;
+}

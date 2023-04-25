@@ -1,0 +1,78 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+@mixin uams-menu-toggle--horizontal() {
+
+    .uams-menu-toggle {
+
+        display: flex;
+
+        &::after {
+            display: none !important;
+        }
+
+        a {
+            border-left: none;
+        }
+
+        li {
+
+            &::before {
+                display: none !important;
+            }
+
+        }
+
+        & > li {
+            flex-grow: 0;
+            position: relative;
+
+            & > a {
+                padding: $uams-spacing--xsmall $uams-spacing--medium $uams-spacing--xsmall $uams-spacing--medium;
+            }
+
+            &[aria-expanded] > a {
+                padding-right: 0.2em;
+            }
+
+            & > ul {
+                position: absolute;
+                top: 100%;
+                width: 225px;
+                padding-left: 5px;
+                padding-right: 5px;
+
+                & > li:first-child {
+                    margin-top: calc( #{$uams-spacing--xxsmall} + #{$uams-spacing--small} );
+                }
+
+                & > li:last-child {
+                    margin-bottom: calc( #{$uams-spacing--xxsmall} + #{$uams-spacing--small} );
+                }
+
+                &::before {
+                    content: "";
+                    display: block;
+                    top: $uams-spacing--xxsmall;
+                    bottom: $uams-spacing--xxsmall;
+                    left: 5px;
+                    right: 5px;
+                    box-shadow: $uams-dropshadow--xlow;
+                    background-color: #fff;
+                    position: absolute;
+                    border-radius: $uams-border-radius--small;
+                    
+                }
+            }
+
+        }
+
+        li[aria-expanded] > button {
+            width: 35px;
+        }
+
+    }
+
+}
+
+

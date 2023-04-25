@@ -1,0 +1,8 @@
+{% from "menu-collapse/_macro.njk" import menuCollapse %}
+{% from "slide-in-panel/_macro.njk" import slideInPanel %}
+
+{% macro mobileMenu(classes = '', startOpen=true, nested=true, style='top-right', quickLinks=false) %}
+{% call slideInPanel( style='mobile' ) -%}
+    {{ menuCollapse( style='mobile') }}
+{%- endcall %}
+{% endmacro %}  

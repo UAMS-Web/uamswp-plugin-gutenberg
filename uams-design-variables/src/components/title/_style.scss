@@ -1,0 +1,23 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-title {
+    font-size: $uams-font-size--medium;
+    line-height: 1.2;
+    
+    a::after {
+        display: none !important; 
+    }
+}
+
+@each $name, $size in $uams-font-size-map {
+
+    .uams-title--#{$name} {
+        &.uams-title,
+        .uams-title {
+            font-size: $size !important;
+            line-height: map-get( $uams-line-height-tight-map, #{$name} ) !important;
+        }  
+    }
+
+}   

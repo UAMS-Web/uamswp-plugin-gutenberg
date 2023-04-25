@@ -1,0 +1,17 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.uams-meta-address {
+
+    font-size: $uams-font-size--xsmall;
+
+    a {
+        color: inherit;
+    }
+
+    &__email,
+    &__phone {
+        margin: 0 0.2rem;
+    }
+
+}

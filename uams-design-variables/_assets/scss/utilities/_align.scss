@@ -1,0 +1,58 @@
+@import '../variables';
+
+/*----------  Alignment  ----------*/
+.uams-align-item,
+.uams-align {
+
+    &--right {
+        margin-left: auto !important;
+    }
+
+    &--left {
+        margin-right: auto !important;
+    }
+
+    &--center {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    
+}
+
+.uams-align-item {
+    &--flex-bottom {
+        margin-top: auto !important;
+    }
+}
+
+.uams-align-text,
+.uams-text-align {
+
+    &--right {
+        text-align: right !important;
+    }
+
+    &--left {
+        text-align: left !important;
+    }
+
+    &--center {
+        text-align: center !important;
+    }
+}
+
+.uams-align-vertical {
+
+    &--bottom {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    &--center {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}

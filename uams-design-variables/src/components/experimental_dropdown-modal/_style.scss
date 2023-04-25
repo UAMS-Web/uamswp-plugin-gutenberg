@@ -1,0 +1,35 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+
+.uams-dropdown-modal {
+    position: relative;
+
+    & > ul {
+        top: calc(100% + 50px);
+        position: absolute;
+        @include uams-modal-box;
+        transition: top $uams-transition-speed--medium $uams-easing 150ms, opacity $uams-transition-speed--medium $uams-easing 150ms;
+        opacity: 0;
+        visibility: hidden;
+    } 
+}
+
+.uams-dropdown-modal[aria-expanded="false"].uams-animating {
+
+    & > ul {
+        visibility: visible;
+        transition-delay: 0ms;
+    }
+}
+
+.uams-dropdown-modal[aria-expanded="true"],
+.uams-dropdown-modal:not(.uams-dropdown-modal--click):hover {
+    position: relative;
+
+    & > ul {
+        top: 100%;
+        opacity: 1;
+        visibility: visible;
+    } 
+}
