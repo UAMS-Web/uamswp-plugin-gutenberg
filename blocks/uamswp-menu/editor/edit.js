@@ -71,7 +71,7 @@ const edit = (props) => {
 						/>
 			</InspectorAdvancedControls>
       <div {...blockProps}>
-        <span className="dashicon dashicons dashicons-menu wsu-gutenberg-menu-block__icon"></span>{" "}
+        <span className="dashicon dashicons dashicons-menu uams-gutenberg-menu-block__icon"></span>{" "}
         Menu: {attributes.slug}
         <div>
         { attributes.custom && <InnerBlocks

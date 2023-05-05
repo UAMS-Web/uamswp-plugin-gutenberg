@@ -16,8 +16,8 @@
 
 /** ===== Front-End Styles ===== */
 .block-editor-block-list__layout {
-  @import "../../../uams-design-variables/src/bundles/wsu-design-system.scss";
-  @import "../../../uams-design-variables/src/bundles/wsu-design-system.wordpress.scss";
+  @import "../../../uams-design-variables/src/bundles/uams-design-system.scss";
+  @import "../../../uams-design-variables/src/bundles/uams-design-system.wordpress.scss";
   @import "../../../blocks/uamswp-news/editor/style";
   @import "../scss/partials/front-end-style-fixes";
 }
