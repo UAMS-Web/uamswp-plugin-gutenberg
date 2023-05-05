@@ -1,0 +1,275 @@
+@font-face {
+	font-family: "uams-icons";
+	src: url("https://cdn-web-wsu.s3-us-west-2.amazonaws.com/designsystem/1.x/wsu-icons/dist/wsu-icons.dist.eot?#iefix") format("embedded-opentype"),
+url("https://cdn-web-wsu.s3-us-west-2.amazonaws.com/designsystem/1.x/wsu-icons/dist/wsu-icons.dist.woff") format("woff"),
+url("https://cdn-web-wsu.s3-us-west-2.amazonaws.com/designsystem/1.x/wsu-icons/dist/wsu-icons.dist.woff2") format("woff2"),
+url("https://cdn-web-wsu.s3-us-west-2.amazonaws.com/designsystem/1.x/wsu-icons/dist/wsu-icons.dist.ttf") format("truetype"),
+url("https://cdn-web-wsu.s3-us-west-2.amazonaws.com/designsystem/1.x/wsu-icons/dist/wsu-icons.dist.svg#wsu-icons") format("svg");
+}
+
+.uams-icon:before {
+	font-family: uams-icons !important;
+	font-style: normal;
+	font-weight: normal !important;
+	vertical-align: top;
+}
+
+.uams-i-alarm:before {
+	content: "\F101";
+}
+.uams-i-alert-notification:before {
+	content: "\F102";
+}
+.uams-i-arrow-down-carrot:before {
+	content: "\F103";
+}
+.uams-i-arrow-down:before {
+	content: "\F104";
+}
+.uams-i-arrow-left-carrot:before {
+	content: "\F105";
+}
+.uams-i-arrow-left:before {
+	content: "\F106";
+}
+.uams-i-arrow-right-carrot:before {
+	content: "\F107";
+}
+.uams-i-arrow-right:before {
+	content: "\F108";
+}
+.uams-i-arrow-up-carrot:before {
+	content: "\F109";
+}
+.uams-i-arrow-up:before {
+	content: "\F10A";
+}
+.uams-i-attachment:before {
+	content: "\F10B";
+}
+.uams-i-basket:before {
+	content: "\F10C";
+}
+.uams-i-bookmark:before {
+	content: "\F10D";
+}
+.uams-i-calendar:before {
+	content: "\F10E";
+}
+.uams-i-cart:before {
+	content: "\F10F";
+}
+.uams-i-check:before {
+	content: "\F110";
+}
+.uams-i-collapse:before {
+	content: "\F111";
+}
+.uams-i-comment:before {
+	content: "\F112";
+}
+.uams-i-contrast:before {
+	content: "\F113";
+}
+.uams-i-credit-card:before {
+	content: "\F114";
+}
+.uams-i-cut:before {
+	content: "\F115";
+}
+.uams-i-discussion:before {
+	content: "\F116";
+}
+.uams-i-document:before {
+	content: "\F117";
+}
+.uams-i-download:before {
+	content: "\F118";
+}
+.uams-i-edit:before {
+	content: "\F119";
+}
+.uams-i-email:before {
+	content: "\F11A";
+}
+.uams-i-expand:before {
+	content: "\F11B";
+}
+.uams-i-favorite:before {
+	content: "\F11C";
+}
+.uams-i-feedback:before {
+	content: "\F11D";
+}
+.uams-i-filter:before {
+	content: "\F11E";
+}
+.uams-i-flag:before {
+	content: "\F11F";
+}
+.uams-i-gallery:before {
+	content: "\F120";
+}
+.uams-i-graph:before {
+	content: "\F121";
+}
+.uams-i-home:before {
+	content: "\F122";
+}
+.uams-i-info:before {
+	content: "\F123";
+}
+.uams-i-key:before {
+	content: "\F124";
+}
+.uams-i-light-bulb:before {
+	content: "\F125";
+}
+.uams-i-link:before {
+	content: "\F126";
+}
+.uams-i-location:before {
+	content: "\F127";
+}
+.uams-i-map-location:before {
+	content: "\F128";
+}
+.uams-i-map:before {
+	content: "\F129";
+}
+.uams-i-menu:before {
+	content: "\F12A";
+}
+.uams-i-minus-circle:before {
+	content: "\F12B";
+}
+.uams-i-minus:before {
+	content: "\F12C";
+}
+.uams-i-mobile:before {
+	content: "\F12D";
+}
+.uams-i-monitor:before {
+	content: "\F12E";
+}
+.uams-i-more-vertical:before {
+	content: "\F12F";
+}
+.uams-i-more:before {
+	content: "\F130";
+}
+.uams-i-next:before {
+	content: "\F131";
+}
+.uams-i-pause:before {
+	content: "\F132";
+}
+.uams-i-phone:before {
+	content: "\F133";
+}
+.uams-i-photos:before {
+	content: "\F134";
+}
+.uams-i-play-circle:before {
+	content: "\F135";
+}
+.uams-i-play:before {
+	content: "\F136";
+}
+.uams-i-plus:before {
+	content: "\F137";
+}
+.uams-i-pluse-circle:before {
+	content: "\F138";
+}
+.uams-i-previous:before {
+	content: "\F139";
+}
+.uams-i-print:before {
+	content: "\F13A";
+}
+.uams-i-profile-circle:before {
+	content: "\F13B";
+}
+.uams-i-profile:before {
+	content: "\F13C";
+}
+.uams-i-rate:before {
+	content: "\F13D";
+}
+.uams-i-refresh:before {
+	content: "\F13E";
+}
+.uams-i-save:before {
+	content: "\F13F";
+}
+.uams-i-search:before {
+	content: "\F140";
+}
+.uams-i-secure:before {
+	content: "\F141";
+}
+.uams-i-send:before {
+	content: "\F142";
+}
+.uams-i-settings:before {
+	content: "\F143";
+}
+.uams-i-share:before {
+	content: "\F144";
+}
+.uams-i-social-facebook:before {
+	content: "\F145";
+}
+.uams-i-social-instagram:before {
+	content: "\F146";
+}
+.uams-i-social-linkedin:before {
+	content: "\F147";
+}
+.uams-i-social-twitter:before {
+	content: "\F148";
+}
+.uams-i-social-youtube:before {
+	content: "\F149";
+}
+.uams-i-stop-circle:before {
+	content: "\F14A";
+}
+.uams-i-stop:before {
+	content: "\F14B";
+}
+.uams-i-tag:before {
+	content: "\F14C";
+}
+.uams-i-tent:before {
+	content: "\F14D";
+}
+.uams-i-time:before {
+	content: "\F14E";
+}
+.uams-i-trash:before {
+	content: "\F14F";
+}
+.uams-i-upload:before {
+	content: "\F150";
+}
+.uams-i-video-slideshow:before {
+	content: "\F151";
+}
+.uams-i-warning-caution:before {
+	content: "\F152";
+}
+.uams-i-warning-stop:before {
+	content: "\F153";
+}
+.uams-i-x-close:before {
+	content: "\F154";
+}
+.uams-i-zoom-in:before {
+	content: "\F155";
+}
+.uams-i-zoom-out:before {
+	content: "\F156";
+}
+
