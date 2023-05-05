@@ -1,13 +1,13 @@
 @import '../../../_assets/scss/variables';
 
-.wsu-coug-head {
+.uams-coug-head {
 
 	width: 100px;
 	height: 100px;
-	fill: $wsu-color--crimson;
+	fill: $uams-color--crimson;
 
 	&--crimson-light {
-		fill: $wsu-color--crimson-light;
+		fill: $uams-color--crimson-light;
 	}
 
 	&--white {
@@ -15,16 +15,16 @@
 	}
 
 	&--boxed-crimson {
-		background-color: $wsu-color--crimson;
+		background-color: $uams-color--crimson;
 		fill: #fff;
 	}
 
 }
 
-.wsu-coug-head-boxed {
+.uams-coug-head-boxed {
 	position: relative;
 	justify-content: center;
-	background-color: $wsu-color--crimson;
+	background-color: $uams-color--crimson;
 	position: relative;
 	display: block;
 	width: 60px;
