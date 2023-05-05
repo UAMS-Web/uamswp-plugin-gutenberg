@@ -24,9 +24,9 @@ class Scripts {
 
 	public static function register_assets() {
 
-		$wds_version = get_theme_mod( 'wsu_wds_version', '2.x' );
+		// $wds_version = get_theme_mod( 'wsu_wds_version', '2.x' );
 
-		wp_register_script( 'uams_design_system_script_people_list', 'https://cdn.web.wsu.edu/designsystem/' . $wds_version . '/dist/bundles/standalone/people-list/scripts.js', array(), UAMSWPPLUGINGUTENBERGVERSION, true );
+		wp_register_script( 'uams_design_system_script_people_list', Plugin::get( 'url' ) . '/assets/dist/css/bundles/standalone/people-list/scripts.js', array(), UAMSWPPLUGINGUTENBERGVERSION, true ); //'https://cdn.web.wsu.edu/designsystem/' . $wds_version . '/dist/bundles/standalone/people-list/scripts.js', array(), UAMSWPPLUGINGUTENBERGVERSION, true );
 		// wp_register_script( 'uams_design_system_script_hero_slider', 'https://cdn.web.wsu.edu/designsystem/2.x/dist/bundles/standalone/hero-slider/scripts.js', array(), UAMSWPPLUGINGUTENBERGVERSION, true );
 		// wp_register_style( 'uams_design_system_script_hero_slider', 'https://cdn.web.wsu.edu/designsystem/2.x/dist/bundles/standalone/hero-slider/styles-wds.css', array(), UAMSWPPLUGINGUTENBERGVERSION );
 	}
@@ -34,11 +34,11 @@ class Scripts {
 
 	public static function enqueue_block_editor_assets() {
 
-		$wds_version = get_theme_mod( 'wsu_wds_version', '2.x' );
+		// $wds_version = get_theme_mod( 'wsu_wds_version', '2.x' );
 
 		wp_enqueue_style(
 			'uamswp-wds-editor-styles',
-			'https://cdn.web.wsu.edu/designsystem/' . $wds_version . '/dist/bundles/wsu-design-system.wordpress.editor.css',
+			Plugin::get( 'url' ) . '/assets/dist/css/bundles/uams-design-system.wordpress.editor.css',
 			array(),
 			Plugin::get( 'version' )
 		);
@@ -77,6 +77,43 @@ class Scripts {
 
 
 	public static function enqueue_frontend_assets() {
+
+		wp_enqueue_style(
+			'wsu_design_system_icons',
+			Plugin::get( 'url' ) . '/assets/dist/css/uams-icons.bundle.css',
+			array(), 
+			Plugin::get( 'version' ) 
+		);
+
+		wp_enqueue_style(
+			'uamswp_design_system_css', 
+			Plugin::get( 'url' ) . '/assets/dist/css/bundles/uams-design-system.css', 
+			array(), 
+			Plugin::get( 'version' ) 
+		);
+
+		wp_enqueue_style( 
+			'uamswp_design_system_css_wordpress', 
+			Plugin::get( 'url' ) . '/assets/dist/css/bundles/uams-design-system.wordpress.css', 
+			array(), 
+			Plugin::get( 'version' ) 
+		);
+
+		wp_enqueue_script( 
+			'uamswp_design_system_js_init', 
+			Plugin::get( 'url' ) . '/assets/dist/js/uams-design-system.init.js',  
+			array(), 
+			Plugin::get( 'version' ), 
+			false 
+		);
+
+		wp_enqueue_script(
+			'uamswp_design_system_js', 
+			Plugin::get( 'url' ) . '/assets/dist/js/uams-design-system.js', 
+			array(), 
+			Plugin::get( 'version' ), 
+			true 
+		);
 
 		// if ( is_singular() ) {
 		// $id = get_the_ID();
