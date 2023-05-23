@@ -32,6 +32,8 @@ class Blocks {
 		'uamswp/overlap-advanced'    => 'Block_UAMSWP_Overlap_Advanced',
 		'uamswp/overlap-column'      => 'Block_UAMSWP_Overlap_Column',
 		'uamswp/overlap-spotlight'   => 'Block_UAMSWP_Overlap_Spotlight',
+		'uamswp/action-bar'			 => 'Block_UAMSWP_Action_Bar',
+		'uamswp/action-bar-item'	 => 'Block_UAMSWP_Action_Bar_Item',
 	);
 
 	protected static $allowed_blocks = array(
@@ -63,6 +65,8 @@ class Blocks {
 		'uamswp/overlap-spotlight',
 		'uamswp/stat',
 		'uamswp/menu',
+		'uamswp/action-bar',
+		'uamswp/action-bar-item',
 		'bcn/breadcrumb-trail',
 		'core/code',
 		'core/embed',
@@ -82,6 +86,18 @@ class Blocks {
 		'core/table',
 		'core/video',
 		'gravityforms/form',
+		// uams-2020 blocks
+		//'acf/action-bar',
+		'acf/call-out',
+		'acf/cta',
+		'acf/hero',
+		'acf/link-list',
+		'acf/uams-news',
+		'acf/text-overlay',
+		'acf/image-side',
+		'acf/text-stacked',
+		'acf/uams-gallery',
+		'acf/uams-section',
 	);
 
 
@@ -129,7 +145,7 @@ class Blocks {
 
 		foreach ( $blocks as $block => $class ) {
 
-			// folder name should be the block name with the / replaced with - (i.e. uamswp/name -> uamspw-name)
+			// folder name should be the block name with the / replaced with - (i.e. uamswp/name -> uamswp-name)
 			$block_folder = str_replace( '/', '-', $block );
 
 			$block_class = __NAMESPACE__ . '\\' . $class;
