@@ -22,6 +22,9 @@ add_action( 'after_setup_theme', 'uamswp_plugin_gutenberg_init' );
 
 function uamswp_plugin_gutenberg_init() {
 
+	define('UAMSWP_ROOT_URL', plugin_dir_url(__FILE__));
+	define('UAMSWP_ROOT_PATH', plugin_dir_path(__FILE__));
+
 	// Initiate plugin
 	require_once __DIR__ . '/includes/plugin.php';
 
