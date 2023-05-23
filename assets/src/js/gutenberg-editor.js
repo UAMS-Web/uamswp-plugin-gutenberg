@@ -1,5 +1,7 @@
 import "../js/partials/editor-config/constants";
 import "../../../blocks/uamswp-accordion/editor/block";
+import "../../../blocks/uamswp-action-bar/editor/block";
+import "../../../blocks/uamswp-action-bar-item/editor/block";
 import "../../../blocks/uamswp-callout/editor/block";
 import "../../../blocks/uamswp-note/editor/block";
 import "../../../blocks/uamswp-card/editor/block";
