@@ -1,0 +1,26 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+ .wp-block-tutorial-uams-section-block {
+	border: 1px dotted #f00;
+}
+.editor-styles-wrapper .uams-module .module-title.sr-only {
+    position: inherit;
+    width: auto;
+    height: auto;
+    border: gray 1px dashed;
+    position: relative;
+}
+.editor-styles-wrapper .uams-module .module-title.sr-only:before {
+    content: "hidden";
+    color: white;
+    background-color: gray;
+    right: 0;
+    top: 0;
+    width: fit-content;
+    position: absolute;
+    font-size: small;
+}
