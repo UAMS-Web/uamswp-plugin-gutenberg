@@ -360,7 +360,7 @@
     
 }
 
-.uams-header-global ~ .uams-wrapper-site .uams-hero--size-full {
+.uams-header-global ~ .content .uams-hero--size-full { //.uams-wrapper-site => .content
 
     .uams-hero__content {
         min-height: calc( 100vh - 64px );
@@ -368,7 +368,7 @@
 
 }
 
-.uams-header-global ~ .uams-wrapper-site .uams-header-site ~ .uams-wrapper-content .uams-hero--size-full {
+.uams-header-global ~ .content .uams-header-site ~ .uams-wrapper-content .uams-hero--size-full { //.uams-wrapper-site => .content
 
     .uams-hero__content {
         min-height: calc( 100vh - 64px - 110px );

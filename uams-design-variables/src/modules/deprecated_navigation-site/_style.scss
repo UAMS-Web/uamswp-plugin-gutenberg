@@ -149,7 +149,7 @@
 
     }
 
-    &:not(.uams-navigation-site--horizontal) ~ .uams-wrapper-site {
+    &:not(.uams-navigation-site--horizontal) ~ .content { //.uams-wrapper-site {
         margin-left: $uams-width--navigation-open;
         @include uams-transition-navigation-vertical;
         transition-property: margin-left;
